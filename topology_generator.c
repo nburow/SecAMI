@@ -12,7 +12,7 @@
 
 double seed = 123456789;
 int total = 0;   //total number of nodes you have created
-int *parent;
+int **parent;
 
 void addParent(int node, char *s)
 {
@@ -46,6 +46,7 @@ char *addNewNodes(int root, int num)
 		parent[total] = root;
 		total++;                        //added a node so increase the total
 	}
+
 	strcat(line, "\n");
 	return line;
 }
@@ -87,7 +88,7 @@ void makeNetwork(int nodes, double mean, FILE *fp)
 			nodeNum++;              //move to next node
 			prevTotal = total;
 			resetPoint = nodeNum;     //next node is where you want to reset to
-			fprintf(fp, entry);
+			fprintf(fp, "%s", entry);
 		}
 		else if (nodeNum < total)
 			nodeNum++;               //added no connections, but move on to next node
