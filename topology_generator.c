@@ -11,15 +11,51 @@
 #include "random.h"
 
 double seed = 123456789;
+int size = 1000;  //MAX size of strings
 int total = 0;   //total number of nodes you have created
-int **parent;
+int *parent;
 
-void addParent(int node, char *s)
+char *addParent(int skippedNode, int node, char *s)
 {
-	char p[10];
-	memset(p, 0, sizeof(p));
-	sprintf(p, "%d", parent[node]);
-	strcat(s, p);
+	//string to return
+	char *p = malloc(size*sizeof(char));
+	memset(p, 0, size*sizeof(char));
+
+	//temporary string, used for formatting (sprintf overwrites existing string);
+	char *tmp = malloc(size*sizeof(char));
+	memset(tmp, 0, size*sizeof(char));
+
+	if(skippedNode < node)
+	{
+		//add those nodes only connected to their parent
+		int i;
+		for(i = skippedNode; i < node; i++)
+		{
+			sprintf(tmp, "%d: %d\n", i, parent[i]);
+			strcat(p, tmp);
+		}
+
+		//prepend those nodes to the entry for the node with new connections
+		//done by copying s to the end of p;
+		char *middle = p + strlen(p);
+		strcpy(middle, s);
+		free(s);
+
+		sprintf(tmp, "%d", parent[node]);
+		strcat(p, tmp);
+	}
+	else
+	{
+		//move s into p so can return the same thing regardless of case
+		strcpy(p, s);
+		free(s);
+
+		//add the current node's parent
+		sprintf(tmp, "%d", parent[node]);
+		strcat(p, tmp);
+	}
+	free(tmp);
+	return p;
 }
 //add connections between nodes at the same level
 char *addLateral(int min, int max)
@@ -29,9 +65,9 @@ char *addLateral(int min, int max)
 //add new nodes
 char *addNewNodes(int root, int num)
 {
-	char *line = malloc(1000*sizeof(char));
+	char *line = malloc(size*sizeof(char));
 	char tmp[10];
-	memset(line, 0, 1000*sizeof(char));
+	memset(line, 0, size*sizeof(char));
 	memset(tmp, 0, sizeof(tmp));
 
 	int i;
@@ -56,11 +92,11 @@ void makeNetwork(int nodes, double mean, FILE *fp)
 
 	int nodeNum = 0;           //which node you are currently on
 	int numNewNodes = 0;    //number of connections this node has
-	int prevTotal = 0;
-	int resetPoint = 0;
+	int resetPoint = 0;     //in the event no new nodes get added, but you still need
+	                       //more nodes, circle back to here to try again
 
-	char *entry = malloc(1000*sizeof(char));
-	memset(entry, 0, sizeof(1000*sizeof(char)));
+	char *entry = malloc(size*sizeof(char));
+	memset(entry, 0, sizeof(size*sizeof(char)));
 
 	while(total < nodes)
 	{
@@ -77,17 +113,17 @@ void makeNetwork(int nodes, double mean, FILE *fp)
 
 		if(numNewNodes > 0)
 		{
+			//node 0 has no parent...
 			if(nodeNum > 0)
-				addParent(nodeNum, entry);
+				entry = addParent(resetPoint, nodeNum, entry);
 
-			//strcat(entry, addPrior(parent[nodeNum], nodeNum, prevTotal));
+			//append list of new connections to current node
 			char *newNodes = addNewNodes(nodeNum, numNewNodes);
 			strcat(entry, newNodes);
 			free(newNodes);
 
 			nodeNum++;              //move to next node
-			prevTotal = total;
-			resetPoint = nodeNum;     //next node is where you want to reset to
+			resetPoint = nodeNum;     //once some node has added new nodes, only add to nodes after it
 			fprintf(fp, "%s", entry);
 		}
 		else if (nodeNum < total)
@@ -95,6 +131,7 @@ void makeNetwork(int nodes, double mean, FILE *fp)
 		else
 			nodeNum  = resetPoint;    //none of the available nodes had connections added, reset
 	}
+	free(entry);
 }
 
 //input:  # of nodes, mean # of connections per node
