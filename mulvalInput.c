@@ -15,6 +15,8 @@ FILE *out;
 FILE *in;
 
 int size = 100;
+char *config[1000];
+int k = 0;
 
 char *getLine()
 {
@@ -43,26 +45,25 @@ char *parseWord(char **tmp)
 	int i = 0;
 	int j = 0;
 
-	while(isblank(*tmp[j]) || ispunct(*tmp[j]))
+	while(isblank((*tmp)[j]) || ispunct((*tmp)[j]))
 		j++;
 
-	printf("%c\n", *tmp[j]);
-
-	while(isdigit(*tmp[j]))
+	while(isalnum((*tmp)[j]))
 	{
-		word[i] = *tmp[j];
+		//printf("%c\n", (*tmp)[j]);
+		word[i] = (*tmp)[j];
 		i++;
 		j++;
 	}
 	word[i] = '\0';
-	*tmp = *tmp + i;
+	*tmp = *tmp + j;
 	//printf("%s\n", tmp);
 	return word;
 }
 void writeConnections()
 {
 	//set-up
-	fprintf(out, "/*Attacker located*/\n");
+	fprintf(out, "/*Attacker located*/\n\n");
 	fprintf(out, "/*Attacker goal*/\n\n\n");
 	fprintf(out, "/*Connections*/\n");
 
@@ -74,16 +75,35 @@ void writeConnections()
 	{
 		//printf("%s\n", line);
 		char *word = parseWord(&line);
+		char *nodeAt = word;
+		config[k++] = nodeAt;
+		word = parseWord(&line);
 		while(strlen(word) > 0)
 		{
-			fprintf(out, "%s ", word);
+			if(isdigit(word[0]))
+				fprintf(out, "hacl(node%s, node%s, tcp, 80).\n", nodeAt, word);
+			else
+				fprintf(out, "hacl(%s, %s, tcp, 80).\n", nodeAt, word);
+			free(word);
 			word = parseWord(&line);
 		}
 		fprintf(out, "\n");
+		free(word);
 		free(holder);
 		line = getLine();
 		holder = line;
 	}
+	free(holder);
+}
+void writeConfig()
+{
+	int i;
+	for(i = 0; i < k; i++)
+	{
+		fprintf(out, "/*Configuration information for node%s\n\n", config[i]);
+		free(config[i]);
+	}
+
 }
 //arguments: name of output file.
 int main(int argc, char** argv)
@@ -95,6 +115,7 @@ int main(int argc, char** argv)
 	writeConnections();
 
 	//comments for node setup
+	writeConfig();
 
 	fclose(out);
 	fclose(in);
