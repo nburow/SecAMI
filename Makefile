@@ -22,4 +22,4 @@ mul: mulvalInput.o
 	${CC} -o mul mulvalInput.o
 	
 clean:
-	rm -rf *.o gen
+	rm -rf *.o gen mul
