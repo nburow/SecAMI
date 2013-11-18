@@ -11,7 +11,7 @@
 #include "random.h"
 
 double seed = 123456789;
-int size = 1000;  //MAX size of strings
+int size = 100;  //MAX size of strings
 int total = 0;   //total number of nodes you have created
 int *parent;
 
@@ -38,6 +38,11 @@ char *addParent(int skippedNode, int node, char *s)
 		//prepend those nodes to the entry for the node with new connections
 		//done by copying s to the end of p;
 		char *middle = p + strlen(p);
+		if((strlen(p) + strlen(s)) > size - 2)
+		{
+			size *= 2;
+			realloc(p, size*sizeof(char));
+		}
 		strcpy(middle, s);
 		free(s);
 
