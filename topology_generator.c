@@ -15,10 +15,12 @@ int size = 100;  //MAX size of strings
 int total = 0;   //total number of nodes you have created
 int *parent;
 
+FILE *fp;
+
 char *addParent(int skippedNode, int node, char *s)
 {
 	//string to return
-	char *p = malloc(size*sizeof(char));
+	char *p = (char *)malloc(size*sizeof(char));
 	memset(p, 0, size*sizeof(char));
 
 	//temporary string, used for formatting (sprintf overwrites existing string);
@@ -41,7 +43,7 @@ char *addParent(int skippedNode, int node, char *s)
 		if((strlen(p) + strlen(s)) > size - 2)
 		{
 			size *= 2;
-			realloc(p, size*sizeof(char));
+			void *x = realloc(p, size*sizeof(char));
 		}
 		strcpy(middle, s);
 		free(s);
@@ -62,15 +64,19 @@ char *addParent(int skippedNode, int node, char *s)
 	free(tmp);
 	return p;
 }
-//add connections between nodes at the same level
-char *addLateral(int min, int max)
+//add the remaining children to the file
+void addChildren(int curr)
 {
-	return NULL;
+	while(curr < total)
+	{
+		fprintf(fp, "%d: %d\n", curr, parent[curr]);
+		curr++;
+	}
 }
 //add new nodes
 char *addNewNodes(int root, int num)
 {
-	char *line = malloc(size*sizeof(char));
+	char *line = (char *)malloc(size*sizeof(char));
 	char tmp[10];
 	memset(line, 0, size*sizeof(char));
 	memset(tmp, 0, sizeof(tmp));
@@ -137,6 +143,8 @@ void makeNetwork(int nodes, double mean, FILE *fp)
 			nodeNum  = resetPoint;    //none of the available nodes had connections added, reset
 	}
 	free(entry);
+	addChildren(nodeNum);
+
 }
 
 //input:  # of nodes, mean # of connections per node
@@ -145,10 +153,10 @@ int main(int argc, char** argv)
 	int nodes = atoi(argv[1]);
 	double mean = atof(argv[2]);
 
-	parent = malloc(nodes * sizeof(int));
+	parent = (int *)malloc(nodes * sizeof(int));
 	memset(parent, 0, nodes*sizeof(int));
 
-	FILE *fp;
+
 	fp = fopen("network.txt", "w");
 
 	makeNetwork(nodes, mean, fp);

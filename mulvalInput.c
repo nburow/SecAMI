@@ -20,7 +20,7 @@ int k = 0;
 
 char *getLine()
 {
-	char *line = malloc(size*sizeof(char));
+	char *line = (char *)malloc(size*sizeof(char));
 	memset(line, 0, size*sizeof(char));
 
 	char c;
@@ -31,7 +31,7 @@ char *getLine()
 		if(i > size - 2) //index: -1, space for '\0' terminator: -2
 		{
 			size *= 2;
-			realloc(line, size*sizeof(char));
+			void *x = realloc(line, size*sizeof(char));
 		}
 	}
 	line[i] = '\0';
@@ -39,7 +39,7 @@ char *getLine()
 }
 char *parseWord(char **tmp)
 {
-	char *word = malloc(size*sizeof(char));
+	char *word = (char *)malloc(size*sizeof(char));
 	memset(word, 0, size*sizeof(char));
 
 	int i = 0;
