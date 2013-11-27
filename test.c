@@ -12,7 +12,7 @@ int main()
 	int i;
 	for(i = 0; i < 10000; i++)
 	{
-		double x = power(&seed, alpha, min, max);
+		double x = power_rng(&seed, alpha, min, max);
 		printf("%f\n",x);
 	}
 }

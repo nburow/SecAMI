@@ -1,7 +1,11 @@
 CC=gcc
-CCFLAGS=-ggdb
+CPP=g++
+CCFLAGS=-std=c99 -ggdb
 
-all: test gen mul mgen
+all: gen mul mgen 
+
+queue.o: queue.c
+	$(CC) -c $(CCFLAGS) queue.c
 
 uniform.o: uniform.c
 	$(CC) -c $(CCFLAGS) uniform.c
@@ -33,8 +37,8 @@ mul: mulvalInput.o
 matrix-topology.o: matrix-topology.c
 	${CC} -c ${CCFLAGS} matrix-topology.c
 	
-mgen: matrix-topology.o
-	${CC} -o mgen matrix-topology.o uniform.o expon.o -lm
+mgen: matrix-topology.o uniform.o power.o queue.o
+	${CC} -o mgen matrix-topology.o uniform.o power.o queue.o -lm
 	
 clean:
-	rm -rf *.o gen mul test
+	rm -rf *.o gen mul test mgen
