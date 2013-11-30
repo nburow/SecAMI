@@ -139,6 +139,7 @@ void init()
 void writeOutput()
 {
 	//printf("nodes: %d\n", nodes);
+	fprintf(fp, "%d\n", nodes);
 	for(int i = 0; i < nodes; i++)
 	{
 		fprintf(fp, "%d:", i);

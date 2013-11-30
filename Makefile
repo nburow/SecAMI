@@ -4,14 +4,14 @@ CCFLAGS=-std=c99 -ggdb
 
 all: gen mul graph bfs
 
+queue.o: queue.c
+	$(CC) -c $(CCFLAGS) queue.c
+	
 bfs.o: bfs.c
 	$(CC) -c $(CCFLAGS) bfs.c
 	
-bfs: bfs.o
-	$(CC) -o bfs bfs.o -lm
-
-queue.o: queue.c
-	$(CC) -c $(CCFLAGS) queue.c
+bfs: bfs.o queue.o
+	$(CC) -o bfs bfs.o queue.o -lm
 
 uniform.o: uniform.c
 	$(CC) -c $(CCFLAGS) uniform.c
