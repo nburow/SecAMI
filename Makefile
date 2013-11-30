@@ -2,7 +2,13 @@ CC=gcc
 CPP=g++
 CCFLAGS=-std=c99 -ggdb
 
-all: gen mul graph 
+all: gen mul graph bfs
+
+bfs.o: bfs.c
+	$(CC) -c $(CCFLAGS) bfs.c
+	
+bfs: bfs.o
+	$(CC) -o bfs bfs.o -lm
 
 queue.o: queue.c
 	$(CC) -c $(CCFLAGS) queue.c
@@ -41,4 +47,4 @@ graph: matrix-topology.o uniform.o power.o queue.o
 	${CC} -o graph matrix-topology.o uniform.o power.o queue.o -lm
 	
 clean:
-	rm -rf *.o gen mul test mgen
+	rm -rf *.o gen mul test graph bfs *.txt

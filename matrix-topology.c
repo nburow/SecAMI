@@ -12,7 +12,7 @@
 #include "queue.h"
 
 //powerlaw globals
-double seed = 123456789;
+double seed = 987654321;
 double alpha = -2.5;
 int min = 1;
 int max = 10;
@@ -37,19 +37,20 @@ void resize()
 		eligible = (int *)realloc(eligible, size*sizeof(int));
 		printf("realloc\n");
 
-		for(int i = nodes + 1; i < size; i++)
+		for(int i = nodes; i < size; i++)
 		{
 			graph[i] = (int *)malloc((max+2)*(sizeof(int)));
-			graph[i][0] = i - 1;
 			eligible[i] = 1;
 
-			for(int j = 1; j < max + 2; j++)
+			for(int j = 0; j < max + 2; j++)
 				graph[i][j] = -1;
 		}
 	}
 }
 int duplicate(int node, int canidate)
 {
+	if(node == canidate)
+		return 1;
 	int i = 0;
 	while(graph[node][i] != -1)
 	{
@@ -76,8 +77,8 @@ int findNode(int node)
 	if(count == nodes)
 	{
 		resize();   //make the graph array bigger if necessary
-		nodes++;    //note that you are adding a new node
 		pairTo = nodes;  //choose the new node
+		nodes++;    //note that you are adding a new node
 	}
 	return pairTo;
 }
@@ -119,6 +120,8 @@ void init()
 		graph[i] = (int *)malloc((max+2)*(sizeof(int)));
 	}
 
+	//no prior node, so empty
+	graph[0][0] = -1;
 	//add connection to prior node to avoid partition
 	for(int i = 1; i < nodes; i++)
 		graph[i][0] = i -1;
@@ -135,6 +138,7 @@ void init()
 
 void writeOutput()
 {
+	//printf("nodes: %d\n", nodes);
 	for(int i = 0; i < nodes; i++)
 	{
 		fprintf(fp, "%d:", i);
