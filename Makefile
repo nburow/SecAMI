@@ -2,7 +2,7 @@ CC=gcc
 CPP=g++
 CCFLAGS=-std=c99 -ggdb
 
-all: gen mul mgen 
+all: gen mul graph 
 
 queue.o: queue.c
 	$(CC) -c $(CCFLAGS) queue.c
@@ -37,8 +37,8 @@ mul: mulvalInput.o
 matrix-topology.o: matrix-topology.c
 	${CC} -c ${CCFLAGS} matrix-topology.c
 	
-mgen: matrix-topology.o uniform.o power.o queue.o
-	${CC} -o mgen matrix-topology.o uniform.o power.o queue.o -lm
+graph: matrix-topology.o uniform.o power.o queue.o
+	${CC} -o graph matrix-topology.o uniform.o power.o queue.o -lm
 	
 clean:
 	rm -rf *.o gen mul test mgen
