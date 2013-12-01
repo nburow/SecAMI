@@ -120,7 +120,7 @@ int **getGraph()
 	return retval;
 }
 
-int *bfs()
+int *bfs(int start)
 {
 	int *bfs = (int *)malloc(nodes*sizeof(int));
 	int n = 0;
@@ -128,7 +128,7 @@ int *bfs()
 	int seen[nodes];
 	memset(seen, 0, sizeof(seen));
 
-	int root = graph[0][0];
+	int root = start;
 	seen[root] = 1;
 	enqueue(&root, sizeof(root));
 	while(!isEmpty())
@@ -181,7 +181,8 @@ int main(int argc, char** argv)
 	graph = getGraph();
 	//myprint();
 
-	int *bfsList = bfs();
+	int start = 4;
+	int *bfsList = bfs(start);
 	bfsPrint(bfsList);
 
 	fclose(in);
