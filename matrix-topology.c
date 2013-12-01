@@ -12,7 +12,7 @@
 #include "queue.h"
 
 //powerlaw globals
-double seed = 987654321;
+double seed;
 double alpha = -2.5;
 int min = 1;
 int max = 10;
@@ -120,16 +120,20 @@ void init()
 		graph[i] = (int *)malloc((max+2)*(sizeof(int)));
 	}
 
-	//no prior node, so empty
-	graph[0][0] = -1;
-	//add connection to prior node to avoid partition
+	//connected to node 1;
+	graph[0][0] = 1;
+	//add connection to prior node (two way) to avoid partition
 	for(int i = 1; i < nodes; i++)
+	{
 		graph[i][0] = i -1;
+		graph[i][1] = i + 1;
+	}
 
+	graph[0][1] = -1;
 	//initialize to -1 so you can find end of connection list
 	for(int i = 0; i < nodes; i++)
 	{
-		for(int j = 1; j < max + 2; j++)
+		for(int j = 2; j < max + 2; j++)
 			graph[i][j] = -1;
 	}	
 
@@ -165,10 +169,11 @@ void cleanup()
 	//free the eligible array
 	free(eligible);
 }
-//arg1: number of nodes to add
+//arg1: number of nodes to add; arg2: 9 digit seed for RNG
 int main(int argc, char **argv)
 {
 	nodes = atoi(argv[1]);
+	seed = atof(argv[2]);
 	eligible = (int *)malloc(nodes*sizeof(int));
 	memset(eligible, 0, nodes*sizeof(int));
 
