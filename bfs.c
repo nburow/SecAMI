@@ -123,7 +123,7 @@ int **getGraph(FILE *in)
 
 int *bfs(int start, int **graph)
 {
-	int *bfs = (int *)malloc(nodes*sizeof(int));
+	int *bfs = (int *)malloc((nodes+1)*sizeof(int));
 	int n = 0;
 
 	int seen[nodes];
@@ -148,6 +148,7 @@ int *bfs(int start, int **graph)
 		}
 		bfs[n++] = *val;
 	}
+	bfs[n] = -1;
 	return bfs;
 }
 

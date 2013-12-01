@@ -1,18 +1,22 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "random.h"
+#include "bfs.h"
+//#include "random.h"
+
+void bfsPrint(int *bfs)
+{
+	int i = 0;
+	while(bfs[i] != -1)
+		printf("%d ", bfs[i++]);
+	printf("\n");
+}
 
 int main()
 {
-	double seed = 123456789;
-	double alpha = -2.5;
-	int min = 1;
-	int max = 10;
+	FILE *in = fopen("graph.txt", "r");
+	int **g = getGraph(in);
+	int *b = bfs(1, g);
 
-	int i;
-	for(i = 0; i < 10000; i++)
-	{
-		double x = power_rng(&seed, alpha, min, max);
-		printf("%f\n",x);
-	}
+	//myprint(g);
+	bfsPrint(b);
 }

@@ -2,7 +2,7 @@ CC=gcc
 CPP=g++
 CCFLAGS=-std=c99 -ggdb
 
-all: gen mul graph bfs
+all: gen mul graph test
 
 queue.o: queue.c
 	$(CC) -c $(CCFLAGS) queue.c
@@ -25,8 +25,8 @@ power.o: power.c
 test.o: test.c
 	$(CC) -c $(CCFLAGS) test.c
 
-test: test.o uniform.o power.o
-	$(CC) -o test test.o uniform.o power.o -lm
+test: test.o uniform.o bfs.o queue.o
+	$(CC) -o test test.o bfs.o queue.o -lm
 
 topology_generator.o: topology_generator.c
 	${CC} -c ${CCFLAGS} topology_generator.c
