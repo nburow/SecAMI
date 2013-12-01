@@ -2,16 +2,25 @@ CC=gcc
 CPP=g++
 CCFLAGS=-std=c99 -ggdb
 
-all: gen mul graph test
+all: gen mul graph attackSim
+
+Heap.o: heap.c
+	$(CC) -c $(CCFLAGS) heap.c
 
 queue.o: queue.c
 	$(CC) -c $(CCFLAGS) queue.c
-	
+
 bfs.o: bfs.c
 	$(CC) -c $(CCFLAGS) bfs.c
 	
-bfs: bfs.o queue.o
-	$(CC) -o bfs bfs.o queue.o -lm
+#bfs: bfs.o queue.o
+#	$(CC) -o bfs bfs.o queue.o -lm
+
+attackSim.o: attackSim.c
+	$(CC) -c $(CCFLAGS) attackSim.c
+
+attackSim: attackSim.o Heap.o bfs.o queue.o
+	$(CC) -o attackSim attackSim.o Heap.o bfs.o queue.o -lm
 
 uniform.o: uniform.c
 	$(CC) -c $(CCFLAGS) uniform.c
@@ -25,8 +34,8 @@ power.o: power.c
 test.o: test.c
 	$(CC) -c $(CCFLAGS) test.c
 
-test: test.o uniform.o bfs.o queue.o
-	$(CC) -o test test.o bfs.o queue.o -lm
+test: test.o uniform.o power.o
+	$(CC) -o test test.o uniform.o power.o -lm
 
 topology_generator.o: topology_generator.c
 	${CC} -c ${CCFLAGS} topology_generator.c
@@ -47,4 +56,4 @@ graph: matrix-topology.o uniform.o power.o queue.o
 	${CC} -o graph matrix-topology.o uniform.o power.o queue.o -lm
 	
 clean:
-	rm -rf *.o gen mul test graph bfs *.txt
+	rm -rf *.o gen mul test graph attackSim 

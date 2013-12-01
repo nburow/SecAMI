@@ -95,11 +95,6 @@ int **getGraph(FILE *in)
 		{
 			size *= 2;
 			retval = (int **)realloc(retval, size*sizeof(int *));
-			for(int i = size/2; i < size; i++)
-			{
-				for(int j = 0; j < len; j++)
-					retval[i][j] = -1;
-			}
 		}
 
 		int j = 0;
@@ -128,7 +123,7 @@ int **getGraph(FILE *in)
 
 int *bfs(int start, int **graph)
 {
-	int *bfs = (int *)malloc((nodes+1)*sizeof(int));
+	int *bfs = (int *)malloc(nodes*sizeof(int));
 	int n = 0;
 
 	int seen[nodes];
@@ -153,12 +148,18 @@ int *bfs(int start, int **graph)
 		}
 		bfs[n++] = *val;
 	}
-	bfs[n] = -1;
 	return bfs;
 }
 
-/*
-void myprint()
+
+void bfsPrint(int *bfs)
+{
+	for(int i = 0; i < nodes; i++)
+		printf("%d ", bfs[i]);
+	printf("\n");
+}
+
+void myprint(int** graph)
 {
 	printf("nodes: %d\n", nodes);
 	for(int i = 0; i < size; i++)
@@ -167,14 +168,14 @@ void myprint()
 			break;
 		for(int j = 0; j < len; j++)
 		{
-			if(graph[i][j] != -1)
-				printf("%d ", graph[i][j]);
-			else
-				break;
+			if(graph[i][j] != -1 && graph[i][j] != -2)	printf("%d ", graph[i][j]);
+			else if(graph[i][j] == -2)					continue;
+			else										break;
 		}
 		printf("\n");
 	}
 }
+/*
 void bfsPrint(int *bfs)
 {
 	for(int i = 0; i < nodes; i++)

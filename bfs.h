@@ -15,7 +15,8 @@ int *bfs(int start, int **graph);
 
 //call before bfs
 int **getGraph(FILE *in);
-
+void bfsPrint(int *bfs);
+void myprint(int** graph);
 #endif
 
 
