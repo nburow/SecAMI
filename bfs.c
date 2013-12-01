@@ -11,16 +11,16 @@
 #include <ctype.h>
 #include "queue.h"
 
-FILE *in;
+//FILE *in;
 
 int size = 100;
 int len = 10;
 
 int nodes;
 
-int **graph;
+//int **graph;
 
-char *getLine()
+char *getLine(FILE *in)
 {
 	char *line = (char *)malloc(size*sizeof(char));
 	memset(line, 0, size*sizeof(char));
@@ -75,15 +75,16 @@ int **init()
 	}
 	return retval;
 }
-int **getGraph()
+
+int **getGraph(FILE *in)
 {
 	int **retval = init();
 
-	char *line = getLine();
+	char *line = getLine(in);
 	char *word = parseWord(&line);
 	nodes = atoi(word);
 
-	line = getLine();
+	line = getLine(in);
 
 	int i = 0;
 	while((strlen(line) > 0))
@@ -114,13 +115,13 @@ int **getGraph()
 			word = parseWord(&line);
 			j++;
 		}
-		line = getLine();
+		line = getLine(in);
 		i++;
 	}
 	return retval;
 }
 
-int *bfs(int start)
+int *bfs(int start, int **graph)
 {
 	int *bfs = (int *)malloc(nodes*sizeof(int));
 	int n = 0;
@@ -150,6 +151,7 @@ int *bfs(int start)
 	return bfs;
 }
 
+/*
 void myprint()
 {
 	printf("nodes: %d\n", nodes);
@@ -173,6 +175,7 @@ void bfsPrint(int *bfs)
 		printf("%d ", bfs[i]);
 	printf("\n");
 }
+
 //arguments: name of input file.
 int main(int argc, char** argv)
 {
@@ -188,5 +191,5 @@ int main(int argc, char** argv)
 	fclose(in);
 	return EXIT_SUCCESS;
 }
-
+*/
 

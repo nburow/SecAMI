@@ -8,9 +8,13 @@
 #ifndef _BFS
 #define _BFS
 
-int *bfs(int start)
+#include <stdio.h>
 
-int **getGraph()
+//must call getGraph before bfs
+int *bfs(int start, int **graph);
+
+//call before bfs
+int **getGraph(FILE *in);
 
 #endif
 
