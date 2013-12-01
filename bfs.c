@@ -95,6 +95,11 @@ int **getGraph(FILE *in)
 		{
 			size *= 2;
 			retval = (int **)realloc(retval, size*sizeof(int *));
+			for(int i = size/2; i < size; i++)
+			{
+				for(int j = 0; j < len; j++)
+					retval[i][j] = -1;
+			}
 		}
 
 		int j = 0;
