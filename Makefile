@@ -2,7 +2,7 @@ CC=gcc
 CPP=g++
 CCFLAGS=-std=c99 -ggdb
 
-all: gen mul graph attackSim
+all: gen mul graph attackSim test
 
 Heap.o: Heap.c
 	$(CC) -c $(CCFLAGS) Heap.c
@@ -34,8 +34,8 @@ power.o: power.c
 test.o: test.c
 	$(CC) -c $(CCFLAGS) test.c
 
-test: test.o uniform.o power.o
-	$(CC) -o test test.o uniform.o power.o -lm
+test: test.o uniform.o power.o bfs.o queue.o
+	$(CC) -o test test.o uniform.o power.o bfs.o queue.o -lm
 
 topology_generator.o: topology_generator.c
 	${CC} -c ${CCFLAGS} topology_generator.c

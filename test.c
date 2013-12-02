@@ -1,18 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "random.h"
+#include "bfs.h"
 
-int main()
+int main(int argc, char **argv)
 {
-	double seed = 123456789;
-	double alpha = -2.5;
-	int min = 1;
-	int max = 10;
-
-	int i;
-	for(i = 0; i < 10000; i++)
-	{
-		double x = power_rng(&seed, alpha, min, max);
-		printf("%f\n",x);
-	}
+	FILE *in = fopen("graph.txt", "r");
+	int **g = getGraph(in);
+	//myprint(g);
+	int start = atoi(argv[1]);
+	int end = atoi(argv[2]);
+	int x = distance(start, end, g);
+	printf("dist from %d to %d is %d\n", start, end, x);
 }

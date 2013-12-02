@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <limits.h>
 #include "queue.h"
 
 //FILE *in;
@@ -151,6 +152,44 @@ int *bfs(int start, int **graph)
 	return bfs;
 }
 
+int distance(int start, int end, int **graph)
+{
+	int unvisited[nodes];   //1 if unvisited, 0 if visited
+	int distance[nodes];   //distance to node x
+	for(int i = 0; i < nodes; i++)
+	{
+		unvisited[i] = 1;
+		distance[i] = INT_MAX;
+	}
+	int current = start;
+	distance[current] = 0;
+
+	while(current != end)
+	{
+		int i = 1;
+		int x = graph[current][i];
+		while(x != -1)
+		{
+			if(distance[current] + 1 < distance[x])
+				distance[x] = distance[current] + 1;
+			i++;
+			x = graph[current][i];
+		}
+		unvisited[current] = 0;
+		int min = INT_MAX;
+		int next = -1;
+		for(int j = 0; j < nodes; j++)
+		{
+			if(unvisited[j] == 1 && distance[j] < min)
+			{
+				min = distance[j];
+				next = j;
+			}
+		}
+		current = next;
+	}
+	return distance[end];
+}
 
 void bfsPrint(int *bfs)
 {
@@ -168,9 +207,12 @@ void myprint(int** graph)
 			break;
 		for(int j = 0; j < len; j++)
 		{
-			if(graph[i][j] != -1 && graph[i][j] != -2)	printf("%d ", graph[i][j]);
-			else if(graph[i][j] == -2)					continue;
-			else										break;
+			if(graph[i][j] != -1 && graph[i][j] != -2)
+				printf("%d ", graph[i][j]);
+			else if(graph[i][j] == -2)
+				continue;
+			else
+				break;
 		}
 		printf("\n");
 	}
