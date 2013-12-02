@@ -123,12 +123,13 @@ void init()
 	//connected to node 1;
 	graph[0][0] = 1;
 	//add connection to prior node (two way) to avoid partition
-	for(int i = 1; i < nodes; i++)
+	for(int i = 1; i < nodes - 1; i++)
 	{
 		graph[i][0] = i -1;
 		graph[i][1] = i + 1;
 	}
-
+	graph[nodes -1][0] = nodes - 2;
+	graph[nodes -1][1] = -1;
 	graph[0][1] = -1;
 	//initialize to -1 so you can find end of connection list
 	for(int i = 0; i < nodes; i++)

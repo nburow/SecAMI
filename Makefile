@@ -4,8 +4,8 @@ CCFLAGS=-std=c99 -ggdb
 
 all: gen mul graph attackSim
 
-Heap.o: heap.c
-	$(CC) -c $(CCFLAGS) heap.c
+Heap.o: Heap.c
+	$(CC) -c $(CCFLAGS) Heap.c
 
 queue.o: queue.c
 	$(CC) -c $(CCFLAGS) queue.c
