@@ -17,6 +17,7 @@ void MinHeapBuild(Heap heap);
 void Heapify(Heap heap, int currentNode);
 void HeapPop(Heap heap, Event* event);
 Heap HeapIncrement(Heap heap);
+int HeapIsEmpty(Heap heap);
 Event* getMin(Heap heap);
 void delMin(Heap heap);
 void insertNode(HeapPointer hp, Event* event);

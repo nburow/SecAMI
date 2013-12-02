@@ -79,8 +79,20 @@ void insertNode(HeapPointer hp, Event* event)
 	*hp = heap;
 }
 
+int HeapIsEmpty(Heap heap)
+{
+	if (heap->currentSize == 0)		return 1;
+	return 0;
+}
 void HeapPop(Heap heap, Event* event)
 {
+	if (HeapIsEmpty(heap))
+	{
+		event->time = -1;
+		event->type = NOEVENT;
+		event->subject = -1;
+		return;
+	}
 	Event* temp = getMin(heap);
 	event->time = temp->time;
 	event->type = temp->type;

@@ -1,7 +1,7 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-enum EventType {COMPROMISE, DETECTION, HOP};
+enum EventType {COMPROMISE, DETECTION, HOP, NOEVENT};
 
 typedef struct
 {
