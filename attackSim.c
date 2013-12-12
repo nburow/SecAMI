@@ -294,7 +294,7 @@ void disconnect(int node)
 		{
 			if (neighbourListOfNeighbour[j] == node)
 			{
-				fprintf(Log, "disconnect %d from %d\n", neighbourList[i], node);
+				fprintf(Log, "disconnect %d from %d j was %d\n", neighbourList[i], node, j);
 				neighbourListOfNeighbour[j] = DISCONNECTED;
 				break;
 			}
@@ -302,7 +302,7 @@ void disconnect(int node)
 		//sort of directed graph, shouldn't happen
 		if (neighbourListOfNeighbour[j] == -1)
 		{
-			fprintf(Log, "Should never come here\n");
+			fprintf(Log, "Should never come here.  Node is %d looking for %d j is %d\n", node, neighbourList[i], j);
 			exit(-1);
 		}
 
@@ -515,6 +515,8 @@ int main(int args, char** argv)
 	int compromiseTime[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 	int hopTime = 1;
 
+	int count = 0;
+
 	double ratio[9] = {1/5, 1/4, 1/3, 1/2, 1, 2, 3, 4, 5};
 
 	//graphs
@@ -523,16 +525,17 @@ int main(int args, char** argv)
 		char graph[30];
 		sprintf(graph, "Graphs/graph%d", i);
 		strcat(graph, ".txt");
-
+		printf("%s\n", graph);
 		//ratio
 		for(int j = 0; j < 10; j++)
 		{
 			//start node
-			for(int m = 1; m < nodeNum; m++)
+			for(int m = 50; m < 52; m++)
 			{
 				//runs per start point
-				for(int n = 0; n < 10; n++)
+				for(int n = 0; n < 2; n++)
 				{
+					printf("running sim %d\n", count++);
 					runSim(graph, m, compromiseTime[j], hopTime, hopTime);
 				}
 			}
