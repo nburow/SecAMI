@@ -15,7 +15,7 @@
 double seed;
 double alpha = -2.5;
 int min = 1;
-int max = 10;
+int max;
 
 int *eligible;         //array with the number of connections per node
 
@@ -138,11 +138,12 @@ void init()
 			graph[i][j] = -1;
 	}	
 
-	fp = fopen("graph.txt", "w");
+
 }
 
-void writeOutput()
+void writeOutput(char *fileName)
 {
+	fp = fopen(fileName, "w");
 	//printf("nodes: %d\n", nodes);
 	fprintf(fp, "%d\n", nodes);
 	for(int i = 0; i < nodes; i++)
@@ -156,12 +157,12 @@ void writeOutput()
 		}
 		fprintf(fp, "\n");
 	}
-}
-void cleanup()
-{
 	//close the file
 	fclose(fp);
+}
 
+void cleanup()
+{
 	//free the adjacency list
 	for(int i = 0; i < size; i++)
 		free(graph[i]);
@@ -170,11 +171,9 @@ void cleanup()
 	//free the eligible array
 	free(eligible);
 }
-//arg1: number of nodes to add; arg2: 9 digit seed for RNG
-int main(int argc, char **argv)
+
+void makeGraph(int num)
 {
-	nodes = atoi(argv[1]);
-	seed = atof(argv[2]);
 	eligible = (int *)malloc(nodes*sizeof(int));
 	memset(eligible, 0, nodes*sizeof(int));
 
@@ -190,10 +189,38 @@ int main(int argc, char **argv)
 		if(eligible[i] > 0)
 			addConnections(i, eligible[i]);
 	}
+	char *base = "graphs/graph";
+	char fileNumber[3];
+	sprintf(fileNumber, "%d", num);
+	char *extension = ".txt";
+	int fileNameLength = strlen(base) + strlen(fileNumber) + strlen(extension) + 1;
 
-	writeOutput();
+	char fileName[fileNameLength];
+	memset(fileName, 0, fileNameLength*sizeof(char));
+
+	strcat(fileName, base);
+	strcat(fileName, fileNumber);
+	strcat(fileName, extension);
+
+	writeOutput(fileName);
 
 	cleanup();
+}
+//arg1: number of nodes to add; arg2: max connections / node;
+//arg3: 9 digit seed for RNG; argv4: number of graphs to make
+int main(int argc, char **argv)
+{
+	nodes = atoi(argv[1]);
+	max = atoi(argv[2]);
+	seed = atof(argv[3]);
+	int numGraphs = atoi(argv[4]);
+
+	mkdir("GraphsGoHere");
+
+	numGraphs = (numGraphs > 999) ? 999 : numGraphs;
+
+	for(int i = 0; i < numGraphs; i++)
+		makeGraph(i);
 
 	return EXIT_SUCCESS;
 }
