@@ -10,6 +10,6 @@ int main(int argc, char **argv)
 	//myprint(g);
 	int start = atoi(argv[1]);
 	int end = atoi(argv[2]);
-	int x = distance(start, end, g);
+	int x = dijkstra(start, end, g);
 	printf("dist from %d to %d is %d\n", start, end, x);
 }

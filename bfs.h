@@ -17,10 +17,10 @@ int *bfs(int start, int **graph);
 int **getGraph(FILE *in);
 
 //call getGraph before distance;
-int distance(int start, int end, int **graph);
+int dijkstra(int start, int end, int **graph);
 
 void bfsPrint(int *bfs);
-void myprint(int** graph);
+void myprint(FILE* fp, int** graph);
 #endif
 
 

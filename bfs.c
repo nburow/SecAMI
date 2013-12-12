@@ -152,7 +152,7 @@ int *bfs(int start, int **graph)
 	return bfs;
 }
 
-int distance(int start, int end, int **graph)
+int dijkstra(int start, int end, int **graph)
 {
 	int unvisited[nodes];   //1 if unvisited, 0 if visited
 	int distance[nodes];   //distance to node x
@@ -198,9 +198,9 @@ void bfsPrint(int *bfs)
 	printf("\n");
 }
 
-void myprint(int** graph)
+void myprint(FILE* fp, int** graph)
 {
-	printf("nodes: %d\n", nodes);
+	fprintf(fp, "nodes: %d\n", nodes);
 	for(int i = 0; i < size; i++)
 	{
 		if(graph[i][0] == -1)
@@ -208,13 +208,13 @@ void myprint(int** graph)
 		for(int j = 0; j < len; j++)
 		{
 			if(graph[i][j] != -1 && graph[i][j] != -2)
-				printf("%d ", graph[i][j]);
+				fprintf(fp, "%d ", graph[i][j]);
 			else if(graph[i][j] == -2)
 				continue;
 			else
 				break;
 		}
-		printf("\n");
+		fprintf(fp, "\n");
 	}
 }
 /*
