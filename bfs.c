@@ -187,7 +187,9 @@ int dijkstra(int start, int end, int **graph)
 			}
 		}
 		current = next;
+		printf("just visited: %d\n", current);
 	}
+	printf("\n\n");
 	return distance[end];
 }
 
