@@ -189,7 +189,7 @@ void makeGraph(int num)
 		if(eligible[i] > 0)
 			addConnections(i, eligible[i]);
 	}
-	char *base = "graphs/graph";
+	char *base = "GraphsGoHere/graph";
 	char fileNumber[3];
 	sprintf(fileNumber, "%d", num);
 	char *extension = ".txt";
