@@ -13,14 +13,17 @@ queue.o: queue.c
 bfs.o: bfs.c
 	$(CC) -c $(CCFLAGS) bfs.c
 	
+uniform.o: uniform.c
+	$(CC) -c $(CCFLAGS) uniform.c
+
 #bfs: bfs.o queue.o
 #	$(CC) -o bfs bfs.o queue.o -lm
 
 attackSim.o: attackSim.c
 	$(CC) -c $(CCFLAGS) attackSim.c
 
-attackSim: attackSim.o Heap.o bfs.o queue.o
-	$(CC) -o attackSim attackSim.o Heap.o bfs.o queue.o -lm
+attackSim: attackSim.o Heap.o bfs.o queue.o uniform.o
+	$(CC) -o attackSim attackSim.o Heap.o bfs.o queue.o uniform.o -lm
 
 uniform.o: uniform.c
 	$(CC) -c $(CCFLAGS) uniform.c

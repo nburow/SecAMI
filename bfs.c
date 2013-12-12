@@ -267,7 +267,7 @@ void bfsPrint(int *bfs)
 //	printf("\n");
 //	}
 
-	printf("distance %d\n",dijkstra(0, 9, graph));
+	printf("distance %d\n",dijkstra(9, 0, graph));
 
 	fclose(in);
 	return EXIT_SUCCESS;
