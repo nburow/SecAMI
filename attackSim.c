@@ -5,7 +5,12 @@
 #include "bfs.h"
 #include "Heap.h"
 #include "Event.h"
+#include "random.h"
 
+
+double COMTIME;
+double HOPTIME;
+double DECTIME;
 
 FILE* Log;
 
@@ -13,16 +18,18 @@ int** Graph;
 int nodeNum;
 
 int** CopyGraph;
-int* bfsArray;
+//int* bfsArray;
 
 ActiveEventList AEL;
 int* NodeStatus;
 Heap EventHeap;
 
+double seed;
+
 void statistic(double time)
 {
 	fprintf(Log, "<-----------Collection------------->\n");
-	myprint(Log, Graph);
+	myprint(Log, CopyGraph);
 	fprintf(Log, "Attack simulation time: %f\n", time);
 	fprintf(Log, "Safe Nodes: \n");
 	int count = 0;
@@ -39,23 +46,44 @@ void statistic(double time)
 	fprintf(Log, "%f%% network are compromised\n", ((double)(nodeNum-count)/(double)nodeNum)*100);
 
 }
-/*
+
 int randomChoose(int* array)
 {
+	int stillSafe = 0;
 	int i;
-	for (i = 0; array[i] != -1; i++)
+	for (i = 1; array[i] != -1; i++)
 	{
-		if (array[i] != DISCONNETED && array[i] != COMPROMISE)
+		if (array[i] != DISCONNECTED && NodeStatus[array[i]] != COMPROMISED)	stillSafe++;
+	}
+	if (stillSafe == 0)
+	{
+		printf("No\n");
+		exit(-1);
+	}
+	int choosen = (int)(uniform(&seed)*100) % stillSafe;
+	for (i = 1; array[i] != -1; i++)
+	{
+		if (array[i] != DISCONNECTED && NodeStatus[array[i]] != COMPROMISED)
 		{
-			
+			if (choosen == 0)	return array[i];
+			else				choosen--;
 		}
 	}
-}
+/*		
+	double j = 42397952317;
+	while (i < 100)
+	{
+		printf("%d\n", (int)(uniform(&j)*100)%6);
+		i++;
+	}
 */
+	return WRONG; 
+}
+
 double calDetectionTime(int dcu, int compromisedNode)
 {
 	int distance = dijkstra(dcu, compromisedNode, Graph);
-	printf("from %d to %d, distance: %d\n", dcu, compromisedNode, distance);
+//	printf("from %d to %d, distance: %d\n", dcu, compromisedNode, distance);
 	return distance * HOPTIME;
 }
 
@@ -64,7 +92,7 @@ void nodeNumOfGraph()
 	int i;
 	for (i = 0; Graph[i][0] != -1; i++);
 	nodeNum = i;
-	printf("%d\n", nodeNum);
+//	printf("%d\n", nodeNum);
 }
 
 void initialActiveEventList()
@@ -80,26 +108,31 @@ void initialActiveEventList()
 	}
 }
 
-void initial(int attackNode)
+void initial(char* fileName, int attackNode, double ct, double ht, double dt)
 {
+	COMTIME = ct;
+	HOPTIME = ht;
+	DECTIME = dt;
+
+	seed = 42397952317;
 	//redirect to file
 	Log = fopen("log.txt", "w");
 	if (!Log)
 	{
-		fprintf(Log, "File doesn't exit\n");
+		printf("File doesn't exit\n");
 		exit(-1);
 	}
 	//Graph Initialize
 	fprintf(Log, "Initializing graph...\n");
-	FILE* in = fopen("graph.txt", "r");
+	FILE* in = fopen(fileName, "r");
 	if (!in)
 	{
-		fprintf(Log, "File doesn't exit\n");
+		printf("File doesn't exit\n");
 		exit(-1);
 	}
 	Graph = getGraph(in);
 	fclose(in);
-	in = fopen("graph.txt", "r");
+	in = fopen(fileName, "r");
 	CopyGraph = getGraph(in);
 	fclose(in);
 	nodeNumOfGraph();
@@ -133,7 +166,6 @@ void initial(int attackNode)
 	insertNode(&EventHeap, event);
 
 	addToActiveList(event);
-//	printf("........\n");
 	fprintf(Log, "Initialization done, start attack\n");
 }
 
@@ -285,12 +317,12 @@ void disconnect(int node)
 
 int main(int args, char** argv)
 {
-	if (args < 2)
+	if (args < 6)
 	{
-		fprintf(Log, "specify where to start attack\n");
+		printf("5 arguments Needed\n");
 		return -1;
 	}
-	initial(atoi(argv[1]));
+	initial(argv[1], atoi(argv[2]), atof(argv[3]), atof(argv[4]), atof(argv[5]));
 
 	double current = 0.0;
 	double eventTime = 0.0;
@@ -306,6 +338,7 @@ int main(int args, char** argv)
 */
 	do
 	{
+		if (NodeStatus[0] == COMPROMISED)		break;
 		//pick an event from EventHeap
 		Event* event = HeapGetMin(EventHeap);
 		if (event == NULL)		break;
@@ -348,6 +381,7 @@ int main(int args, char** argv)
 
 				// search target to compromise
 				int i, j;
+				int whichNeighbour = 0;
 				for (i = 0; i < nodeNum; i++)
 				{
 					if (NodeStatus[i] == COMPROMISED)
@@ -357,11 +391,18 @@ int main(int args, char** argv)
 						for (j = 1; neighbourList[j] != -1; j++)		//hop to next
 						{
 							// if neighbour is compromised but not detected or detected(disconnected)
-							if (NodeStatus[neighbourList[j]] == COMPROMISED || neighbourList[j] == DISCONNECTED)	continue;
+							if (NodeStatus[neighbourList[j]] == COMPROMISED || neighbourList[j] == DISCONNECTED || NodeStatus[neighbourList[i]] == HOPPED)	continue;
 							// there's a node to hop to
 							else
 							{
-								fprintf(Log, "%f second later hop to %d\n", HOPTIME, neighbourList[j]);
+								whichNeighbour = randomChoose(neighbourList);
+
+								if (whichNeighbour == WRONG)	
+								{
+									printf("crash!!!!\n");
+									exit(-1);
+								}
+								fprintf(Log, "%f second later hop to %d\n", HOPTIME,whichNeighbour);
 								break;
 								// or you can count the reachable neighbours for lately random choose
 							}
@@ -376,8 +417,8 @@ int main(int args, char** argv)
 						hopEvent->time = current + HOPTIME;
 						hopEvent->type = HOP;
 						hopEvent->subject = i;
-						//hopEvent->object = randomChoose(neighbourList);
-						hopEvent->object = neighbourList[j];
+						hopEvent->object = whichNeighbour;
+//						hopEvent->object = neighbourList[j];
 						insertNode(&EventHeap, hopEvent);
 
 						addToActiveList(hopEvent);
@@ -387,7 +428,7 @@ int main(int args, char** argv)
 				eventTime = HOPTIME;				//time needed for event to happen
 				
 				// schedule detection
-				double detectionTime = calDetectionTime(event->object, 0);
+				double detectionTime = calDetectionTime(0, event->object);
 				fprintf(Log, "%f second should be detected\n", current+detectionTime);
 
 				Event* detectEvent = (Event*)malloc(sizeof(Event));
@@ -432,13 +473,14 @@ int main(int args, char** argv)
 			}
 			case HOP:	{
 				// if this node has already been compromised before others spread here
-				if (NodeStatus[event->object] == COMPROMISED)		
+				if (NodeStatus[event->object] == COMPROMISED || NodeStatus[event->object] == HOPPED)		
 				{
 					fprintf(Log, "HAha, one step late, %d has been compromised\n", event->object);
 					break;
 				}
 				fprintf(Log, "reach node: %d\n", event->object);
 				cleanActiveList(event);
+				NodeStatus[event->object] = HOPPED;
 
 				fprintf(Log, "%f second later compromise node %d\n", COMTIME, event->object);
 				Event* compromiseEvent = (Event*)malloc(sizeof(Event));
