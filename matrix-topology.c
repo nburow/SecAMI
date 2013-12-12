@@ -147,6 +147,11 @@ void init()
 void writeOutput(char *fileName)
 {
 	fp = fopen(fileName, "w");
+	if (fp == NULL)
+	{
+		printf("%s is a bad file\n", fileName);
+		exit(EXIT_FAILURE);
+	}
 	//printf("nodes: %d\n", nodes);
 	fprintf(fp, "%d\n", nodes);
 	for(int i = 0; i < nodes; i++)
@@ -192,7 +197,7 @@ void makeGraph(int num)
 		if(eligible[i] > 0)
 			addConnections(i, eligible[i]);
 	}
-	char *base = "GraphsGoHere/graph";
+	char *base = "Graphs/graph";
 	char fileNumber[3];
 	sprintf(fileNumber, "%d", num);
 	char *extension = ".txt";
@@ -218,7 +223,8 @@ int main(int argc, char **argv)
 	seed = atof(argv[3]);
 	int numGraphs = atoi(argv[4]);
 
-	mkdir("GraphsGoHere", 700);
+	if(mkdir("Graphs", 0777) == -1)
+		printf("bad directory\n");
 
 	numGraphs = (numGraphs > 999) ? 999 : numGraphs;
 
