@@ -538,6 +538,7 @@ int main(int args, char** argv)
 			}
 		}
 	}
+	fclose(Results);
 }
 
 
