@@ -2,7 +2,7 @@ CC=gcc
 CPP=g++
 CCFLAGS=-std=c99 -ggdb
 
-all: gen mul graph attackSim test
+all: graph attackSim
 
 Heap.o: Heap.c
 	$(CC) -c $(CCFLAGS) Heap.c
@@ -13,9 +13,6 @@ queue.o: queue.c
 bfs.o: bfs.c
 	$(CC) -c $(CCFLAGS) bfs.c
 	
-uniform.o: uniform.c
-	$(CC) -c $(CCFLAGS) uniform.c
-
 #bfs: bfs.o queue.o
 #	$(CC) -o bfs bfs.o queue.o -lm
 
