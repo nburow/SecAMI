@@ -38,12 +38,13 @@ void Heapify(Heap heap, int currentNode)
 	}
 }
 
-Event* getMin(Heap heap)
+Event* HeapGetMin(Heap heap)
 {
+	if (HeapIsEmpty(heap))		return NULL;
 	return (heap->array)[0];
 }
 
-void delMin(Heap heap)
+void HeapDelMin(Heap heap)
 {
 	free((heap->array)[0]);
 	(heap->array)[0] = (heap->array)[heap->currentSize-1];
@@ -79,31 +80,31 @@ void insertNode(HeapPointer hp, Event* event)
 	*hp = heap;
 }
 
-int HeapIsEmpty(Heap heap)
+Boolean HeapIsEmpty(Heap heap)
 {
-	if (heap->currentSize == 0)		return 1;
-	return 0;
+	if (heap->currentSize == 0)		return TRUE;
+	return FALSE;
 }
 void HeapPop(Heap heap, Event* event)
 {
-	if (HeapIsEmpty(heap))
+/*	if (HeapIsEmpty(heap))	
 	{
-		event->time = -1;
 		event->type = NOEVENT;
-		event->subject = -1;
 		return;
 	}
-	Event* temp = getMin(heap);
+*/	Event* temp = HeapGetMin(heap);
 	event->time = temp->time;
 	event->type = temp->type;
 	event->subject = temp->subject;
-	delMin(heap);
+	event->object = temp->object;
+//	event->active = temp->active;
+	HeapDelMin(heap);
 }
 
 Heap HeapIncrement(Heap heap)
 {
 	Heap newHeap = (Heap)malloc(sizeof(Heap));
-	newHeap->array = (char*)malloc(sizeof(Event*) * (heap->currentSize + HEAPSIZE));
+	newHeap->array = (Event**)malloc(sizeof(Event*) * (heap->currentSize + HEAPSIZE));
 	newHeap->maxSize = heap->currentSize + HEAPSIZE;
 	newHeap->currentSize = 0;
 	int i;
@@ -112,6 +113,9 @@ Heap HeapIncrement(Heap heap)
 		(newHeap->array)[i] = (Event*)malloc(sizeof(Event));
 		(newHeap->array)[i]->time = (heap->array)[i]->time;
 		(newHeap->array)[i]->type = (heap->array)[i]->type;
+		(newHeap->array)[i]->subject = (heap->array)[i]->subject;
+		(newHeap->array)[i]->object = (heap->array[i])->object;
+	//	(newHeap->array)[i]->active = (heap->array[i])->active;
 		newHeap->currentSize++;
 	}
 
@@ -126,6 +130,7 @@ Heap HeapIncrement(Heap heap)
 
 	return newHeap;
 }
+
 /*
 int main()
 {

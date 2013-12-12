@@ -1,0 +1,93 @@
+Initializing graph...
+Initializing ActiveEventList...
+Initializing NodeStatus...
+Initializing Heap...
+Initializing Attack...
+Initialization done, start attack
+At 0.100000 second comes event 0
+node 6 is compromised
+2.000000 second later hop to 4
+8.100000 second should be detected
+At 2.100000 second comes event 2
+reach node: 4
+3.000000 second later compromise node 4
+At 5.100000 second comes event 0
+node 4 is compromised
+2.000000 second later hop to 2
+2.000000 second later hop to 7
+11.100000 second should be detected
+At 7.100000 second comes event 2
+reach node: 7
+3.000000 second later compromise node 7
+At 7.100000 second comes event 2
+reach node: 2
+3.000000 second later compromise node 2
+At 8.100000 second comes event 1
+node: 6 is detected
+disconnect its neighbour:
+4 7 
+disconnect 4 from 6
+disconnect 6 from 4
+disconnect 7 from 6
+disconnect 6 from 7
+stop attacking from node 6 to node 7
+Now the graph is like:
+nodes: 8
+0 1 
+1 0 2 
+2 1 3 4 5 
+3 2 7 
+4 2 
+5 2 
+6 
+7 3 
+--------------------------------------------
+At 10.100000 second comes event 0
+node 2 is compromised
+2.000000 second later hop to 1
+All of the neighbours are COMPROMISED
+14.100000 second should be detected
+Event has been cancelled, delete from the heap
+At 11.100000 second comes event 1
+node: 4 is detected
+disconnect its neighbour:
+2 
+disconnect 2 from 4
+disconnect 4 from 2
+Now the graph is like:
+nodes: 8
+0 1 
+1 0 2 
+2 1 3 5 
+3 2 7 
+4 
+5 2 
+6 
+7 3 
+--------------------------------------------
+At 12.100000 second comes event 2
+reach node: 1
+3.000000 second later compromise node 1
+At 14.100000 second comes event 1
+node: 2 is detected
+disconnect its neighbour:
+1 3 5 
+disconnect 1 from 2
+disconnect 2 from 1
+disconnect 3 from 2
+disconnect 2 from 3
+disconnect 5 from 2
+disconnect 2 from 5
+stop attacking from node 2 to node 1
+Now the graph is like:
+nodes: 8
+0 1 
+1 0 
+2 
+3 7 
+4 
+5 
+6 
+7 3 
+--------------------------------------------
+Event has been cancelled, delete from the heap
