@@ -19,10 +19,43 @@ ActiveEventList AEL;
 int* NodeStatus;
 Heap EventHeap;
 
+void statistic(double time)
+{
+	fprintf(Log, "<-----------Collection------------->\n");
+	myprint(Log, Graph);
+	fprintf(Log, "Attack simulation time: %f\n", time);
+	fprintf(Log, "Safe Nodes: \n");
+	int count = 0;
+ 	for (int i = 0; i < nodeNum; i++)
+	{
+		if (NodeStatus[i] != COMPROMISED && NodeStatus[i] != DETECTED)
+		{
+			fprintf(Log, "%d ", i);
+			count++;
+		}
+	}
+	fprintf(Log, "\n");
+	fprintf(Log, "%d nodes out of %d nodes are safe\n", count, nodeNum);
+	fprintf(Log, "%f%% network are compromised\n", ((double)(nodeNum-count)/(double)nodeNum)*100);
 
+}
+/*
+int randomChoose(int* array)
+{
+	int i;
+	for (i = 0; array[i] != -1; i++)
+	{
+		if (array[i] != DISCONNETED && array[i] != COMPROMISE)
+		{
+			
+		}
+	}
+}
+*/
 double calDetectionTime(int dcu, int compromisedNode)
 {
 	int distance = dijkstra(dcu, compromisedNode, Graph);
+	printf("from %d to %d, distance: %d\n", dcu, compromisedNode, distance);
 	return distance * HOPTIME;
 }
 
@@ -31,6 +64,7 @@ void nodeNumOfGraph()
 	int i;
 	for (i = 0; Graph[i][0] != -1; i++);
 	nodeNum = i;
+	printf("%d\n", nodeNum);
 }
 
 void initialActiveEventList()
@@ -71,12 +105,12 @@ void initial(int attackNode)
 	nodeNumOfGraph();
 //	bfsArray = bfs(attackNode, Graph);
 //	bfsPrint(bfsArray);
-	
+	myprint(Log, Graph);
 	//ActiveEventList Initialize
 	fprintf(Log, "Initializing ActiveEventList...\n");
 	AEL = (ActiveEventList)malloc(sizeof(ActiveNodePtr)*nodeNum);
 	initialActiveEventList();
-
+	
 	//NodeStatus Initialize
 	fprintf(Log, "Initializing NodeStatus...\n");
 	NodeStatus = (int*)malloc(sizeof(int)*nodeNum);
@@ -96,10 +130,10 @@ void initial(int attackNode)
 	event->time = 0.1;
 	event->subject = attackNode;
 	event->object = attackNode;
-//	event->active = TRUE;
 	insertNode(&EventHeap, event);
 
 	addToActiveList(event);
+//	printf("........\n");
 	fprintf(Log, "Initialization done, start attack\n");
 }
 
@@ -120,7 +154,7 @@ Boolean EventIsActive(Event* event)
 
 void addToActiveList(Event* event)
 {
-//	fprintf(Log, "Adding attack to active list(from %d to %d)\n", event->subject, event->object);
+	fprintf(Log, "Adding attack to active list(from %d to %d)\n", event->subject, event->object);
 	ActiveNodePtr newActiveEvent= (ActiveNodePtr)malloc(sizeof(ActiveNode));
 	newActiveEvent->event = event;
 	newActiveEvent->next = (AEL[event->subject])->next;
@@ -161,7 +195,7 @@ void cleanActiveList(Event* event)
 		}
 		if (current->active == FALSE)
 		{
-//			fprintf(Log, "cleaning the activelist...\n");
+			fprintf(Log, "cleaning the activelist...\n");
 			pre->next = current->next;
 			free(current);
 			current = pre->next;
@@ -169,7 +203,7 @@ void cleanActiveList(Event* event)
 		}
 		else if (temp->subject == event->subject && temp->object == event->object && temp->type == event->type && current->active == TRUE)
 		{
-//			fprintf(Log, "Deactivating event %d from %d to %d\n", event->type, event->subject, event->object);
+			fprintf(Log, "Deactivating event %d from %d to %d\n", event->type, event->subject, event->object);
 			current->active = FALSE;
 		}
 		pre = current;
@@ -179,7 +213,7 @@ void cleanActiveList(Event* event)
 
 void clearActiveList(int node)
 {
-//	fprintf(Log, "Deactivating event conerning with node %d...\n", node);
+	fprintf(Log, "Deactivating event conerning with node %d...\n", node);
 	ActiveNodePtr pre = AEL[node];
 	ActiveNodePtr current = AEL[node]->next;
 	while (current != NULL)
@@ -192,7 +226,7 @@ void clearActiveList(int node)
 		}
 		if (current->active == FALSE)
 		{
-//			fprintf(Log, "cleaning the activelist...\n");
+			fprintf(Log, "cleaning the activelist...\n");
 			pre->next = current->next;
 			free(current);
 			current = pre->next;
@@ -201,7 +235,7 @@ void clearActiveList(int node)
 		{
 			fprintf(Log, "stop attacking from node %d to node %d\n", temp->subject, temp->object);
 			current->active = FALSE;
-		
+
 			pre = current;
 			current = current->next;
 		}
@@ -277,7 +311,7 @@ int main(int args, char** argv)
 		if (event == NULL)		break;
 		if (!EventIsActive(event))
 		{
-//			fprintf(Log, "Event has been cancelled, delete from the heap\n");
+			fprintf(Log, "Event has been cancelled, delete from the heap\n");
 			HeapDelMin(EventHeap);
 			continue;
 		}
@@ -312,8 +346,6 @@ int main(int args, char** argv)
 				fprintf(Log, "node %d is compromised\n", event->object);
 				cleanActiveList(event);
 
-			//	fprintf(Log, "%f second later hop to node:\n", HOPTIME);
-				
 				// search target to compromise
 				int i, j;
 				for (i = 0; i < nodeNum; i++)
@@ -346,7 +378,6 @@ int main(int args, char** argv)
 						hopEvent->subject = i;
 						//hopEvent->object = randomChoose(neighbourList);
 						hopEvent->object = neighbourList[j];
-					//	hopEvent->active = TRUE;
 						insertNode(&EventHeap, hopEvent);
 
 						addToActiveList(hopEvent);
@@ -356,7 +387,7 @@ int main(int args, char** argv)
 				eventTime = HOPTIME;				//time needed for event to happen
 				
 				// schedule detection
-				double detectionTime = calDetectionTime(0, event->object);
+				double detectionTime = calDetectionTime(event->object, 0);
 				fprintf(Log, "%f second should be detected\n", current+detectionTime);
 
 				Event* detectEvent = (Event*)malloc(sizeof(Event));
@@ -365,7 +396,6 @@ int main(int args, char** argv)
 				// subject should be DCU, which is supposed to be at node 0
 				detectEvent->subject = 0;
 				detectEvent->object = event->object;
-			//	detectEvent->active = TRUE;
 				insertNode(&EventHeap, detectEvent);
 
 				addToActiveList(detectEvent);
@@ -416,7 +446,6 @@ int main(int args, char** argv)
 				compromiseEvent->type = COMPROMISE;
 				compromiseEvent->subject = event->subject;
 				compromiseEvent->object = event->object;
-			//	compromiseEvent->active = TRUE;
 				insertNode(&EventHeap, compromiseEvent);
 				
 				addToActiveList(compromiseEvent);
@@ -428,6 +457,8 @@ int main(int args, char** argv)
 		HeapDelMin(EventHeap);
 //		free(event);
 	} while(current + eventTime < SIMTIME);
+
+	statistic(current);
 	fclose(Log);
 	return 0;
 }

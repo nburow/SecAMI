@@ -21,7 +21,6 @@
 #define HOPED			2
 #define DETECTED		3
 
-
 typedef struct activeNode
 {
 	Event* event;
