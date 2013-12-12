@@ -13,6 +13,7 @@ double HOPTIME;
 double DECTIME;
 
 FILE* Log;
+FILE* Results;
 
 int** Graph;
 int nodeNum;
@@ -45,6 +46,7 @@ void statistic(double time)
 	fprintf(Log, "%d nodes out of %d nodes are safe\n", count, nodeNum);
 	fprintf(Log, "%f%% network are compromised\n", ((double)(nodeNum-count)/(double)nodeNum)*100);
 
+	fprintf(Results, "%20d%20f\n", nodeNum - count, (count/(double)nodeNum)*100);
 }
 
 int randomChoose(int* array)
@@ -110,6 +112,7 @@ void initialActiveEventList()
 
 void initial(char* fileName, int attackNode, double ct, double ht, double dt)
 {
+	fprintf(Results, "%20s%20f%20f%20d", fileName, ct, ht, attackNode);
 	COMTIME = ct;
 	HOPTIME = ht;
 	DECTIME = dt;
@@ -504,6 +507,10 @@ int main(int args, char** argv)
 {
 	int startGraphNum = atoi(argv[1]);
 	int lastGraphNum = atoi(argv[2]);
+
+	Results = fopen("results.txt", "w");
+	fprintf(Results, "%20s%20s%20s%20s%20s%20s\n", "Graph File", "Compromise Time", "Hop Time", "Start Point",
+			"Num Compromised", "% Alive");
 
 	int compromiseTime[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 	int hopTime = 1;
