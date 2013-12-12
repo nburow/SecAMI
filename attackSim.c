@@ -312,7 +312,7 @@ int main(int args, char** argv)
 				fprintf(Log, "node %d is compromised\n", event->object);
 				cleanActiveList(event);
 
-//				fprintf(Log, "%f second later hop to node:\n", HOPTIME);
+			//	fprintf(Log, "%f second later hop to node:\n", HOPTIME);
 				
 				// search target to compromise
 				int i, j;
