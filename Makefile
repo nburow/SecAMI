@@ -2,7 +2,7 @@ CC=gcc
 CPP=g++
 CCFLAGS=-std=c99 -ggdb
 
-all: graph attackSim runSim
+all: graph attackSim
 
 runSim.o: runSim.c
 	$(CC) -c $(CCFLAGS) runSim.c

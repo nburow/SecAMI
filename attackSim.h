@@ -6,10 +6,12 @@
 //#define ATTACKER	0x007
 
 #define SIMTIME		50.0	
+/*
 #define COMTIME		3.0			//TIME TO COMPROMISE
 #define DETTIME		2.0			//TIME TO DETECT
 #define RECTIME		5.0			//TIME TO RECOVER
 #define HOPTIME		2.0			//TIME TO HOP
+*/
 
 //flag adjlist
 #define END_OF_LIST				-1
@@ -18,8 +20,10 @@
 //node status
 #define GOOD			0
 #define COMPROMISED		1
-#define HOPED			2
+#define HOPPED			2
 #define DETECTED		3
+
+#define WRONG			65536
 
 typedef struct activeNode
 {
