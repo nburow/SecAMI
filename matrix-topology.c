@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
 #include "random.h"
 #include "queue.h"
 
@@ -215,7 +218,7 @@ int main(int argc, char **argv)
 	seed = atof(argv[3]);
 	int numGraphs = atoi(argv[4]);
 
-	mkdir("GraphsGoHere");
+	mkdir("GraphsGoHere", 700);
 
 	numGraphs = (numGraphs > 999) ? 999 : numGraphs;
 
