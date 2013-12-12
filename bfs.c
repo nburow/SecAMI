@@ -86,37 +86,57 @@ int **getGraph(FILE *in)
 	nodes = atoi(word);
 
 	line = getLine(in);
+	//printf("next line: %s\n", line);
 
 	int i = 0;
 	while((strlen(line) > 0))
 	{
 		word = parseWord(&line);
 
-		if(i >= size)
+		if(i >= size - 1)
 		{
 			size *= 2;
 			retval = (int **)realloc(retval, size*sizeof(int *));
+			for(int k = i+1; k < size; k++)
+				retval[k] = (int *)malloc(len*sizeof(int));
+			for(int k = i+1; k < size; k++)
+			{
+				for(int l = 0; l < len; l++)
+					retval[k][l] = -1;
+			}
 		}
 
 		int j = 0;
 		while((strlen(word) > 0))
 		{
-			if(j >= len)
-			{
-				len *= 2;
-				for(int k = 0; k < size; k++)
+			if(i == 1)
+				//printf("next word: %s\n", word);
+				//printf("j %d len %d\n", j, len);
+				if(j >= len -1)  //leave room for terminating -1
 				{
-					retval[k] = (int *)realloc(retval[k], len*sizeof(int));
-					for(int l = len/2; l < len; l++)
-						retval[k][l] = -1;
+					//printf("realloc\n");
+					len *= 2;
+					for(int k = 0; k < size; k++)
+					{
+						retval[k] = (int *)realloc(retval[k], len*sizeof(int));
+						for(int l = len/2; l < len; l++)
+							retval[k][l] = -1;
+					}
+					int k = 0;
+					//while(retval[j][k] != -1)
+					//printf("%d\t", retval[j][k]);
+					//printf("\n");
 				}
-			}
 			int node = atoi(word);
+			//if(i == 1)
+			//printf("adding: %d\n", node);
 			retval[i][j] = node;
 			word = parseWord(&line);
 			j++;
 		}
+		//printf("last entry in line %d: %d\n", i, retval[i][j]);
 		line = getLine(in);
+		//printf("next line: %s\n", line);
 		i++;
 	}
 	return retval;
@@ -166,12 +186,16 @@ int dijkstra(int start, int end, int **graph)
 
 	while(current != end)
 	{
+		//		printf("current: %d distance: %d\n", current, distance[current]);
 		int i = 1;
 		int x = graph[current][i];
 		while(x != -1)
 		{
 			if(distance[current] + 1 < distance[x])
+			{
 				distance[x] = distance[current] + 1;
+				//				printf("new distance for %d is %d\n", x, distance[x]);
+			}
 			i++;
 			x = graph[current][i];
 		}
@@ -187,9 +211,10 @@ int dijkstra(int start, int end, int **graph)
 			}
 		}
 		current = next;
-		printf("just visited: %d\n", current);
+		//		printf("\n");
+		//printf("just visited: %d distance: %d \n", current, distance[current]);
 	}
-	printf("\n\n");
+	//	printf("\n\n");
 	return distance[end];
 }
 
@@ -226,21 +251,26 @@ void bfsPrint(int *bfs)
 		printf("%d ", bfs[i]);
 	printf("\n");
 }
-
+ */
 //arguments: name of input file.
-int main(int argc, char** argv)
+/*int main(int argc, char** argv)
 {
-	in = fopen(argv[1], "r");
+	FILE *in = fopen(argv[1], "r");
 
-	graph = getGraph();
+	int **graph = getGraph(in);
 	//myprint();
+//	for(int j = 0; j < nodes; j++)
+//	{
+//	int i = 1;
+//	while(graph[j][i] != -1)
+//		printf("%d\t", graph[j][i++]);
+//	printf("\n");
+//	}
 
-	int start = 4;
-	int *bfsList = bfs(start);
-	bfsPrint(bfsList);
+	printf("distance %d\n",dijkstra(0, 9, graph));
 
 	fclose(in);
 	return EXIT_SUCCESS;
-}
-*/
+}*/
+//*/
 
