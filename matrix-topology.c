@@ -109,7 +109,7 @@ void addConnections(int node, int connections)
 		eligible[pairTo]--;
 		connections--;
 	}
-	eligible[i] = 0;
+	eligible[node] = 0;
 }
 
 //creates the adjacency list, opens a file pointer
