@@ -21,11 +21,11 @@
 //node status
 #define GOOD			0
 #define COMPROMISED		1
-#define HOPPED			2
+//#define ARRIVED		2
 #define DETECTED		3
 #define HOPPING			4
 #define COMPROMISING	5
-#define ATTACKING		6
+//#define ATTACKING		6
 #define DETECTING		7
 
 typedef struct activeNode

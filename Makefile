@@ -56,4 +56,4 @@ graph: matrix-topology.o uniform.o power.o queue.o
 	${CC} -o graph matrix-topology.o uniform.o power.o queue.o -lm
 	
 clean:
-	rm -rf *.o gen mul test graph attackSim 
+	rm -rf *.o gen mul test graph attackSim bfs
