@@ -42,10 +42,10 @@ void resize()
 
 		for(int i = nodes; i < size; i++)
 		{
-			graph[i] = (int *)malloc((max+2)*(sizeof(int)));
+			graph[i] = (int *)malloc((max+4)*(sizeof(int)));
 			eligible[i] = 1;
 
-			for(int j = 0; j < max + 2; j++)
+			for(int j = 0; j < max + 4; j++)
 				graph[i][j] = -1;
 		}
 	}
@@ -120,7 +120,7 @@ void init()
 	for(int i = 0; i < nodes; i++)
 	{
 		//max+1 to leave room for our extra connection to avoid partitions
-		graph[i] = (int *)malloc((max+2)*(sizeof(int)));
+		graph[i] = (int *)malloc((max+4)*(sizeof(int)));
 	}
 
 	//connected to node 1;
@@ -137,7 +137,7 @@ void init()
 	//initialize to -1 so you can find end of connection list
 	for(int i = 0; i < nodes; i++)
 	{
-		for(int j = 2; j < max + 2; j++)
+		for(int j = 2; j < max + 4; j++)
 			graph[i][j] = -1;
 	}	
 

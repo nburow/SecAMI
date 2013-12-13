@@ -508,13 +508,17 @@ int main(int args, char** argv)
 	for(int i = 0; i < 10; i++)
 	{
 		for(int j = 0; j < 10; j++)
-			printf("%d\n", compromiseTime[i]/detectTime[j]);
+		{
+			if(detectTime[j] != 0)
+				printf("%f\n", compromiseTime[i]/detectTime[j]);
+		}
+
 	}
 	//graphs
 	for(int i = startGraphNum; i <= lastGraphNum; i++)
 	{
 		char graph[30];
-		sprintf(graph, "Graphs/graph%d", i);
+		sprintf(graph, "%s/graph%d", argv[3], i);
 		strcat(graph, ".txt");
 		printf("%s\n", graph);
 		//compromise times
