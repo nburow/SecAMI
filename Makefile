@@ -4,12 +4,6 @@ CCFLAGS=-std=c99 -ggdb
 
 all: graph attackSim
 
-runSim.o: runSim.c
-	$(CC) -c $(CCFLAGS) runSim.c
-	
-runSim: runSim.o
-	$(CC) -o runSim runSim.o
-
 Heap.o: Heap.c
 	$(CC) -c $(CCFLAGS) Heap.c
 
@@ -19,8 +13,8 @@ queue.o: queue.c
 bfs.o: bfs.c
 	$(CC) -c $(CCFLAGS) bfs.c
 	
-bfs: bfs.o queue.o
-	$(CC) -o bfs bfs.o queue.o -lm
+#bfs: bfs.o queue.o
+#	$(CC) -o bfs bfs.o queue.o -lm
 
 attackSim.o: attackSim.c
 	$(CC) -c $(CCFLAGS) attackSim.c
@@ -62,4 +56,4 @@ graph: matrix-topology.o uniform.o power.o queue.o
 	${CC} -o graph matrix-topology.o uniform.o power.o queue.o -lm
 	
 clean:
-	rm -rf *.o gen mul test graph attackSim bfs
+	rm -rf *.o gen mul test graph attackSim 

@@ -1,4786 +1,1445 @@
 Initializing graph...
 nodes: 100
-0 1 62 
-1 0 2 49 94 92 63 13 5 26 
+0 1 60 25 
+1 0 2 72 63 91 
 2 1 3 
-3 2 4 45 22 5 
+3 2 4 46 
 4 3 5 
-5 4 6 69 70 18 1 44 32 3 
-6 5 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 18 58 42 55 57 
-18 17 19 5 
-19 18 20 91 56 27 48 
-20 19 21 56 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 19 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 92 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 5 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 51 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
+5 4 6 15 
+6 5 7 64 96 80 14 23 30 
+7 6 8 41 
+8 7 9 99 14 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 14 8 11 82 9 62 81 87 
+14 13 15 8 6 
+15 14 16 5 74 27 
+16 15 17 29 27 
+17 16 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 6 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 15 16 95 34 37 
+28 27 29 85 70 
+29 28 30 16 
+30 29 31 23 42 6 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
 43 42 44 11 
-44 43 45 5 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 92 
-47 46 48 36 
-48 47 49 30 19 87 80 21 60 79 
-49 48 50 1 
-50 49 51 67 92 76 88 
-51 50 52 36 
-52 51 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 56 17 78 
-56 55 57 19 20 
-57 56 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 50 
-68 67 69 42 54 58 
-69 68 70 5 24 25 29 
-70 69 71 5 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 50 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 50 
-89 88 90 58 
-90 89 91 46 57 
-91 90 92 19 
-92 91 93 1 50 46 30 
-93 92 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
+44 43 45 25 
+45 44 46 89 84 
+46 45 47 3 
+47 46 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 6 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 15 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 6 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 6 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
 Initializing ActiveEventList...
 Initializing NodeStatus...
 Initializing Heap...
 Initializing Attack...
-Adding attack to active list(from 51 to 51)
+Adding attack to active list(from 5 to 5)
 Initialization done, start attack
 At 0.100000 second comes event 0
-node 51 is compromised
-Deactivating event 0 from 51 to 51
-1.000000 second later hop to 50
-Adding attack to active list(from 51 to 50)
-4.100000 second should be detected
-Adding attack to active list(from 0 to 51)
-At 1.100000 second comes event 2
-reach node: 50
-Deactivating event 2 from 51 to 50
-cleaning the activelist...
-1.000000 second later compromise node 50
-Adding attack to active list(from 51 to 50)
-At 2.100000 second comes event 0
-node 50 is compromised
-Deactivating event 0 from 51 to 50
-cleaning the activelist...
-1.000000 second later hop to 92
-Adding attack to active list(from 50 to 92)
-1.000000 second later hop to 36
-Adding attack to active list(from 51 to 36)
-5.100000 second should be detected
-Adding attack to active list(from 0 to 50)
-At 3.100000 second comes event 2
-reach node: 36
-Deactivating event 2 from 51 to 36
-cleaning the activelist...
-1.000000 second later compromise node 36
-Adding attack to active list(from 51 to 36)
-At 3.100000 second comes event 2
-reach node: 92
-Deactivating event 2 from 50 to 92
-1.000000 second later compromise node 92
-Adding attack to active list(from 50 to 92)
-At 4.100000 second comes event 0
-node 92 is compromised
-Deactivating event 0 from 50 to 92
-cleaning the activelist...
-1.000000 second later hop to 88
-Adding attack to active list(from 50 to 88)
-1.000000 second later hop to 52
-Adding attack to active list(from 51 to 52)
-1.000000 second later hop to 91
-Adding attack to active list(from 92 to 91)
-6.100000 second should be detected
-Adding attack to active list(from 0 to 92)
-At 4.100000 second comes event 1
-Deactivating event 1 from 0 to 51
-node: 51 is detected
-disconnect its neighbour:
-50 52 36 
-disconnect 50 from 51 j was 2
-disconnect 51 from 50
-disconnect 52 from 51 j was 1
-disconnect 51 from 52
-disconnect 36 from 51 j was 3
-disconnect 51 from 36
-Deactivating event conerning with node 51...
-stop attacking from node 51 to node 52
-stop attacking from node 51 to node 36
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 92 63 13 5 26 
-2 1 3 
-3 2 4 45 22 5 
-4 3 5 
-5 4 6 69 70 18 1 44 32 3 
-6 5 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 18 58 42 55 57 
-18 17 19 5 
-19 18 20 91 56 27 48 
-20 19 21 56 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 19 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 92 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 5 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 5 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 92 
-47 46 48 36 
-48 47 49 30 19 87 80 21 60 79 
-49 48 50 1 
-50 49 67 92 76 88 
-51 
-52 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 56 17 78 
-56 55 57 19 20 
-57 56 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 50 
-68 67 69 42 54 58 
-69 68 70 5 24 25 29 
-70 69 71 5 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 50 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 50 
-89 88 90 58 
-90 89 91 46 57 
-91 90 92 19 
-92 91 93 1 50 46 30 
-93 92 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 5.100000 second comes event 2
-reach node: 88
-Deactivating event 2 from 50 to 88
-cleaning the activelist...
-1.000000 second later compromise node 88
-Adding attack to active list(from 50 to 88)
-At 5.100000 second comes event 1
-Deactivating event 1 from 0 to 50
-cleaning the activelist...
-node: 50 is detected
-disconnect its neighbour:
-49 67 92 76 88 
-disconnect 49 from 50 j was 2
-disconnect 50 from 49
-disconnect 67 from 50 j was 4
-disconnect 50 from 67
-disconnect 92 from 50 j was 4
-disconnect 50 from 92
-disconnect 76 from 50 j was 4
-disconnect 50 from 76
-disconnect 88 from 50 j was 9
-disconnect 50 from 88
-Deactivating event conerning with node 50...
-stop attacking from node 50 to node 88
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 92 63 13 5 26 
-2 1 3 
-3 2 4 45 22 5 
-4 3 5 
-5 4 6 69 70 18 1 44 32 3 
-6 5 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 18 58 42 55 57 
-18 17 19 5 
-19 18 20 91 56 27 48 
-20 19 21 56 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 19 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 92 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 5 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 5 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 92 
-47 46 48 36 
-48 47 49 30 19 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 56 17 78 
-56 55 57 19 20 
-57 56 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 5 24 25 29 
-70 69 71 5 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 91 46 57 
-91 90 92 19 
-92 91 93 1 46 30 
-93 92 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 5.100000 second comes event 2
-reach node: 91
-Deactivating event 2 from 92 to 91
-1.000000 second later compromise node 91
-Adding attack to active list(from 92 to 91)
-At 6.100000 second comes event 0
-node 91 is compromised
-Deactivating event 0 from 92 to 91
-cleaning the activelist...
-1.000000 second later hop to 19
-Adding attack to active list(from 91 to 19)
-1.000000 second later hop to 30
-Adding attack to active list(from 92 to 30)
-9.100000 second should be detected
-Adding attack to active list(from 0 to 91)
-Event has been cancelled, delete from the heap
-At 6.100000 second comes event 1
-Deactivating event 1 from 0 to 92
-cleaning the activelist...
-node: 92 is detected
-disconnect its neighbour:
-91 93 1 46 30 
-disconnect 91 from 92 j was 2
-disconnect 92 from 91
-disconnect 93 from 92 j was 1
-disconnect 92 from 93
-disconnect 1 from 92 j was 5
-disconnect 92 from 1
-disconnect 46 from 92 j was 8
-disconnect 92 from 46
-disconnect 30 from 92 j was 11
-disconnect 92 from 30
-Deactivating event conerning with node 92...
-stop attacking from node 92 to node 30
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 5 26 
-2 1 3 
-3 2 4 45 22 5 
-4 3 5 
-5 4 6 69 70 18 1 44 32 3 
-6 5 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 18 58 42 55 57 
-18 17 19 5 
-19 18 20 91 56 27 48 
-20 19 21 56 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 19 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 5 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 5 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 19 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 56 17 78 
-56 55 57 19 20 
-57 56 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 5 24 25 29 
-70 69 71 5 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 91 46 57 
-91 90 19 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 7.100000 second comes event 2
-reach node: 19
-Deactivating event 2 from 91 to 19
-1.000000 second later compromise node 19
-Adding attack to active list(from 91 to 19)
-Event has been cancelled, delete from the heap
-At 8.100000 second comes event 0
-node 19 is compromised
-Deactivating event 0 from 91 to 19
-cleaning the activelist...
-1.000000 second later hop to 56
-Adding attack to active list(from 19 to 56)
-1.000000 second later hop to 90
-Adding attack to active list(from 91 to 90)
-12.100000 second should be detected
-Adding attack to active list(from 0 to 19)
-At 9.100000 second comes event 1
-Deactivating event 1 from 0 to 91
-cleaning the activelist...
-node: 91 is detected
-disconnect its neighbour:
-90 19 
-disconnect 90 from 91 j was 2
-disconnect 91 from 90
-disconnect 19 from 91 j was 3
-disconnect 91 from 19
-Deactivating event conerning with node 91...
-stop attacking from node 91 to node 90
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 5 26 
-2 1 3 
-3 2 4 45 22 5 
-4 3 5 
-5 4 6 69 70 18 1 44 32 3 
-6 5 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 18 58 42 55 57 
-18 17 19 5 
-19 18 20 56 27 48 
-20 19 21 56 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 19 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 5 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 5 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 19 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 56 17 78 
-56 55 57 19 20 
-57 56 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 5 24 25 29 
-70 69 71 5 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 57 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-Event has been cancelled, delete from the heap
-At 9.100000 second comes event 2
-reach node: 56
-Deactivating event 2 from 19 to 56
-1.000000 second later compromise node 56
-Adding attack to active list(from 19 to 56)
-At 10.100000 second comes event 0
-node 56 is compromised
-Deactivating event 0 from 19 to 56
-cleaning the activelist...
-1.000000 second later hop to 18
-Adding attack to active list(from 19 to 18)
-1.000000 second later hop to 55
-Adding attack to active list(from 56 to 55)
-15.100000 second should be detected
-Adding attack to active list(from 0 to 56)
-At 11.100000 second comes event 2
-reach node: 55
-Deactivating event 2 from 56 to 55
-1.000000 second later compromise node 55
-Adding attack to active list(from 56 to 55)
-At 11.100000 second comes event 2
-reach node: 18
-Deactivating event 2 from 19 to 18
-cleaning the activelist...
-1.000000 second later compromise node 18
-Adding attack to active list(from 19 to 18)
-At 12.100000 second comes event 0
-node 18 is compromised
-Deactivating event 0 from 19 to 18
-cleaning the activelist...
-1.000000 second later hop to 5
-Adding attack to active list(from 18 to 5)
-1.000000 second later hop to 27
-Adding attack to active list(from 19 to 27)
-1.000000 second later hop to 57
-Adding attack to active list(from 56 to 57)
-15.100000 second should be detected
-Adding attack to active list(from 0 to 18)
-At 12.100000 second comes event 1
-Deactivating event 1 from 0 to 19
-cleaning the activelist...
-node: 19 is detected
-disconnect its neighbour:
-18 20 56 27 48 
-disconnect 18 from 19 j was 2
-disconnect 19 from 18
-disconnect 20 from 19 j was 1
-disconnect 19 from 20
-disconnect 56 from 19 j was 3
-disconnect 19 from 56
-disconnect 27 from 19 j was 3
-disconnect 19 from 27
-disconnect 48 from 19 j was 4
-disconnect 19 from 48
-Deactivating event conerning with node 19...
-stop attacking from node 19 to node 27
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 5 26 
-2 1 3 
-3 2 4 45 22 5 
-4 3 5 
-5 4 6 69 70 18 1 44 32 3 
-6 5 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 18 58 42 55 57 
-18 17 5 
-19 
-20 21 56 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 5 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 5 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 56 17 78 
-56 55 57 20 
-57 56 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 5 24 25 29 
-70 69 71 5 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 57 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 12.100000 second comes event 0
-node 55 is compromised
-Deactivating event 0 from 56 to 55
-cleaning the activelist...
-1.000000 second later hop to 17
-Adding attack to active list(from 18 to 17)
-1.000000 second later hop to 54
-Adding attack to active list(from 55 to 54)
-1.000000 second later hop to 57
-Adding attack to active list(from 56 to 57)
-17.100000 second should be detected
-Adding attack to active list(from 0 to 55)
-At 13.100000 second comes event 2
-reach node: 5
-Deactivating event 2 from 18 to 5
-1.000000 second later compromise node 5
-Adding attack to active list(from 18 to 5)
-At 13.100000 second comes event 2
-reach node: 54
-Deactivating event 2 from 55 to 54
-1.000000 second later compromise node 54
-Adding attack to active list(from 55 to 54)
-At 13.100000 second comes event 2
-reach node: 57
-Deactivating event 2 from 56 to 57
-Deactivating event 2 from 56 to 57
-cleaning the activelist...
-1.000000 second later compromise node 57
-Adding attack to active list(from 56 to 57)
-At 13.100000 second comes event 2
-HAha, one step late, 57 has been compromised
-Event has been cancelled, delete from the heap
-At 13.100000 second comes event 2
-reach node: 17
-Deactivating event 2 from 18 to 17
-cleaning the activelist...
-1.000000 second later compromise node 17
-Adding attack to active list(from 18 to 17)
-At 14.100000 second comes event 0
-node 54 is compromised
-Deactivating event 0 from 55 to 54
-cleaning the activelist...
-1.000000 second later hop to 5
-Adding attack to active list(from 18 to 5)
-1.000000 second later hop to 68
-Adding attack to active list(from 54 to 68)
-1.000000 second later hop to 78
-Adding attack to active list(from 55 to 78)
-1.000000 second later hop to 20
-Adding attack to active list(from 56 to 20)
-19.100000 second should be detected
-Adding attack to active list(from 0 to 54)
-At 14.100000 second comes event 0
-node 17 is compromised
-Deactivating event 0 from 18 to 17
-cleaning the activelist...
-1.000000 second later hop to 57
-Adding attack to active list(from 17 to 57)
-1.000000 second later hop to 5
-Adding attack to active list(from 18 to 5)
-1.000000 second later hop to 53
-Adding attack to active list(from 54 to 53)
-1.000000 second later hop to 78
-Adding attack to active list(from 55 to 78)
-1.000000 second later hop to 20
-Adding attack to active list(from 56 to 20)
-18.100000 second should be detected
-Adding attack to active list(from 0 to 17)
-At 14.100000 second comes event 0
 node 5 is compromised
-cleaning the activelist...
-Deactivating event 0 from 18 to 5
+Deactivating event 0 from 5 to 5
 1.000000 second later hop to 4
 Adding attack to active list(from 5 to 4)
-1.000000 second later hop to 57
-Adding attack to active list(from 17 to 57)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 68
-Adding attack to active list(from 54 to 68)
-1.000000 second later hop to 78
-Adding attack to active list(from 55 to 78)
-1.000000 second later hop to 20
-Adding attack to active list(from 56 to 20)
-16.100000 second should be detected
+5.100000 second should be detected
 Adding attack to active list(from 0 to 5)
-At 14.100000 second comes event 0
-node 57 is compromised
-Deactivating event 0 from 56 to 57
-cleaning the activelist...
-cleaning the activelist...
-1.000000 second later hop to 69
-Adding attack to active list(from 5 to 69)
-1.000000 second later hop to 42
-Adding attack to active list(from 17 to 42)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 68
-Adding attack to active list(from 54 to 68)
-1.000000 second later hop to 78
-Adding attack to active list(from 55 to 78)
-1.000000 second later hop to 20
-Adding attack to active list(from 56 to 20)
-1.000000 second later hop to 90
-Adding attack to active list(from 57 to 90)
-18.100000 second should be detected
-Adding attack to active list(from 0 to 57)
-At 15.100000 second comes event 1
-Deactivating event 1 from 0 to 18
-cleaning the activelist...
-node: 18 is detected
-disconnect its neighbour:
-17 5 
-disconnect 17 from 18 j was 2
-disconnect 18 from 17
-disconnect 5 from 18 j was 5
-disconnect 18 from 5
-Deactivating event conerning with node 18...
-stop attacking from node 18 to node 5
-stop attacking from node 18 to node 5
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 5 26 
-2 1 3 
-3 2 4 45 22 5 
-4 3 5 
-5 4 6 69 70 1 44 32 3 
-6 5 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 58 42 55 57 
-18 
-19 
-20 21 56 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 5 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 5 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 56 17 78 
-56 55 57 20 
-57 56 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 5 24 25 29 
-70 69 71 5 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 57 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 15.100000 second comes event 2
-reach node: 90
-Deactivating event 2 from 57 to 90
-1.000000 second later compromise node 90
-Adding attack to active list(from 57 to 90)
-Event has been cancelled, delete from the heap
-At 15.100000 second comes event 2
-reach node: 20
-Deactivating event 2 from 56 to 20
-Deactivating event 2 from 56 to 20
-Deactivating event 2 from 56 to 20
-Deactivating event 2 from 56 to 20
-cleaning the activelist...
-1.000000 second later compromise node 20
-Adding attack to active list(from 56 to 20)
-At 15.100000 second comes event 2
-HAha, one step late, 20 has been compromised
-At 15.100000 second comes event 2
-reach node: 78
-Deactivating event 2 from 55 to 78
-Deactivating event 2 from 55 to 78
-Deactivating event 2 from 55 to 78
-Deactivating event 2 from 55 to 78
-cleaning the activelist...
-1.000000 second later compromise node 78
-Adding attack to active list(from 55 to 78)
-At 15.100000 second comes event 2
+At 1.100000 second comes event 2
 reach node: 4
 Deactivating event 2 from 5 to 4
+cleaning the activelist...
 1.000000 second later compromise node 4
 Adding attack to active list(from 5 to 4)
-At 15.100000 second comes event 2
-reach node: 68
-Deactivating event 2 from 54 to 68
-Deactivating event 2 from 54 to 68
-Deactivating event 2 from 54 to 68
-1.000000 second later compromise node 68
-Adding attack to active list(from 54 to 68)
-At 15.100000 second comes event 2
-HAha, one step late, 57 has been compromised
-At 15.100000 second comes event 2
-HAha, one step late, 68 has been compromised
-At 15.100000 second comes event 2
-reach node: 42
-Deactivating event 2 from 17 to 42
-1.000000 second later compromise node 42
-Adding attack to active list(from 17 to 42)
-At 15.100000 second comes event 2
-HAha, one step late, 78 has been compromised
-At 15.100000 second comes event 2
-reach node: 69
-Deactivating event 2 from 5 to 69
-cleaning the activelist...
-1.000000 second later compromise node 69
-Adding attack to active list(from 5 to 69)
-At 15.100000 second comes event 2
-HAha, one step late, 78 has been compromised
-At 15.100000 second comes event 2
-HAha, one step late, 20 has been compromised
-At 15.100000 second comes event 2
-HAha, one step late, 20 has been compromised
-At 15.100000 second comes event 1
-cleaning the activelist...
-Deactivating event 1 from 0 to 56
-node: 56 is detected
-disconnect its neighbour:
-55 57 20 
-disconnect 55 from 56 j was 2
-disconnect 56 from 55
-disconnect 57 from 56 j was 1
-disconnect 56 from 57
-disconnect 20 from 56 j was 3
-disconnect 56 from 20
-Deactivating event conerning with node 56...
-stop attacking from node 56 to node 20
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 5 26 
-2 1 3 
-3 2 4 45 22 5 
-4 3 5 
-5 4 6 69 70 1 44 32 3 
-6 5 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 58 42 55 57 
-18 
-19 
-20 21 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 5 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 5 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 17 78 
-56 
-57 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 5 24 25 29 
-70 69 71 5 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 57 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 15.100000 second comes event 2
-HAha, one step late, 57 has been compromised
-At 15.100000 second comes event 2
-HAha, one step late, 68 has been compromised
-Event has been cancelled, delete from the heap
-At 15.100000 second comes event 2
-reach node: 53
-cleaning the activelist...
-cleaning the activelist...
-Deactivating event 2 from 54 to 53
-cleaning the activelist...
-1.000000 second later compromise node 53
-Adding attack to active list(from 54 to 53)
-At 15.100000 second comes event 2
-HAha, one step late, 78 has been compromised
-At 16.100000 second comes event 0
-node 68 is compromised
-Deactivating event 0 from 54 to 68
-cleaning the activelist...
-1.000000 second later hop to 3
-Adding attack to active list(from 5 to 3)
-1.000000 second later hop to 42
-Adding attack to active list(from 17 to 42)
-1.000000 second later hop to 53
-Adding attack to active list(from 54 to 53)
-1.000000 second later hop to 78
-Adding attack to active list(from 55 to 78)
-1.000000 second later hop to 37
-Adding attack to active list(from 57 to 37)
-1.000000 second later hop to 42
-Adding attack to active list(from 68 to 42)
-20.100000 second should be detected
-Adding attack to active list(from 0 to 68)
-At 16.100000 second comes event 0
-node 90 is compromised
-Deactivating event 0 from 57 to 90
-cleaning the activelist...
-1.000000 second later hop to 1
-Adding attack to active list(from 5 to 1)
-1.000000 second later hop to 58
-Adding attack to active list(from 17 to 58)
-1.000000 second later hop to 53
-Adding attack to active list(from 54 to 53)
-1.000000 second later hop to 78
-Adding attack to active list(from 55 to 78)
-1.000000 second later hop to 37
-Adding attack to active list(from 57 to 37)
-1.000000 second later hop to 42
-Adding attack to active list(from 68 to 42)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-20.100000 second should be detected
-Adding attack to active list(from 0 to 90)
-At 16.100000 second comes event 0
+At 2.100000 second comes event 0
 node 4 is compromised
 Deactivating event 0 from 5 to 4
 cleaning the activelist...
 1.000000 second later hop to 3
 Adding attack to active list(from 4 to 3)
-1.000000 second later hop to 1
-Adding attack to active list(from 5 to 1)
-1.000000 second later hop to 42
-Adding attack to active list(from 17 to 42)
-1.000000 second later hop to 53
-Adding attack to active list(from 54 to 53)
-1.000000 second later hop to 78
-Adding attack to active list(from 55 to 78)
-1.000000 second later hop to 58
-Adding attack to active list(from 57 to 58)
-1.000000 second later hop to 42
-Adding attack to active list(from 68 to 42)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-19.100000 second should be detected
+1.000000 second later hop to 15
+Adding attack to active list(from 5 to 15)
+6.100000 second should be detected
 Adding attack to active list(from 0 to 4)
-At 16.100000 second comes event 1
-Deactivating event 1 from 0 to 5
+At 3.100000 second comes event 2
+reach node: 15
+Deactivating event 2 from 5 to 15
 cleaning the activelist...
-node: 5 is detected
-disconnect its neighbour:
-4 6 69 70 1 44 32 3 
-disconnect 4 from 5 j was 2
-disconnect 5 from 4
-disconnect 6 from 5 j was 1
-disconnect 5 from 6
-disconnect 69 from 5 j was 3
-disconnect 5 from 69
-disconnect 70 from 5 j was 3
-disconnect 5 from 70
-disconnect 1 from 5 j was 8
-disconnect 5 from 1
-disconnect 44 from 5 j was 3
-disconnect 5 from 44
-disconnect 32 from 5 j was 3
-disconnect 5 from 32
-disconnect 3 from 5 j was 5
-disconnect 5 from 3
-Deactivating event conerning with node 5...
-stop attacking from node 5 to node 1
-stop attacking from node 5 to node 1
-stop attacking from node 5 to node 3
-stop attacking from node 5 to node 69
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 26 
-2 1 3 
-3 2 4 45 22 
-4 3 
-5 
-6 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 58 42 55 57 
-18 
-19 
-20 21 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 55 68 
-55 54 17 78 
-56 
-57 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 24 25 29 
-70 69 71 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 55 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 57 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 16.100000 second comes event 0
-node 42 is compromised
-Deactivating event 0 from 17 to 42
-cleaning the activelist...
-1.000000 second later hop to 3
-Adding attack to active list(from 4 to 3)
-1.000000 second later hop to 58
-Adding attack to active list(from 17 to 58)
-1.000000 second later hop to 76
-Adding attack to active list(from 42 to 76)
-1.000000 second later hop to 53
-Adding attack to active list(from 54 to 53)
-1.000000 second later hop to 78
-Adding attack to active list(from 55 to 78)
-1.000000 second later hop to 37
-Adding attack to active list(from 57 to 37)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-20.100000 second should be detected
-Adding attack to active list(from 0 to 42)
-Event has been cancelled, delete from the heap
-At 16.100000 second comes event 0
-node 78 is compromised
-Deactivating event 0 from 55 to 78
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-1.000000 second later hop to 3
-Adding attack to active list(from 4 to 3)
-1.000000 second later hop to 58
-Adding attack to active list(from 17 to 58)
-1.000000 second later hop to 79
-Adding attack to active list(from 42 to 79)
-1.000000 second later hop to 53
-Adding attack to active list(from 54 to 53)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 57 to 37)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 77
-Adding attack to active list(from 78 to 77)
-1.000000 second later hop to 46
-Adding attack to active list(from 90 to 46)
-20.100000 second should be detected
-Adding attack to active list(from 0 to 78)
-Event has been cancelled, delete from the heap
-At 16.100000 second comes event 0
-node 53 is compromised
-Deactivating event 0 from 54 to 53
-cleaning the activelist...
-1.000000 second later hop to 3
-Adding attack to active list(from 4 to 3)
-1.000000 second later hop to 16
-Adding attack to active list(from 17 to 16)
-1.000000 second later hop to 6
-Adding attack to active list(from 42 to 6)
-1.000000 second later hop to 52
-Adding attack to active list(from 53 to 52)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 58
-Adding attack to active list(from 57 to 58)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 30
-Adding attack to active list(from 78 to 30)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-20.100000 second should be detected
-Adding attack to active list(from 0 to 53)
-At 17.100000 second comes event 2
-HAha, one step late, 53 has been compromised
-At 17.100000 second comes event 2
-reach node: 89
-Deactivating event 2 from 90 to 89
-Deactivating event 2 from 90 to 89
-Deactivating event 2 from 90 to 89
-Deactivating event 2 from 90 to 89
-1.000000 second later compromise node 89
-Adding attack to active list(from 90 to 89)
-At 17.100000 second comes event 2
-HAha, one step late, 78 has been compromised
-At 17.100000 second comes event 2
-reach node: 30
-Deactivating event 2 from 78 to 30
-1.000000 second later compromise node 30
-Adding attack to active list(from 78 to 30)
-At 17.100000 second comes event 2
-reach node: 58
-Deactivating event 2 from 57 to 58
-Deactivating event 2 from 57 to 58
-cleaning the activelist...
-1.000000 second later compromise node 58
-Adding attack to active list(from 57 to 58)
-At 17.100000 second comes event 2
-HAha, one step late, 42 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 58 has been compromised
-At 17.100000 second comes event 2
-reach node: 52
-Deactivating event 2 from 53 to 52
-1.000000 second later compromise node 52
-Adding attack to active list(from 53 to 52)
-At 17.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 17.100000 second comes event 2
-reach node: 6
-Deactivating event 2 from 42 to 6
-1.000000 second later compromise node 6
-Adding attack to active list(from 42 to 6)
-At 17.100000 second comes event 2
+1.000000 second later compromise node 15
+Adding attack to active list(from 5 to 15)
+At 3.100000 second comes event 2
 reach node: 3
-Deactivating event 2 from 4 to 3
-Deactivating event 2 from 4 to 3
-Deactivating event 2 from 4 to 3
 Deactivating event 2 from 4 to 3
 1.000000 second later compromise node 3
 Adding attack to active list(from 4 to 3)
-At 17.100000 second comes event 2
-HAha, one step late, 58 has been compromised
-At 17.100000 second comes event 2
-reach node: 16
-Deactivating event 2 from 17 to 16
-cleaning the activelist...
-1.000000 second later compromise node 16
-Adding attack to active list(from 17 to 16)
-At 17.100000 second comes event 2
-reach node: 37
-cleaning the activelist...
-Deactivating event 2 from 57 to 37
-Deactivating event 2 from 57 to 37
-cleaning the activelist...
-Deactivating event 2 from 57 to 37
-Deactivating event 2 from 57 to 37
-1.000000 second later compromise node 37
-Adding attack to active list(from 57 to 37)
-At 17.100000 second comes event 2
-reach node: 76
-cleaning the activelist...
-Deactivating event 2 from 42 to 76
-1.000000 second later compromise node 76
-Adding attack to active list(from 42 to 76)
-At 17.100000 second comes event 2
-HAha, one step late, 53 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 42 has been compromised
-At 17.100000 second comes event 2
-reach node: 77
-cleaning the activelist...
-Deactivating event 2 from 78 to 77
-1.000000 second later compromise node 77
-Adding attack to active list(from 78 to 77)
-At 17.100000 second comes event 2
-HAha, one step late, 78 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 17.100000 second comes event 2
-reach node: 79
-Deactivating event 2 from 42 to 79
-cleaning the activelist...
-1.000000 second later compromise node 79
-Adding attack to active list(from 42 to 79)
-Event has been cancelled, delete from the heap
-At 17.100000 second comes event 2
-HAha, one step late, 58 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 3 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 58 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 53 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 53 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 78 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 17.100000 second comes event 2
-reach node: 46
-cleaning the activelist...
-Deactivating event 2 from 90 to 46
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-1.000000 second later compromise node 46
-Adding attack to active list(from 90 to 46)
-At 17.100000 second comes event 2
-HAha, one step late, 3 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 42 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 78 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 53 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 42 has been compromised
-At 17.100000 second comes event 1
-cleaning the activelist...
-Deactivating event 1 from 0 to 55
-node: 55 is detected
-disconnect its neighbour:
-54 17 78 
-disconnect 54 from 55 j was 2
-disconnect 55 from 54
-disconnect 17 from 55 j was 5
-disconnect 55 from 17
-disconnect 78 from 55 j was 4
-disconnect 55 from 78
-Deactivating event conerning with node 55...
-stop attacking from node 55 to node 78
-stop attacking from node 55 to node 78
-stop attacking from node 55 to node 78
-stop attacking from node 78 to node 30
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 26 
-2 1 3 
-3 2 4 45 22 
-4 3 
-5 
-6 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 17 22 71 76 
-17 16 58 42 57 
-18 
-19 
-20 21 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 17 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 68 
-55 
-56 
-57 58 37 90 17 
-58 57 59 17 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 24 25 29 
-70 69 71 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 57 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 17.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 17.100000 second comes event 2
-HAha, one step late, 3 has been compromised
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 17.100000 second comes event 2
-HAha, one step late, 42 has been compromised
-At 18.100000 second comes event 0
-node 77 is compromised
-Deactivating event 0 from 78 to 77
-cleaning the activelist...
-1.000000 second later hop to 3
-Adding attack to active list(from 4 to 3)
-1.000000 second later hop to 16
-Adding attack to active list(from 17 to 16)
-1.000000 second later hop to 79
-Adding attack to active list(from 42 to 79)
-1.000000 second later hop to 30
-Adding attack to active list(from 53 to 30)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 58
-Adding attack to active list(from 57 to 58)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 76
-Adding attack to active list(from 77 to 76)
-1.000000 second later hop to 74
-Adding attack to active list(from 78 to 74)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-22.100000 second should be detected
-Adding attack to active list(from 0 to 77)
-At 18.100000 second comes event 0
-node 52 is compromised
-Deactivating event 0 from 53 to 52
-cleaning the activelist...
-1.000000 second later hop to 3
-Adding attack to active list(from 4 to 3)
-1.000000 second later hop to 16
-Adding attack to active list(from 17 to 16)
-1.000000 second later hop to 41
-Adding attack to active list(from 42 to 41)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-1.000000 second later hop to 30
-Adding attack to active list(from 53 to 30)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 58
-Adding attack to active list(from 57 to 58)
-1.000000 second later hop to 58
-Adding attack to active list(from 68 to 58)
-1.000000 second later hop to 76
-Adding attack to active list(from 77 to 76)
-1.000000 second later hop to 79
-Adding attack to active list(from 78 to 79)
-1.000000 second later hop to 46
-Adding attack to active list(from 90 to 46)
-23.100000 second should be detected
-Adding attack to active list(from 0 to 52)
-At 18.100000 second comes event 1
-Deactivating event 1 from 0 to 17
-cleaning the activelist...
-node: 17 is detected
-disconnect its neighbour:
-16 58 42 57 
-disconnect 16 from 17 j was 2
-disconnect 17 from 16
-disconnect 58 from 17 j was 3
-disconnect 17 from 58
-disconnect 42 from 17 j was 3
-disconnect 17 from 42
-disconnect 57 from 17 j was 5
-disconnect 17 from 57
-Deactivating event conerning with node 17...
-stop attacking from node 17 to node 16
-stop attacking from node 17 to node 16
-stop attacking from node 17 to node 16
-cleaning the activelist...
-stop attacking from node 42 to node 41
-stop attacking from node 0 to node 0
-stop attacking from node 0 to node 1
-stop attacking from node 0 to node 1
-stop attacking from node 0 to node 1
-stop attacking from node 17 to node 16
-stop attacking from node 78 to node 30
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 26 
-2 1 3 
-3 2 4 45 22 
-4 3 
-5 
-6 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 22 71 76 
-17 
-18 
-19 
-20 21 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 57 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 68 
-55 
-56 
-57 58 37 90 
-58 57 59 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 24 25 29 
-70 69 71 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 57 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 18.100000 second comes event 0
-node 46 is compromised
-Deactivating event 0 from 90 to 46
-cleaning the activelist...
-1.000000 second later hop to 3
-Adding attack to active list(from 4 to 3)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 79
-Adding attack to active list(from 46 to 79)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-1.000000 second later hop to 30
-Adding attack to active list(from 53 to 30)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 58
-Adding attack to active list(from 57 to 58)
-1.000000 second later hop to 58
-Adding attack to active list(from 68 to 58)
-1.000000 second later hop to 76
-Adding attack to active list(from 77 to 76)
-1.000000 second later hop to 30
-Adding attack to active list(from 78 to 30)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-21.100000 second should be detected
-Adding attack to active list(from 0 to 46)
-At 18.100000 second comes event 0
-node 58 is compromised
-Deactivating event 0 from 57 to 58
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-1.000000 second later hop to 3
-Adding attack to active list(from 4 to 3)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 40
-Adding attack to active list(from 46 to 40)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-1.000000 second later hop to 30
-Adding attack to active list(from 53 to 30)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 57 to 37)
-1.000000 second later hop to 89
-Adding attack to active list(from 58 to 89)
-1.000000 second later hop to 67
-Adding attack to active list(from 68 to 67)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 74
-Adding attack to active list(from 78 to 74)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-22.100000 second should be detected
-Adding attack to active list(from 0 to 58)
-At 18.100000 second comes event 1
-Deactivating event 1 from 0 to 57
-cleaning the activelist...
-node: 57 is detected
-disconnect its neighbour:
-58 37 90 
-disconnect 58 from 57 j was 1
-disconnect 57 from 58
-disconnect 37 from 57 j was 4
-disconnect 57 from 37
-disconnect 90 from 57 j was 4
-disconnect 57 from 90
-Deactivating event conerning with node 57...
-stop attacking from node 57 to node 37
-stop attacking from node 57 to node 58
-stop attacking from node 57 to node 58
-stop attacking from node 57 to node 58
-stop attacking from node 57 to node 37
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 26 
-2 1 3 
-3 2 4 45 22 
-4 3 
-5 
-6 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 22 71 76 
-17 
-18 
-19 
-20 21 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 68 
-55 
-56 
-57 
-58 59 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 24 25 29 
-70 69 71 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-At 18.100000 second comes event 0
+At 4.100000 second comes event 0
 node 3 is compromised
 Deactivating event 0 from 4 to 3
 cleaning the activelist...
+1.000000 second later hop to 46
+Adding attack to active list(from 3 to 46)
+All of the neighbours are COMPROMISED
+7.100000 second should be detected
+Adding attack to active list(from 0 to 3)
+At 4.100000 second comes event 0
+node 15 is compromised
+Deactivating event 0 from 5 to 15
 cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-1.000000 second later hop to 2
-Adding attack to active list(from 3 to 2)
 All of the neighbours are COMPROMISED
 1.000000 second later hop to 6
-Adding attack to active list(from 42 to 6)
-1.000000 second later hop to 45
-Adding attack to active list(from 46 to 45)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-1.000000 second later hop to 30
-Adding attack to active list(from 53 to 30)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 59
-Adding attack to active list(from 58 to 59)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 76
-Adding attack to active list(from 77 to 76)
-1.000000 second later hop to 74
-Adding attack to active list(from 78 to 74)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-21.100000 second should be detected
-Adding attack to active list(from 0 to 3)
-At 18.100000 second comes event 0
-node 76 is compromised
-Deactivating event 0 from 42 to 76
+Adding attack to active list(from 5 to 6)
+1.000000 second later hop to 14
+Adding attack to active list(from 15 to 14)
+8.100000 second should be detected
+Adding attack to active list(from 0 to 15)
+At 5.100000 second comes event 2
+reach node: 46
+Deactivating event 2 from 3 to 46
+1.000000 second later compromise node 46
+Adding attack to active list(from 3 to 46)
+At 5.100000 second comes event 1
+Deactivating event 1 from 0 to 5
+node: 5 is detected
+disconnect its neighbour:
+4 6 15 
+disconnect 4 from 5
+disconnect 5 from 4
+disconnect 6 from 5
+disconnect 5 from 6
+disconnect 15 from 5
+disconnect 5 from 15
+Deactivating event conerning with node 5...
+stop attacking from node 5 to node 6
 cleaning the activelist...
-1.000000 second later hop to 45
-Adding attack to active list(from 3 to 45)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 41
-Adding attack to active list(from 42 to 41)
-1.000000 second later hop to 27
-Adding attack to active list(from 46 to 27)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-1.000000 second later hop to 30
-Adding attack to active list(from 53 to 30)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 89
-Adding attack to active list(from 58 to 89)
-1.000000 second later hop to 67
-Adding attack to active list(from 68 to 67)
-1.000000 second later hop to 16
-Adding attack to active list(from 76 to 16)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 79
-Adding attack to active list(from 78 to 79)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-21.100000 second should be detected
-Adding attack to active list(from 0 to 76)
-At 18.100000 second comes event 0
-node 6 is compromised
-cleaning the activelist...
-Deactivating event 0 from 42 to 6
-1.000000 second later hop to 22
-Adding attack to active list(from 3 to 22)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 79
-Adding attack to active list(from 42 to 79)
-1.000000 second later hop to 79
-Adding attack to active list(from 46 to 79)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-1.000000 second later hop to 30
-Adding attack to active list(from 53 to 30)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 59
-Adding attack to active list(from 58 to 59)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 30
-Adding attack to active list(from 78 to 30)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-21.100000 second should be detected
-Adding attack to active list(from 0 to 6)
-At 18.100000 second comes event 0
-node 79 is compromised
-Deactivating event 0 from 42 to 79
-cleaning the activelist...
-1.000000 second later hop to 22
-Adding attack to active list(from 3 to 22)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 7
-Adding attack to active list(from 6 to 7)
-1.000000 second later hop to 41
-Adding attack to active list(from 42 to 41)
-1.000000 second later hop to 65
-Adding attack to active list(from 46 to 65)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-1.000000 second later hop to 30
-Adding attack to active list(from 53 to 30)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 89
-Adding attack to active list(from 58 to 89)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 75
-Adding attack to active list(from 76 to 75)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 74
-Adding attack to active list(from 78 to 74)
-1.000000 second later hop to 80
-Adding attack to active list(from 79 to 80)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-22.100000 second should be detected
-Adding attack to active list(from 0 to 79)
+Now the graph is like:
+nodes: 100
+0 1 60 25 
+1 0 2 72 63 91 
+2 1 3 
+3 2 4 46 
+4 3 
+5 
+6 7 64 96 80 14 23 30 
+7 6 8 41 
+8 7 9 99 14 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 14 8 11 82 9 62 81 87 
+14 13 15 8 6 
+15 14 16 74 27 
+16 15 17 29 27 
+17 16 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 6 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 15 16 95 34 37 
+28 27 29 85 70 
+29 28 30 16 
+30 29 31 23 42 6 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
+43 42 44 11 
+44 43 45 25 
+45 44 46 89 84 
+46 45 47 3 
+47 46 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 6 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 15 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 6 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 6 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
+--------------------------------------------
+At 5.100000 second comes event 2
+reach node: 14
+Deactivating event 2 from 15 to 14
+1.000000 second later compromise node 14
+Adding attack to active list(from 15 to 14)
 Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 18.100000 second comes event 0
-node 30 is compromised
-cleaning the activelist...
-Deactivating event 0 from 78 to 30
-1.000000 second later hop to 2
-Adding attack to active list(from 3 to 2)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 7
-Adding attack to active list(from 6 to 7)
-1.000000 second later hop to 31
-Adding attack to active list(from 30 to 31)
-1.000000 second later hop to 85
-Adding attack to active list(from 42 to 85)
-1.000000 second later hop to 40
-Adding attack to active list(from 46 to 40)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 89
-Adding attack to active list(from 58 to 89)
-1.000000 second later hop to 67
-Adding attack to active list(from 68 to 67)
-1.000000 second later hop to 26
-Adding attack to active list(from 76 to 26)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 74
-Adding attack to active list(from 78 to 74)
-1.000000 second later hop to 80
-Adding attack to active list(from 79 to 80)
-1.000000 second later hop to 89
-Adding attack to active list(from 90 to 89)
-21.100000 second should be detected
-Adding attack to active list(from 0 to 30)
-At 18.100000 second comes event 0
-node 89 is compromised
-cleaning the activelist...
-Deactivating event 0 from 90 to 89
-1.000000 second later hop to 45
-Adding attack to active list(from 3 to 45)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 7
-Adding attack to active list(from 6 to 7)
-1.000000 second later hop to 94
-Adding attack to active list(from 30 to 94)
-1.000000 second later hop to 73
-Adding attack to active list(from 42 to 73)
-1.000000 second later hop to 27
-Adding attack to active list(from 46 to 27)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 59
-Adding attack to active list(from 58 to 59)
-1.000000 second later hop to 67
-Adding attack to active list(from 68 to 67)
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 74
-Adding attack to active list(from 78 to 74)
-1.000000 second later hop to 10
-Adding attack to active list(from 79 to 10)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-22.100000 second should be detected
-Adding attack to active list(from 0 to 89)
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-reach node: 41
-Deactivating event 2 from 42 to 41
-cleaning the activelist...
-1.000000 second later compromise node 41
-Adding attack to active list(from 42 to 41)
-At 19.100000 second comes event 2
-HAha, one step late, 30 has been compromised
-At 19.100000 second comes event 2
-reach node: 59
-Deactivating event 2 from 58 to 59
-Deactivating event 2 from 58 to 59
-1.000000 second later compromise node 59
-Adding attack to active list(from 58 to 59)
-At 19.100000 second comes event 2
-reach node: 10
-Deactivating event 2 from 79 to 10
-1.000000 second later compromise node 10
-Adding attack to active list(from 79 to 10)
-At 19.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 19.100000 second comes event 2
-reach node: 74
-Deactivating event 2 from 78 to 74
-Deactivating event 2 from 78 to 74
-Deactivating event 2 from 78 to 74
-Deactivating event 2 from 78 to 74
-Deactivating event 2 from 78 to 74
-cleaning the activelist...
-1.000000 second later compromise node 74
-Adding attack to active list(from 78 to 74)
-At 19.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 19.100000 second comes event 2
-reach node: 97
-Deactivating event 2 from 77 to 97
-Deactivating event 2 from 77 to 97
-Deactivating event 2 from 77 to 97
-Deactivating event 2 from 77 to 97
-1.000000 second later compromise node 97
-Adding attack to active list(from 77 to 97)
-At 19.100000 second comes event 2
-HAha, one step late, 76 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 36 has been compromised
-At 19.100000 second comes event 2
-reach node: 67
-Deactivating event 2 from 68 to 67
-Deactivating event 2 from 68 to 67
-Deactivating event 2 from 68 to 67
-1.000000 second later compromise node 67
-Adding attack to active list(from 68 to 67)
-At 19.100000 second comes event 2
-reach node: 40
-Deactivating event 2 from 52 to 40
-Deactivating event 2 from 52 to 40
-Deactivating event 2 from 52 to 40
-1.000000 second later compromise node 40
-Adding attack to active list(from 52 to 40)
-At 19.100000 second comes event 2
-HAha, one step late, 74 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 59 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 19.100000 second comes event 2
-reach node: 27
-Deactivating event 2 from 46 to 27
-Deactivating event 2 from 46 to 27
-1.000000 second later compromise node 27
-Adding attack to active list(from 46 to 27)
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 19.100000 second comes event 2
-reach node: 73
-Deactivating event 2 from 42 to 73
-Deactivating event 2 from 42 to 73
-cleaning the activelist...
-1.000000 second later compromise node 73
-Adding attack to active list(from 42 to 73)
-At 19.100000 second comes event 2
-HAha, one step late, 30 has been compromised
-At 19.100000 second comes event 2
-reach node: 94
-Deactivating event 2 from 30 to 94
-1.000000 second later compromise node 94
-Adding attack to active list(from 30 to 94)
-At 19.100000 second comes event 2
-reach node: 45
-Deactivating event 2 from 3 to 45
-1.000000 second later compromise node 45
-Adding attack to active list(from 3 to 45)
-At 19.100000 second comes event 2
-HAha, one step late, 41 has been compromised
-At 19.100000 second comes event 2
-reach node: 7
-Deactivating event 2 from 6 to 7
-Deactivating event 2 from 6 to 7
-1.000000 second later compromise node 7
-Adding attack to active list(from 6 to 7)
-At 19.100000 second comes event 2
-HAha, one step late, 46 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 45 has been compromised
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-reach node: 80
-cleaning the activelist...
-Deactivating event 2 from 79 to 80
-Deactivating event 2 from 79 to 80
-1.000000 second later compromise node 80
-Adding attack to active list(from 79 to 80)
-At 19.100000 second comes event 2
-HAha, one step late, 27 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 74 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 67 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 19.100000 second comes event 2
-reach node: 85
-cleaning the activelist...
-Deactivating event 2 from 42 to 85
-cleaning the activelist...
-1.000000 second later compromise node 85
-Adding attack to active list(from 42 to 85)
-At 19.100000 second comes event 2
-HAha, one step late, 58 has been compromised
-At 19.100000 second comes event 2
-reach node: 31
-cleaning the activelist...
-Deactivating event 2 from 30 to 31
-1.000000 second later compromise node 31
-Adding attack to active list(from 30 to 31)
-At 19.100000 second comes event 2
-HAha, one step late, 30 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 7 has been compromised
-At 19.100000 second comes event 2
-reach node: 2
-cleaning the activelist...
-Deactivating event 2 from 3 to 2
-1.000000 second later compromise node 2
-Adding attack to active list(from 3 to 2)
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 74 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 19.100000 second comes event 2
-reach node: 75
-Deactivating event 2 from 76 to 75
-1.000000 second later compromise node 75
-Adding attack to active list(from 76 to 75)
-At 19.100000 second comes event 2
-HAha, one step late, 76 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 30 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 67 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 41 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 7 has been compromised
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 59 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 30 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 79 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 79 has been compromised
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 79 has been compromised
-At 19.100000 second comes event 1
+At 6.100000 second comes event 1
 Deactivating event 1 from 0 to 4
 cleaning the activelist...
 node: 4 is detected
 disconnect its neighbour:
 3 
-disconnect 3 from 4 j was 2
+disconnect 3 from 4
 disconnect 4 from 3
 Deactivating event conerning with node 4...
-stop attacking from node 0 to node 1
-stop attacking from node 4 to node 3
-stop attacking from node 4 to node 3
-stop attacking from node 4 to node 3
 cleaning the activelist...
 Now the graph is like:
 nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 26 
+0 1 60 25 
+1 0 2 72 63 91 
 2 1 3 
-3 2 45 22 
+3 2 46 
 4 
 5 
-6 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 22 71 76 
-17 
-18 
-19 
-20 21 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 68 6 85 73 76 79 
+6 7 64 96 80 14 23 30 
+7 6 8 41 
+8 7 9 99 14 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 14 8 11 82 9 62 81 87 
+14 13 15 8 6 
+15 14 16 74 27 
+16 15 17 29 27 
+17 16 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 6 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 15 16 95 34 37 
+28 27 29 85 70 
+29 28 30 16 
+30 29 31 23 42 6 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
 43 42 44 11 
-44 43 45 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 54 30 
-54 53 68 
-55 
-56 
-57 
-58 59 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 54 58 
-69 68 70 24 25 29 
-70 69 71 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
+44 43 45 25 
+45 44 46 89 84 
+46 45 47 3 
+47 46 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 6 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 15 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 6 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 6 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
 --------------------------------------------
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 79 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 79 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 30 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 58 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 76 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 80 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 2 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 74 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 67 has been compromised
-At 19.100000 second comes event 2
-reach node: 26
-Deactivating event 2 from 76 to 26
-cleaning the activelist...
-Deactivating event 2 from 76 to 26
-1.000000 second later compromise node 26
-Adding attack to active list(from 76 to 26)
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 30 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 79 has been compromised
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 30 has been compromised
-At 19.100000 second comes event 1
-cleaning the activelist...
-Deactivating event 1 from 0 to 54
-node: 54 is detected
-disconnect its neighbour:
-53 68 
-disconnect 53 from 54 j was 2
-disconnect 54 from 53
-disconnect 68 from 54 j was 4
-disconnect 54 from 68
-Deactivating event conerning with node 54...
-stop attacking from node 17 to node 16
-stop attacking from node 77 to node 76
-stop attacking from node 68 to node 69
-stop attacking from node 0 to node 0
-stop attacking from node 90 to node 89
-cleaning the activelist...
-Now the graph is like:
-nodes: 100
-0 1 62 
-1 0 2 49 94 63 13 26 
-2 1 3 
-3 2 45 22 
-4 
-5 
-6 7 72 42 
-7 6 8 
-8 7 9 99 34 
-9 8 10 
-10 9 11 45 96 82 79 75 
-11 10 12 83 43 
-12 11 13 26 31 
-13 12 14 1 
-14 13 15 81 
-15 14 16 39 66 37 74 
-16 15 22 71 76 
-17 
-18 
-19 
-20 21 36 
-21 20 22 28 64 48 
-22 21 23 3 16 
-23 22 24 98 60 
-24 23 25 69 26 
-25 24 26 69 93 35 37 86 
-26 25 27 12 41 67 33 1 72 86 24 76 88 0 0 65 0 24 26 69 93 35 37 86 
-27 26 28 46 73 
-28 27 29 21 
-29 28 30 69 79 
-30 29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-31 30 32 38 12 
-32 31 33 
-33 32 34 26 
-34 33 35 8 
-35 34 36 25 99 59 
-36 35 37 87 76 47 20 88 
-37 36 38 15 84 61 25 58 85 88 
-38 37 39 31 
-39 38 40 15 
-40 39 41 46 52 72 78 
-41 40 42 26 
-42 41 43 68 6 85 73 76 79 
-43 42 44 11 
-44 43 45 
-45 44 46 3 10 
-46 45 47 27 40 65 90 79 
-47 46 48 36 
-48 47 49 30 87 80 21 60 79 
-49 48 1 
-50 
-51 
-52 53 40 
-53 52 30 
-54 
-55 
-56 
-57 
-58 59 37 68 89 
-59 58 60 35 88 
-60 59 61 23 48 85 
-61 60 62 37 
-62 61 63 0 
-63 62 64 1 
-64 63 65 21 30 
-65 64 66 46 
-66 65 67 15 
-67 66 68 26 
-68 67 69 42 58 
-69 68 70 24 25 29 
-70 69 71 
-71 70 72 16 
-72 71 73 6 26 40 
-73 72 74 42 27 
-74 73 75 30 15 78 
-75 74 76 10 
-76 75 77 36 42 26 16 78 
-77 76 78 97 
-78 77 79 40 30 76 74 
-79 78 80 10 46 48 29 42 
-80 79 81 48 
-81 80 82 14 
-82 81 83 10 
-83 82 84 11 
-84 83 85 37 
-85 84 86 42 30 60 37 
-86 85 87 26 25 88 
-87 86 88 36 48 
-88 87 89 37 26 95 86 36 59 
-89 88 90 58 
-90 89 46 
-91 
-92 
-93 94 25 30 
-94 93 95 1 30 
-95 94 96 88 
-96 95 97 10 
-97 96 98 30 77 
-98 97 99 23 
-99 98 8 35 
---------------------------------------------
-Event has been cancelled, delete from the heap
-At 19.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 76 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 74 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-At 19.100000 second comes event 2
-HAha, one step late, 89 has been compromised
-Event has been cancelled, delete from the heap
-At 20.100000 second comes event 0
-node 74 is compromised
-Deactivating event 0 from 78 to 74
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 29
-Adding attack to active list(from 30 to 29)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 65
-Adding attack to active list(from 46 to 65)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 59
-Adding attack to active list(from 58 to 59)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 75
-Adding attack to active list(from 76 to 75)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 10
-Adding attack to active list(from 79 to 10)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-24.100000 second should be detected
-Adding attack to active list(from 0 to 74)
-Event has been cancelled, delete from the heap
-At 20.100000 second comes event 0
-node 73 is compromised
-Deactivating event 0 from 42 to 73
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 7
-Adding attack to active list(from 6 to 7)
-1.000000 second later hop to 64
-Adding attack to active list(from 30 to 64)
-1.000000 second later hop to 85
-Adding attack to active list(from 42 to 85)
-1.000000 second later hop to 40
-Adding attack to active list(from 46 to 40)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 59
-Adding attack to active list(from 58 to 59)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 75
-Adding attack to active list(from 76 to 75)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 80
-Adding attack to active list(from 79 to 80)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-24.100000 second should be detected
-Adding attack to active list(from 0 to 73)
-At 20.100000 second comes event 0
-node 59 is compromised
-Deactivating event 0 from 58 to 59
-cleaning the activelist...
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 0
-Adding attack to active list(from 30 to 0)
-1.000000 second later hop to 41
-Adding attack to active list(from 42 to 41)
-1.000000 second later hop to 47
-Adding attack to active list(from 46 to 47)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 88
-Adding attack to active list(from 59 to 88)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 75
-Adding attack to active list(from 74 to 75)
-1.000000 second later hop to 75
-Adding attack to active list(from 76 to 75)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 48
-Adding attack to active list(from 79 to 48)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-24.100000 second should be detected
-Adding attack to active list(from 0 to 59)
-Event has been cancelled, delete from the heap
-At 20.100000 second comes event 0
-node 41 is compromised
-cleaning the activelist...
-Deactivating event 0 from 42 to 41
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 48
-Adding attack to active list(from 30 to 48)
-1.000000 second later hop to 26
-Adding attack to active list(from 41 to 26)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 47
-Adding attack to active list(from 46 to 47)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 35
-Adding attack to active list(from 59 to 35)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 16
-Adding attack to active list(from 76 to 16)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 80
-Adding attack to active list(from 79 to 80)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-23.100000 second should be detected
-Adding attack to active list(from 0 to 41)
-At 20.100000 second comes event 0
-node 27 is compromised
-Deactivating event 0 from 46 to 27
-cleaning the activelist...
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 7
-Adding attack to active list(from 6 to 7)
-1.000000 second later hop to 26
-Adding attack to active list(from 27 to 26)
-1.000000 second later hop to 64
-Adding attack to active list(from 30 to 64)
-1.000000 second later hop to 26
-Adding attack to active list(from 41 to 26)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 65
-Adding attack to active list(from 46 to 65)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 60
-Adding attack to active list(from 59 to 60)
-1.000000 second later hop to 67
-Adding attack to active list(from 68 to 67)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 75
-Adding attack to active list(from 74 to 75)
-1.000000 second later hop to 16
-Adding attack to active list(from 76 to 16)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 29
-Adding attack to active list(from 79 to 29)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-23.100000 second should be detected
-Adding attack to active list(from 0 to 27)
-Event has been cancelled, delete from the heap
-Event has been cancelled, delete from the heap
-At 20.100000 second comes event 0
-node 31 is compromised
-Deactivating event 0 from 30 to 31
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 26
-Adding attack to active list(from 27 to 26)
-1.000000 second later hop to 97
-Adding attack to active list(from 30 to 97)
-1.000000 second later hop to 32
-Adding attack to active list(from 31 to 32)
-1.000000 second later hop to 40
-Adding attack to active list(from 41 to 40)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 40
-Adding attack to active list(from 46 to 40)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 35
-Adding attack to active list(from 59 to 35)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 75
-Adding attack to active list(from 74 to 75)
-1.000000 second later hop to 26
-Adding attack to active list(from 76 to 26)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 10
-Adding attack to active list(from 79 to 10)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-24.100000 second should be detected
-Adding attack to active list(from 0 to 31)
-At 20.100000 second comes event 0
-node 7 is compromised
-Deactivating event 0 from 6 to 7
-cleaning the activelist...
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 26
-Adding attack to active list(from 27 to 26)
-1.000000 second later hop to 48
-Adding attack to active list(from 30 to 48)
-1.000000 second later hop to 38
-Adding attack to active list(from 31 to 38)
-1.000000 second later hop to 40
-Adding attack to active list(from 41 to 40)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 47
-Adding attack to active list(from 46 to 47)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 60
-Adding attack to active list(from 59 to 60)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 80
-Adding attack to active list(from 79 to 80)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-24.100000 second should be detected
-Adding attack to active list(from 0 to 7)
-At 20.100000 second comes event 0
-node 75 is compromised
-Deactivating event 0 from 76 to 75
-cleaning the activelist...
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 26
-Adding attack to active list(from 27 to 26)
-1.000000 second later hop to 65
-Adding attack to active list(from 30 to 65)
-1.000000 second later hop to 32
-Adding attack to active list(from 31 to 32)
-1.000000 second later hop to 40
-Adding attack to active list(from 41 to 40)
-1.000000 second later hop to 85
-Adding attack to active list(from 42 to 85)
-1.000000 second later hop to 40
-Adding attack to active list(from 46 to 40)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 60
-Adding attack to active list(from 59 to 60)
-1.000000 second later hop to 67
-Adding attack to active list(from 68 to 67)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 10
-Adding attack to active list(from 75 to 10)
-1.000000 second later hop to 26
-Adding attack to active list(from 76 to 26)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 10
-Adding attack to active list(from 79 to 10)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-24.100000 second should be detected
-Adding attack to active list(from 0 to 75)
-Event has been cancelled, delete from the heap
-At 20.100000 second comes event 0
-node 67 is compromised
-Deactivating event 0 from 68 to 67
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 28
-Adding attack to active list(from 27 to 28)
-1.000000 second later hop to 94
-Adding attack to active list(from 30 to 94)
-1.000000 second later hop to 32
-Adding attack to active list(from 31 to 32)
-1.000000 second later hop to 26
-Adding attack to active list(from 41 to 26)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 65
-Adding attack to active list(from 46 to 65)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 88
-Adding attack to active list(from 59 to 88)
-1.000000 second later hop to 26
-Adding attack to active list(from 67 to 26)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 10
-Adding attack to active list(from 75 to 10)
-1.000000 second later hop to 16
-Adding attack to active list(from 76 to 16)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 29
-Adding attack to active list(from 79 to 29)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-23.100000 second should be detected
-Adding attack to active list(from 0 to 67)
-At 20.100000 second comes event 0
-node 94 is compromised
-cleaning the activelist...
-Deactivating event 0 from 30 to 94
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 26
-Adding attack to active list(from 27 to 26)
-1.000000 second later hop to 28
-Adding attack to active list(from 30 to 28)
-1.000000 second later hop to 38
-Adding attack to active list(from 31 to 38)
-1.000000 second later hop to 26
-Adding attack to active list(from 41 to 26)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 40
-Adding attack to active list(from 46 to 40)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 35
-Adding attack to active list(from 59 to 35)
-1.000000 second later hop to 66
-Adding attack to active list(from 67 to 66)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 10
-Adding attack to active list(from 75 to 10)
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-1.000000 second later hop to 97
-Adding attack to active list(from 77 to 97)
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 29
-Adding attack to active list(from 79 to 29)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 93
-Adding attack to active list(from 94 to 93)
-22.100000 second should be detected
-Adding attack to active list(from 0 to 94)
-At 20.100000 second comes event 0
-node 97 is compromised
-Deactivating event 0 from 77 to 97
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 26
-Adding attack to active list(from 27 to 26)
-1.000000 second later hop to 0
-Adding attack to active list(from 30 to 0)
-1.000000 second later hop to 38
-Adding attack to active list(from 31 to 38)
-1.000000 second later hop to 40
-Adding attack to active list(from 41 to 40)
-1.000000 second later hop to 85
-Adding attack to active list(from 42 to 85)
-1.000000 second later hop to 45
-Adding attack to active list(from 46 to 45)
-1.000000 second later hop to 40
-Adding attack to active list(from 52 to 40)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 35
-Adding attack to active list(from 59 to 35)
-1.000000 second later hop to 26
-Adding attack to active list(from 67 to 26)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 10
-Adding attack to active list(from 75 to 10)
-1.000000 second later hop to 26
-Adding attack to active list(from 76 to 26)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 40
-Adding attack to active list(from 78 to 40)
-1.000000 second later hop to 10
-Adding attack to active list(from 79 to 10)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 93
-Adding attack to active list(from 94 to 93)
-1.000000 second later hop to 96
-Adding attack to active list(from 97 to 96)
-24.100000 second should be detected
-Adding attack to active list(from 0 to 97)
-At 20.100000 second comes event 0
-node 40 is compromised
-Deactivating event 0 from 52 to 40
-cleaning the activelist...
-cleaning the activelist...
-Deactivating event 0 from 52 to 40
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 28
-Adding attack to active list(from 27 to 28)
-1.000000 second later hop to 0
-Adding attack to active list(from 30 to 0)
-1.000000 second later hop to 32
-Adding attack to active list(from 31 to 32)
-1.000000 second later hop to 72
-Adding attack to active list(from 40 to 72)
-1.000000 second later hop to 26
-Adding attack to active list(from 41 to 26)
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 45
-Adding attack to active list(from 46 to 45)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 60
-Adding attack to active list(from 59 to 60)
-1.000000 second later hop to 66
-Adding attack to active list(from 67 to 66)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-1.000000 second later hop to 10
-Adding attack to active list(from 75 to 10)
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 29
-Adding attack to active list(from 79 to 29)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 93
-Adding attack to active list(from 94 to 93)
-1.000000 second later hop to 98
-Adding attack to active list(from 97 to 98)
-24.100000 second should be detected
-Adding attack to active list(from 0 to 40)
-At 20.100000 second comes event 0
-node 10 is compromised
-Deactivating event 0 from 79 to 10
-cleaning the activelist...
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 45
-Adding attack to active list(from 10 to 45)
-1.000000 second later hop to 26
-Adding attack to active list(from 27 to 26)
-1.000000 second later hop to 69
-Adding attack to active list(from 30 to 69)
-1.000000 second later hop to 38
-Adding attack to active list(from 31 to 38)
-1.000000 second later hop to 72
-Adding attack to active list(from 40 to 72)
-1.000000 second later hop to 26
-Adding attack to active list(from 41 to 26)
-1.000000 second later hop to 85
-Adding attack to active list(from 42 to 85)
-1.000000 second later hop to 45
-Adding attack to active list(from 46 to 45)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 88
-Adding attack to active list(from 59 to 88)
-1.000000 second later hop to 26
-Adding attack to active list(from 67 to 26)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 29
-Adding attack to active list(from 79 to 29)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 1
-Adding attack to active list(from 94 to 1)
-1.000000 second later hop to 98
-Adding attack to active list(from 97 to 98)
-25.100000 second should be detected
-Adding attack to active list(from 0 to 10)
-At 20.100000 second comes event 0
-node 26 is compromised
-Deactivating event 0 from 76 to 26
-cleaning the activelist...
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 45
-Adding attack to active list(from 10 to 45)
-1.000000 second later hop to 86
-Adding attack to active list(from 26 to 86)
-1.000000 second later hop to 28
-Adding attack to active list(from 27 to 28)
-1.000000 second later hop to 48
-Adding attack to active list(from 30 to 48)
-1.000000 second later hop to 12
-Adding attack to active list(from 31 to 12)
-1.000000 second later hop to 39
-Adding attack to active list(from 40 to 39)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 47
-Adding attack to active list(from 46 to 47)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 88
-Adding attack to active list(from 59 to 88)
-1.000000 second later hop to 66
-Adding attack to active list(from 67 to 66)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 16
-Adding attack to active list(from 76 to 16)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 48
-Adding attack to active list(from 79 to 48)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 93
-Adding attack to active list(from 94 to 93)
-1.000000 second later hop to 98
-Adding attack to active list(from 97 to 98)
-22.100000 second should be detected
-Adding attack to active list(from 0 to 26)
-At 20.100000 second comes event 0
-node 45 is compromised
-Deactivating event 0 from 3 to 45
+At 6.100000 second comes event 0
+node 46 is compromised
+Deactivating event 0 from 3 to 46
 cleaning the activelist...
 1.000000 second later hop to 2
 Adding attack to active list(from 3 to 2)
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 11
-Adding attack to active list(from 10 to 11)
-1.000000 second later hop to 24
-Adding attack to active list(from 26 to 24)
-1.000000 second later hop to 28
-Adding attack to active list(from 27 to 28)
-1.000000 second later hop to 93
-Adding attack to active list(from 30 to 93)
-1.000000 second later hop to 12
-Adding attack to active list(from 31 to 12)
-1.000000 second later hop to 72
-Adding attack to active list(from 40 to 72)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 85
-Adding attack to active list(from 42 to 85)
-1.000000 second later hop to 44
-Adding attack to active list(from 45 to 44)
-1.000000 second later hop to 65
-Adding attack to active list(from 46 to 65)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 35
-Adding attack to active list(from 59 to 35)
-1.000000 second later hop to 66
-Adding attack to active list(from 67 to 66)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-All of the neighbours are COMPROMISED
+10.100000 second should be detected
+Adding attack to active list(from 0 to 46)
+At 6.100000 second comes event 0
+node 14 is compromised
+Deactivating event 0 from 15 to 14
+cleaning the activelist...
+1.000000 second later hop to 6
+Adding attack to active list(from 14 to 6)
 1.000000 second later hop to 16
-Adding attack to active list(from 76 to 16)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 80
-Adding attack to active list(from 79 to 80)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 93
-Adding attack to active list(from 94 to 93)
-1.000000 second later hop to 96
-Adding attack to active list(from 97 to 96)
-24.100000 second should be detected
-Adding attack to active list(from 0 to 45)
-At 20.100000 second comes event 0
-node 80 is compromised
-Deactivating event 0 from 79 to 80
+Adding attack to active list(from 15 to 16)
+11.100000 second should be detected
+Adding attack to active list(from 0 to 14)
+At 7.100000 second comes event 1
+Deactivating event 1 from 0 to 3
 cleaning the activelist...
-1.000000 second later hop to 22
-Adding attack to active list(from 3 to 22)
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 82
-Adding attack to active list(from 10 to 82)
-1.000000 second later hop to 72
-Adding attack to active list(from 26 to 72)
-1.000000 second later hop to 28
-Adding attack to active list(from 27 to 28)
-1.000000 second later hop to 28
-Adding attack to active list(from 30 to 28)
-1.000000 second later hop to 32
-Adding attack to active list(from 31 to 32)
-1.000000 second later hop to 39
-Adding attack to active list(from 40 to 39)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 44
-Adding attack to active list(from 45 to 44)
-1.000000 second later hop to 65
-Adding attack to active list(from 46 to 65)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 35
-Adding attack to active list(from 59 to 35)
-1.000000 second later hop to 66
-Adding attack to active list(from 67 to 66)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
+node: 3 is detected
+disconnect its neighbour:
+2 46 
+disconnect 2 from 3
+disconnect 3 from 2
+disconnect 46 from 3
+disconnect 3 from 46
+Deactivating event conerning with node 3...
+stop attacking from node 3 to node 2
+cleaning the activelist...
+Now the graph is like:
+nodes: 100
+0 1 60 25 
+1 0 2 72 63 91 
+2 1 
+3 
+4 
+5 
+6 7 64 96 80 14 23 30 
+7 6 8 41 
+8 7 9 99 14 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 14 8 11 82 9 62 81 87 
+14 13 15 8 6 
+15 14 16 74 27 
+16 15 17 29 27 
+17 16 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 6 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 15 16 95 34 37 
+28 27 29 85 70 
+29 28 30 16 
+30 29 31 23 42 6 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
+43 42 44 11 
+44 43 45 25 
+45 44 46 89 84 
+46 45 47 
+47 46 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 6 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 15 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 6 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 6 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
+--------------------------------------------
+At 7.100000 second comes event 2
+reach node: 16
+Deactivating event 2 from 15 to 16
+cleaning the activelist...
+1.000000 second later compromise node 16
+Adding attack to active list(from 15 to 16)
+Event has been cancelled, delete from the heap
+At 7.100000 second comes event 2
+reach node: 6
+Deactivating event 2 from 14 to 6
+1.000000 second later compromise node 6
+Adding attack to active list(from 14 to 6)
+At 8.100000 second comes event 0
+node 16 is compromised
+Deactivating event 0 from 15 to 16
+cleaning the activelist...
+1.000000 second later hop to 27
+Adding attack to active list(from 15 to 27)
 1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 29
-Adding attack to active list(from 79 to 29)
-1.000000 second later hop to 48
-Adding attack to active list(from 80 to 48)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 95
-Adding attack to active list(from 94 to 95)
-1.000000 second later hop to 96
-Adding attack to active list(from 97 to 96)
-24.100000 second should be detected
-Adding attack to active list(from 0 to 80)
-At 20.100000 second comes event 0
-node 2 is compromised
-Deactivating event 0 from 3 to 2
+Adding attack to active list(from 16 to 15)
+12.100000 second should be detected
+Adding attack to active list(from 0 to 16)
+At 8.100000 second comes event 1
+Deactivating event 1 from 0 to 15
 cleaning the activelist...
-1.000000 second later hop to 1
-Adding attack to active list(from 2 to 1)
-1.000000 second later hop to 22
-Adding attack to active list(from 3 to 22)
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 96
-Adding attack to active list(from 10 to 96)
-1.000000 second later hop to 86
-Adding attack to active list(from 26 to 86)
-1.000000 second later hop to 28
-Adding attack to active list(from 27 to 28)
-1.000000 second later hop to 0
-Adding attack to active list(from 30 to 0)
-1.000000 second later hop to 38
-Adding attack to active list(from 31 to 38)
-1.000000 second later hop to 72
-Adding attack to active list(from 40 to 72)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 85
-Adding attack to active list(from 42 to 85)
-1.000000 second later hop to 44
-Adding attack to active list(from 45 to 44)
-1.000000 second later hop to 47
-Adding attack to active list(from 46 to 47)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 88
-Adding attack to active list(from 59 to 88)
-1.000000 second later hop to 66
-Adding attack to active list(from 67 to 66)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 48
-Adding attack to active list(from 79 to 48)
-1.000000 second later hop to 48
-Adding attack to active list(from 80 to 48)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 93
-Adding attack to active list(from 94 to 93)
-1.000000 second later hop to 96
-Adding attack to active list(from 97 to 96)
-22.100000 second should be detected
-Adding attack to active list(from 0 to 2)
-At 20.100000 second comes event 0
-node 85 is compromised
-Deactivating event 0 from 42 to 85
+node: 15 is detected
+disconnect its neighbour:
+14 16 74 27 
+disconnect 14 from 15
+disconnect 15 from 14
+disconnect 16 from 15
+disconnect 15 from 16
+disconnect 74 from 15
+disconnect 15 from 74
+disconnect 27 from 15
+disconnect 15 from 27
+Deactivating event conerning with node 15...
+stop attacking from node 15 to node 27
 cleaning the activelist...
-1.000000 second later hop to 1
-Adding attack to active list(from 2 to 1)
-1.000000 second later hop to 22
-Adding attack to active list(from 3 to 22)
-1.000000 second later hop to 72
-Adding attack to active list(from 6 to 72)
-1.000000 second later hop to 8
-Adding attack to active list(from 7 to 8)
-1.000000 second later hop to 9
-Adding attack to active list(from 10 to 9)
-1.000000 second later hop to 33
-Adding attack to active list(from 26 to 33)
-1.000000 second later hop to 28
-Adding attack to active list(from 27 to 28)
-1.000000 second later hop to 28
-Adding attack to active list(from 30 to 28)
-1.000000 second later hop to 38
-Adding attack to active list(from 31 to 38)
-1.000000 second later hop to 39
-Adding attack to active list(from 40 to 39)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 43
-Adding attack to active list(from 42 to 43)
-1.000000 second later hop to 44
-Adding attack to active list(from 45 to 44)
-1.000000 second later hop to 65
-Adding attack to active list(from 46 to 65)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 37
-Adding attack to active list(from 58 to 37)
-1.000000 second later hop to 35
-Adding attack to active list(from 59 to 35)
-1.000000 second later hop to 66
-Adding attack to active list(from 67 to 66)
-1.000000 second later hop to 69
-Adding attack to active list(from 68 to 69)
-1.000000 second later hop to 72
-Adding attack to active list(from 73 to 72)
-1.000000 second later hop to 15
-Adding attack to active list(from 74 to 15)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 36
-Adding attack to active list(from 76 to 36)
-All of the neighbours are COMPROMISED
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 29
-Adding attack to active list(from 79 to 29)
-1.000000 second later hop to 48
-Adding attack to active list(from 80 to 48)
-1.000000 second later hop to 37
-Adding attack to active list(from 85 to 37)
-1.000000 second later hop to 88
-Adding attack to active list(from 89 to 88)
-All of the neighbours are COMPROMISED
-1.000000 second later hop to 95
-Adding attack to active list(from 94 to 95)
-1.000000 second later hop to 96
-Adding attack to active list(from 97 to 96)
-24.100000 second should be detected
-Adding attack to active list(from 0 to 85)
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-reach node: 48
-Deactivating event 2 from 80 to 48
-Deactivating event 2 from 80 to 48
-Deactivating event 2 from 80 to 48
-1.000000 second later compromise node 48
-Adding attack to active list(from 80 to 48)
-At 21.100000 second comes event 2
-reach node: 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
-Deactivating event 2 from 42 to 43
+Now the graph is like:
+nodes: 100
+0 1 60 25 
+1 0 2 72 63 91 
+2 1 
+3 
+4 
+5 
+6 7 64 96 80 14 23 30 
+7 6 8 41 
+8 7 9 99 14 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 14 8 11 82 9 62 81 87 
+14 13 8 6 
+15 
+16 17 29 27 
+17 16 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 6 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 16 95 34 37 
+28 27 29 85 70 
+29 28 30 16 
+30 29 31 23 42 6 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
+43 42 44 11 
+44 43 45 25 
+45 44 46 89 84 
+46 45 47 
+47 46 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 6 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 6 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 6 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
+--------------------------------------------
+At 8.100000 second comes event 0
+node 6 is compromised
+Deactivating event 0 from 14 to 6
 cleaning the activelist...
-1.000000 second later compromise node 43
-Adding attack to active list(from 42 to 43)
-At 21.100000 second comes event 2
-HAha, one step late, 45 has been compromised
-At 21.100000 second comes event 2
-reach node: 29
-Deactivating event 2 from 79 to 29
-Deactivating event 2 from 79 to 29
-Deactivating event 2 from 79 to 29
-Deactivating event 2 from 79 to 29
-Deactivating event 2 from 79 to 29
-Deactivating event 2 from 79 to 29
-Deactivating event 2 from 79 to 29
-cleaning the activelist...
-1.000000 second later compromise node 29
-Adding attack to active list(from 79 to 29)
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 36 has been compromised
-At 21.100000 second comes event 2
+1.000000 second later hop to 7
+Adding attack to active list(from 6 to 7)
+12.100000 second should be detected
+Adding attack to active list(from 0 to 6)
+At 9.100000 second comes event 2
 reach node: 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
-Deactivating event 2 from 74 to 15
+Deactivating event 2 from 16 to 15
 1.000000 second later compromise node 15
-Adding attack to active list(from 74 to 15)
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-reach node: 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-Deactivating event 2 from 73 to 72
-1.000000 second later compromise node 72
-Adding attack to active list(from 73 to 72)
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-reach node: 66
-Deactivating event 2 from 67 to 66
-Deactivating event 2 from 67 to 66
-Deactivating event 2 from 67 to 66
-Deactivating event 2 from 67 to 66
-Deactivating event 2 from 67 to 66
-Deactivating event 2 from 67 to 66
-Deactivating event 2 from 67 to 66
-1.000000 second later compromise node 66
-Adding attack to active list(from 67 to 66)
-At 21.100000 second comes event 2
-reach node: 47
-Deactivating event 2 from 46 to 47
-Deactivating event 2 from 46 to 47
-Deactivating event 2 from 46 to 47
-Deactivating event 2 from 46 to 47
-Deactivating event 2 from 46 to 47
+Adding attack to active list(from 16 to 15)
+Event has been cancelled, delete from the heap
+At 9.100000 second comes event 2
+reach node: 7
+Deactivating event 2 from 6 to 7
+1.000000 second later compromise node 7
+Adding attack to active list(from 6 to 7)
+At 10.100000 second comes event 1
+Deactivating event 1 from 0 to 46
 cleaning the activelist...
-1.000000 second later compromise node 47
-Adding attack to active list(from 46 to 47)
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-reach node: 35
-Deactivating event 2 from 59 to 35
-Deactivating event 2 from 59 to 35
-Deactivating event 2 from 59 to 35
-Deactivating event 2 from 59 to 35
-Deactivating event 2 from 59 to 35
-Deactivating event 2 from 59 to 35
-Deactivating event 2 from 59 to 35
-1.000000 second later compromise node 35
-Adding attack to active list(from 59 to 35)
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-reach node: 65
-Deactivating event 2 from 46 to 65
+node: 46 is detected
+disconnect its neighbour:
+45 47 
+disconnect 45 from 46
+disconnect 46 from 45
+disconnect 47 from 46
+disconnect 46 from 47
+Deactivating event conerning with node 46...
+Now the graph is like:
+nodes: 100
+0 1 60 25 
+1 0 2 72 63 91 
+2 1 
+3 
+4 
+5 
+6 7 64 96 80 14 23 30 
+7 6 8 41 
+8 7 9 99 14 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 14 8 11 82 9 62 81 87 
+14 13 8 6 
+15 
+16 17 29 27 
+17 16 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 6 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 16 95 34 37 
+28 27 29 85 70 
+29 28 30 16 
+30 29 31 23 42 6 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
+43 42 44 11 
+44 43 45 25 
+45 44 89 84 
+46 
+47 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 6 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 6 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 6 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
+--------------------------------------------
+At 10.100000 second comes event 0
+node 15 is compromised
+Deactivating event 0 from 16 to 15
 cleaning the activelist...
-Deactivating event 2 from 46 to 65
-Deactivating event 2 from 46 to 65
+All of the neighbours are COMPROMISED
+1.000000 second later hop to 29
+Adding attack to active list(from 16 to 29)
+14.100000 second should be detected
+Adding attack to active list(from 0 to 15)
+At 10.100000 second comes event 0
+node 7 is compromised
+Deactivating event 0 from 6 to 7
 cleaning the activelist...
-Deactivating event 2 from 46 to 65
+1.000000 second later hop to 23
+Adding attack to active list(from 6 to 23)
+1.000000 second later hop to 8
+Adding attack to active list(from 7 to 8)
+All of the neighbours are COMPROMISED
+15.100000 second should be detected
+Adding attack to active list(from 0 to 7)
+At 11.100000 second comes event 1
+Deactivating event 1 from 0 to 14
 cleaning the activelist...
-Deactivating event 2 from 46 to 65
+node: 14 is detected
+disconnect its neighbour:
+13 8 6 
+disconnect 13 from 14
+disconnect 14 from 13
+disconnect 8 from 14
+disconnect 14 from 8
+disconnect 6 from 14
+disconnect 14 from 6
+Deactivating event conerning with node 14...
 cleaning the activelist...
-cleaning the activelist...
-Deactivating event 2 from 46 to 65
-1.000000 second later compromise node 65
-Adding attack to active list(from 46 to 65)
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-reach node: 44
-Deactivating event 2 from 45 to 44
-Deactivating event 2 from 45 to 44
-Deactivating event 2 from 45 to 44
-Deactivating event 2 from 45 to 44
-1.000000 second later compromise node 44
-Adding attack to active list(from 45 to 44)
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-reach node: 39
-Deactivating event 2 from 40 to 39
-Deactivating event 2 from 40 to 39
-Deactivating event 2 from 40 to 39
-1.000000 second later compromise node 39
-Adding attack to active list(from 40 to 39)
-At 21.100000 second comes event 2
-HAha, one step late, 36 has been compromised
-At 21.100000 second comes event 2
-reach node: 38
-Deactivating event 2 from 31 to 38
-Deactivating event 2 from 31 to 38
-Deactivating event 2 from 31 to 38
-Deactivating event 2 from 31 to 38
-Deactivating event 2 from 31 to 38
-Deactivating event 2 from 31 to 38
-1.000000 second later compromise node 38
-Adding attack to active list(from 31 to 38)
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-reach node: 28
-Deactivating event 2 from 27 to 28
-Deactivating event 2 from 27 to 28
-Deactivating event 2 from 27 to 28
-Deactivating event 2 from 27 to 28
-Deactivating event 2 from 27 to 28
-Deactivating event 2 from 27 to 28
-Deactivating event 2 from 27 to 28
-1.000000 second later compromise node 28
-Adding attack to active list(from 27 to 28)
-At 21.100000 second comes event 2
-HAha, one step late, 29 has been compromised
-At 21.100000 second comes event 2
-reach node: 33
-Deactivating event 2 from 26 to 33
-1.000000 second later compromise node 33
-Adding attack to active list(from 26 to 33)
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-reach node: 9
-Deactivating event 2 from 10 to 9
-1.000000 second later compromise node 9
-Adding attack to active list(from 10 to 9)
-At 21.100000 second comes event 2
-reach node: 60
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-Deactivating event 2 from 59 to 60
-cleaning the activelist...
-cleaning the activelist...
-Deactivating event 2 from 59 to 60
-Deactivating event 2 from 59 to 60
-cleaning the activelist...
-Deactivating event 2 from 59 to 60
-cleaning the activelist...
-1.000000 second later compromise node 60
-Adding attack to active list(from 59 to 60)
-At 21.100000 second comes event 2
-reach node: 1
-Deactivating event 2 from 94 to 1
-1.000000 second later compromise node 1
-Adding attack to active list(from 94 to 1)
-At 21.100000 second comes event 2
-reach node: 98
-Deactivating event 2 from 97 to 98
-Deactivating event 2 from 97 to 98
-Deactivating event 2 from 97 to 98
-1.000000 second later compromise node 98
-Adding attack to active list(from 97 to 98)
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
+Now the graph is like:
+nodes: 100
+0 1 60 25 
+1 0 2 72 63 91 
+2 1 
+3 
+4 
+5 
+6 7 64 96 80 23 30 
+7 6 8 41 
+8 7 9 99 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 8 11 82 9 62 81 87 
+14 
+15 
+16 17 29 27 
+17 16 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 6 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 16 95 34 37 
+28 27 29 85 70 
+29 28 30 16 
+30 29 31 23 42 6 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
+43 42 44 11 
+44 43 45 25 
+45 44 89 84 
+46 
+47 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 6 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 6 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 6 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
+--------------------------------------------
+At 11.100000 second comes event 2
 reach node: 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
-Deactivating event 2 from 7 to 8
 Deactivating event 2 from 7 to 8
 1.000000 second later compromise node 8
 Adding attack to active list(from 7 to 8)
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-reach node: 22
-Deactivating event 2 from 3 to 22
-Deactivating event 2 from 3 to 22
-Deactivating event 2 from 3 to 22
+At 11.100000 second comes event 2
+reach node: 29
+Deactivating event 2 from 16 to 29
 cleaning the activelist...
-1.000000 second later compromise node 22
-Adding attack to active list(from 3 to 22)
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 1 has been compromised
-At 21.100000 second comes event 2
-reach node: 96
-Deactivating event 2 from 97 to 96
-Deactivating event 2 from 97 to 96
-Deactivating event 2 from 97 to 96
-Deactivating event 2 from 97 to 96
+1.000000 second later compromise node 29
+Adding attack to active list(from 16 to 29)
+At 11.100000 second comes event 2
+reach node: 23
+Deactivating event 2 from 6 to 23
 cleaning the activelist...
+1.000000 second later compromise node 23
+Adding attack to active list(from 6 to 23)
+At 12.100000 second comes event 0
+node 23 is compromised
+Deactivating event 0 from 6 to 23
 cleaning the activelist...
+1.000000 second later hop to 64
+Adding attack to active list(from 6 to 64)
+All of the neighbours are COMPROMISED
+1.000000 second later hop to 17
+Adding attack to active list(from 23 to 17)
+15.100000 second should be detected
+Adding attack to active list(from 0 to 23)
+At 12.100000 second comes event 1
+Deactivating event 1 from 0 to 16
 cleaning the activelist...
-Deactivating event 2 from 97 to 96
-1.000000 second later compromise node 96
-Adding attack to active list(from 97 to 96)
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-reach node: 93
-Deactivating event 2 from 94 to 93
-Deactivating event 2 from 94 to 93
-Deactivating event 2 from 94 to 93
-cleaning the activelist...
-Deactivating event 2 from 94 to 93
-Deactivating event 2 from 94 to 93
-Deactivating event 2 from 94 to 93
-1.000000 second later compromise node 93
-Adding attack to active list(from 94 to 93)
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 48 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 48 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 36 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 45 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 66 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 47 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 44 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 85 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 38 has been compromised
-At 21.100000 second comes event 2
-reach node: 0
-Deactivating event 2 from 30 to 0
-Deactivating event 2 from 30 to 0
-Deactivating event 2 from 30 to 0
-Deactivating event 2 from 30 to 0
-cleaning the activelist...
-1.000000 second later compromise node 0
-Adding attack to active list(from 30 to 0)
-At 21.100000 second comes event 2
-reach node: 86
-cleaning the activelist...
-Deactivating event 2 from 26 to 86
-Deactivating event 2 from 26 to 86
-1.000000 second later compromise node 86
-Adding attack to active list(from 26 to 86)
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 86 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 96 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 22 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 1 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 96 has been compromised
-At 21.100000 second comes event 2
-reach node: 95
-Deactivating event 2 from 94 to 95
-cleaning the activelist...
-Deactivating event 2 from 94 to 95
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-1.000000 second later compromise node 95
-Adding attack to active list(from 94 to 95)
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 48 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 29 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 36 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 66 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 35 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 65 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-reach node: 32
-cleaning the activelist...
-cleaning the activelist...
-Deactivating event 2 from 31 to 32
-cleaning the activelist...
-Deactivating event 2 from 31 to 32
-cleaning the activelist...
-cleaning the activelist...
-Deactivating event 2 from 31 to 32
-Deactivating event 2 from 31 to 32
-cleaning the activelist...
-Deactivating event 2 from 31 to 32
-1.000000 second later compromise node 32
-Adding attack to active list(from 31 to 32)
-At 21.100000 second comes event 2
-HAha, one step late, 48 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-reach node: 82
-cleaning the activelist...
-Deactivating event 2 from 10 to 82
-1.000000 second later compromise node 82
-Adding attack to active list(from 10 to 82)
-At 21.100000 second comes event 2
-HAha, one step late, 36 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 22 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 96 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 93 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 80 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 16 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-reach node: 12
-cleaning the activelist...
-Deactivating event 2 from 31 to 12
-Deactivating event 2 from 31 to 12
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-1.000000 second later compromise node 12
-Adding attack to active list(from 31 to 12)
-At 21.100000 second comes event 2
-HAha, one step late, 39 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 66 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 35 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 65 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 44 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 85 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 12 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 93 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-reach node: 24
-cleaning the activelist...
-Deactivating event 2 from 26 to 24
-cleaning the activelist...
-1.000000 second later compromise node 24
-Adding attack to active list(from 26 to 24)
-At 21.100000 second comes event 2
-HAha, one step late, 75 has been compromised
-At 21.100000 second comes event 2
-reach node: 11
-cleaning the activelist...
-Deactivating event 2 from 10 to 11
-1.000000 second later compromise node 11
-Adding attack to active list(from 10 to 11)
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 2 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 93 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 48 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 16 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 66 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 47 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 29 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 75 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 80 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 98 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 65 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 48 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 32 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 65 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 85 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 85 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 38 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 45 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 48 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 98 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 93 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 29 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 36 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 66 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 60 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 45 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 32 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 0 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 60 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 35 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 45 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 85 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 0 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 93 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 29 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 36 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 96 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 95 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 38 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 29 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 16 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 65 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 32 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 94 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 28 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 44 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 39 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 67 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 59 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 47 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-Event has been cancelled, delete from the heap
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 35 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 29 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 75 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 16 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 80 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 38 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 48 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 8 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 75 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 35 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 96 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 38 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 16 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 75 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 67 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 60 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 37 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 65 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 43 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 10 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 7 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 26 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 7 has been compromised
-At 21.100000 second comes event 2
-reach node: 64
-cleaning the activelist...
-cleaning the activelist...
-cleaning the activelist...
-Deactivating event 2 from 30 to 64
-cleaning the activelist...
-Deactivating event 2 from 30 to 64
-1.000000 second later compromise node 64
-Adding attack to active list(from 30 to 64)
-At 21.100000 second comes event 2
-HAha, one step late, 64 has been compromised
-Event has been cancelled, delete from the heap
-At 21.100000 second comes event 2
-HAha, one step late, 85 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 35 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 66 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-Event has been cancelled, delete from the heap
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 59 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 69 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 72 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 88 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 15 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 32 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 75 has been compromised
-Event has been cancelled, delete from the heap
-At 21.100000 second comes event 2
-HAha, one step late, 97 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 93 has been compromised
-At 21.100000 second comes event 2
-HAha, one step late, 40 has been compromised
-At 21.100000 second comes event 1
-Deactivating event 1 from 0 to 30
-cleaning the activelist...
-node: 30 is detected
+node: 16 is detected
 disconnect its neighbour:
-29 31 53 48 74 94 64 97 78 85 93 0 0 65 0 28 30 69 79 
-disconnect 29 from 30 j was 2
-disconnect 30 from 29
-disconnect 31 from 30 j was 1
-disconnect 30 from 31
-disconnect 53 from 30 j was 3
-disconnect 30 from 53
-disconnect 48 from 30 j was 3
-disconnect 30 from 48
-disconnect 74 from 30 j was 3
-disconnect 30 from 74
-disconnect 94 from 30 j was 4
-disconnect 30 from 94
-disconnect 64 from 30 j was 4
-disconnect 30 from 64
-disconnect 97 from 30 j was 3
-disconnect 30 from 97
-disconnect 78 from 30 j was 5
-disconnect 30 from 78
-disconnect 85 from 30 j was 4
-disconnect 30 from 85
-disconnect 93 from 30 j was 4
-disconnect 30 from 93
-Should never come here.  Node is 30 looking for 0 j is 3
+17 29 27 
+disconnect 17 from 16
+disconnect 16 from 17
+disconnect 29 from 16
+disconnect 16 from 29
+disconnect 27 from 16
+disconnect 16 from 27
+Deactivating event conerning with node 16...
+stop attacking from node 16 to node 29
+cleaning the activelist...
+Now the graph is like:
+nodes: 100
+0 1 60 25 
+1 0 2 72 63 91 
+2 1 
+3 
+4 
+5 
+6 7 64 96 80 23 30 
+7 6 8 41 
+8 7 9 99 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 8 11 82 9 62 81 87 
+14 
+15 
+16 
+17 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 6 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 95 34 37 
+28 27 29 85 70 
+29 28 30 
+30 29 31 23 42 6 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
+43 42 44 11 
+44 43 45 25 
+45 44 89 84 
+46 
+47 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 6 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 6 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 6 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
+--------------------------------------------
+At 12.100000 second comes event 0
+node 8 is compromised
+Deactivating event 0 from 7 to 8
+cleaning the activelist...
+1.000000 second later hop to 6
+Adding attack to active list(from 7 to 6)
+1.000000 second later hop to 99
+Adding attack to active list(from 8 to 99)
+All of the neighbours are COMPROMISED
+16.100000 second should be detected
+Adding attack to active list(from 0 to 8)
+At 12.100000 second comes event 1
+Deactivating event 1 from 0 to 6
+cleaning the activelist...
+node: 6 is detected
+disconnect its neighbour:
+7 64 96 80 23 30 
+disconnect 7 from 6
+disconnect 6 from 7
+disconnect 64 from 6
+disconnect 6 from 64
+disconnect 96 from 6
+disconnect 6 from 96
+disconnect 80 from 6
+disconnect 6 from 80
+disconnect 23 from 6
+disconnect 6 from 23
+disconnect 30 from 6
+disconnect 6 from 30
+Deactivating event conerning with node 6...
+stop attacking from node 6 to node 64
+cleaning the activelist...
+Now the graph is like:
+nodes: 100
+0 1 60 25 
+1 0 2 72 63 91 
+2 1 
+3 
+4 
+5 
+6 
+7 8 41 
+8 7 9 99 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 8 11 82 9 62 81 87 
+14 
+15 
+16 
+17 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 95 34 37 
+28 27 29 85 70 
+29 28 30 
+30 29 31 23 42 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
+43 42 44 11 
+44 43 45 25 
+45 44 89 84 
+46 
+47 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
+--------------------------------------------
+Event has been cancelled, delete from the heap
+Event has been cancelled, delete from the heap
+At 13.100000 second comes event 2
+reach node: 6
+Deactivating event 2 from 7 to 6
+cleaning the activelist...
+1.000000 second later compromise node 6
+Adding attack to active list(from 7 to 6)
+At 13.100000 second comes event 2
+reach node: 17
+Deactivating event 2 from 23 to 17
+1.000000 second later compromise node 17
+Adding attack to active list(from 23 to 17)
+At 13.100000 second comes event 2
+reach node: 99
+Deactivating event 2 from 8 to 99
+1.000000 second later compromise node 99
+Adding attack to active list(from 8 to 99)
+At 14.100000 second comes event 0
+node 99 is compromised
+Deactivating event 0 from 8 to 99
+cleaning the activelist...
+1.000000 second later hop to 9
+Adding attack to active list(from 8 to 9)
+All of the neighbours are COMPROMISED
+1.000000 second later hop to 8
+Adding attack to active list(from 99 to 8)
+17.100000 second should be detected
+Adding attack to active list(from 0 to 99)
+At 14.100000 second comes event 0
+node 6 is compromised
+Deactivating event 0 from 7 to 6
+cleaning the activelist...
+All of the neighbours are COMPROMISED
+1.000000 second later hop to 41
+Adding attack to active list(from 7 to 41)
+All of the neighbours are COMPROMISED
+18.100000 second should be detected
+Adding attack to active list(from 0 to 6)
+At 14.100000 second comes event 0
+node 17 is compromised
+Deactivating event 0 from 23 to 17
+cleaning the activelist...
+All of the neighbours are COMPROMISED
+All of the neighbours are COMPROMISED
+1.000000 second later hop to 73
+Adding attack to active list(from 17 to 73)
+1.000000 second later hop to 24
+Adding attack to active list(from 23 to 24)
+18.100000 second should be detected
+Adding attack to active list(from 0 to 17)
+At 14.100000 second comes event 1
+Deactivating event 1 from 0 to 15
+cleaning the activelist...
+node: 15 is detected
+disconnect its neighbour:
+
+Deactivating event conerning with node 15...
+cleaning the activelist...
+Now the graph is like:
+nodes: 100
+0 1 60 25 
+1 0 2 72 63 91 
+2 1 
+3 
+4 
+5 
+6 
+7 8 41 
+8 7 9 99 22 13 56 97 48 95 
+9 8 10 72 13 
+10 9 11 
+11 10 12 43 58 13 
+12 11 13 32 98 96 23 
+13 12 8 11 82 9 62 81 87 
+14 
+15 
+16 
+17 18 73 82 23 
+18 17 19 77 90 
+19 18 20 23 58 
+20 19 21 24 47 
+21 20 22 33 39 70 
+22 21 23 8 
+23 22 24 19 12 71 17 30 78 38 94 61 23 25 20 81 93 
+24 23 25 20 81 93 
+25 24 26 0 44 
+26 25 27 79 72 
+27 26 28 80 55 95 34 37 
+28 27 29 85 70 
+29 28 30 
+30 29 31 23 42 86 59 75 57 
+31 30 32 79 53 40 48 
+32 31 33 12 
+33 32 34 21 
+34 33 35 27 76 
+35 34 36 77 83 67 
+36 35 37 62 49 50 81 
+37 36 38 27 92 
+38 37 39 23 54 52 58 81 
+39 38 40 21 88 58 
+40 39 41 31 82 93 
+41 40 42 7 
+42 41 43 30 
+43 42 44 11 
+44 43 45 25 
+45 44 89 84 
+46 
+47 48 64 68 84 85 20 66 
+48 47 49 8 31 91 72 
+49 48 50 36 
+50 49 51 36 
+51 50 52 90 78 
+52 51 53 38 
+53 52 54 31 
+54 53 55 38 
+55 54 56 27 
+56 55 57 8 
+57 56 58 30 
+58 57 59 11 39 62 38 19 
+59 58 60 30 
+60 59 61 0 
+61 60 62 23 69 
+62 61 63 13 36 58 
+63 62 64 1 99 
+64 63 65 47 
+65 64 66 84 
+66 65 67 47 
+67 66 68 35 
+68 67 69 47 
+69 68 70 61 96 
+70 69 71 21 28 
+71 70 72 23 
+72 71 73 1 9 48 26 
+73 72 74 17 
+74 73 75 
+75 74 76 30 
+76 75 77 34 
+77 76 78 18 35 
+78 77 79 23 51 
+79 78 80 26 31 
+80 79 81 27 
+81 80 82 13 36 94 23 38 91 
+82 81 83 13 17 40 
+83 82 84 35 
+84 83 85 47 65 45 91 
+85 84 86 28 47 
+86 85 87 30 
+87 86 88 13 
+88 87 89 39 
+89 88 90 45 
+90 89 91 51 18 
+91 90 92 48 84 81 1 
+92 91 93 37 
+93 92 94 23 40 
+94 93 95 23 81 
+95 94 96 8 27 
+96 95 97 12 69 
+97 96 98 8 
+98 97 99 12 
+99 98 8 63 
+--------------------------------------------
+At 15.100000 second comes event 2
+reach node: 9
+Deactivating event 2 from 8 to 9
+cleaning the activelist...
+1.000000 second later compromise node 9
+Adding attack to active list(from 8 to 9)
+At 15.100000 second comes event 2
+reach node: 8
+Deactivating event 2 from 99 to 8
+1.000000 second later compromise node 8
+Adding attack to active list(from 99 to 8)
+At 15.100000 second comes event 2
+reach node: 41
+Deactivating event 2 from 7 to 41
+cleaning the activelist...
+1.000000 second later compromise node 41
+Adding attack to active list(from 7 to 41)
+At 15.100000 second comes event 2
+reach node: 73
+Deactivating event 2 from 17 to 73
+1.000000 second later compromise node 73
+Adding attack to active list(from 17 to 73)
+At 15.100000 second comes event 1
+Deactivating event 1 from 0 to 23
+cleaning the activelist...
+node: 23 is detected
+disconnect its neighbour:
+22 24 19 12 71 17 30 78 38 94 61 23 25 20 81 93 
+disconnect 22 from 23
+disconnect 23 from 22
+disconnect 24 from 23
+disconnect 23 from 24
+disconnect 19 from 23
+disconnect 23 from 19
+disconnect 12 from 23
+disconnect 23 from 12
+disconnect 71 from 23
+disconnect 23 from 71
+disconnect 17 from 23
+disconnect 23 from 17
+disconnect 30 from 23
+disconnect 23 from 30
+disconnect 78 from 23
+disconnect 23 from 78
+disconnect 38 from 23
+disconnect 23 from 38
+disconnect 94 from 23
+disconnect 23 from 94
+disconnect 61 from 23
+disconnect 23 from 61
+disconnect 23 from 23
+disconnect 23 from -2
+Should never come here

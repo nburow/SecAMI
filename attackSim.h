@@ -3,7 +3,8 @@
 
 #include "Heap.h"
 
-//#define ATTACKER	0x007
+#define WRONG		65536
+#define NOONE		-3
 
 #define SIMTIME		50.0	
 /*
@@ -22,8 +23,10 @@
 #define COMPROMISED		1
 #define HOPPED			2
 #define DETECTED		3
-
-#define WRONG			65536
+#define HOPPING			4
+#define COMPROMISING	5
+#define ATTACKING		6
+#define DETECTING		7
 
 typedef struct activeNode
 {
