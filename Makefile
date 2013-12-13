@@ -13,8 +13,8 @@ queue.o: queue.c
 bfs.o: bfs.c
 	$(CC) -c $(CCFLAGS) bfs.c
 	
-#bfs: bfs.o queue.o
-#	$(CC) -o bfs bfs.o queue.o -lm
+bfs: bfs.o queue.o
+	$(CC) -o bfs bfs.o queue.o -lm
 
 attackSim.o: attackSim.c
 	$(CC) -c $(CCFLAGS) attackSim.c
@@ -56,4 +56,4 @@ graph: matrix-topology.o uniform.o power.o queue.o
 	${CC} -o graph matrix-topology.o uniform.o power.o queue.o -lm
 	
 clean:
-	rm -rf *.o gen mul test graph attackSim 
+	rm -rf *.o gen mul test graph attackSim Graphs
