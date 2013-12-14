@@ -36,12 +36,6 @@ test.o: test.c
 
 test: test.o uniform.o power.o bfs.o queue.o
 	$(CC) -o test test.o uniform.o power.o bfs.o queue.o -lm
-
-topology_generator.o: topology_generator.c
-	${CC} -c ${CCFLAGS} topology_generator.c
-	
-gen: topology_generator.o uniform.o expon.o
-	${CC} -o gen topology_generator.o uniform.o expon.o -lm
 	
 mulvalInput.o: mulvalInput.c
 	${CC} -c ${CCFLAGS} mulvalInput.c

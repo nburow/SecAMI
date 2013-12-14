@@ -26,13 +26,50 @@ Heap EventHeap;
 
 double seed;
 
+int *visited;
+
+int dfs(int node)
+{
+	//node has no neighbors, just count the node itself
+	if(CopyGraph[node][0] == END_OF_LIST)
+		return 1;
+
+	int count = 1; //count yourself
+	int i = 0;  //number of neighbors dcu has;
+	while(CopyGraph[node][i] != END_OF_LIST)
+	{
+		int canidate = CopyGraph[node][i];
+		if(canidate != DISCONNECTED && visited[canidate] == 0)
+		{
+			visited[canidate] = 1;
+			count += dfs(canidate); //count neighbors recursively
+			//fprintf(Log, "%d ", canidate);
+		}
+		i++;  //move to next neighbor
+	}
+	return count;
+}
+
 void statistic(double time)
 {
 	//fprintf(Log, "<-----------Collection------------->\n");
-	////myprint(Log, CopyGraph);
+	//myprint(Log, CopyGraph);
 	//fprintf(Log, "Attack simulation time: %f\n", time);
 	//fprintf(Log, "Safe Nodes: \n");
+	visited = (int *)malloc(nodeNum*(sizeof(int)));
+	memset(visited, 0, nodeNum*sizeof(int));
+	visited[0] = 1;
+
 	int count = 0;
+	if(NodeStatus[0] == DETECTED || NodeStatus[0] == COMPROMISED)
+		count = 0;
+	else
+		count = dfs(0);
+
+	/*fprintf(Log, "\n");
+	fprintf(Log, "%d nodes out of %d nodes are safe\n", count, nodeNum);
+
+	count = 0;
 	for (int i = 0; i < nodeNum; i++)
 	{
 		if (NodeStatus[i] != COMPROMISED && NodeStatus[i] != DETECTED)
@@ -41,11 +78,7 @@ void statistic(double time)
 			count++;
 		}
 	}
-	if(NodeStatus[0] == DETECTED || NodeStatus[0] == COMPROMISED)
-		count = 0;
-
-	//fprintf(Log, "\n");
-	//fprintf(Log, "%d nodes out of %d nodes are safe\n", count, nodeNum);
+	fprintf(Log, "old style nodes safe: %d\n", count);*/
 	//fprintf(Log, "%f%% network are compromised\n", ((double)(nodeNum-count)/(double)nodeNum)*100);
 
 	fprintf(Results, "%20d%20f\n", nodeNum-count, (count/(double)nodeNum)*100);
@@ -385,7 +418,7 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt)
 					}
 
 					NodeStatus[i] = HOPPING;
-					NodeStatus[neighbourList[i]] = HOPPING;
+					NodeStatus[whichNeighbour] = HOPPING;
 					// then hop to it
 					Event* hopEvent = (Event*)malloc(sizeof(Event));
 					hopEvent->time = current + HOPTIME;
@@ -528,7 +561,7 @@ int main(int args, char** argv)
 			for(int k = 0; k < 10; k++)
 			{
 				//start node
-				for(int m = 0; m < 50; m++)
+				for(int m = 0; m < 100; m++)
 				{
 					//runs per start point
 					for(int n = 0; n < 2; n++)
