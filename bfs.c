@@ -143,6 +143,15 @@ int **getGraph(FILE *in)
 	return retval;
 }
 
+void freeGraph(int **graph)
+{
+	for(int i = 0; i < size; i++)
+	{
+		free(graph[i]);
+	}
+	free(graph);
+}
+
 int *bfs(int start, int **graph)
 {
 	int *bfs = (int *)malloc(nodes*sizeof(int));

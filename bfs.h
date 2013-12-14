@@ -16,6 +16,8 @@ int *bfs(int start, int **graph);
 //call before bfs
 int **getGraph(FILE *in);
 
+void freeGraph(int **graph);
+
 //call getGraph before distance;
 int dijkstra(int start, int end, int **graph);
 

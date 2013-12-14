@@ -515,7 +515,10 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt)
 	statistic(current);
 	fclose(Log);
 }
-
+//args1: first graph #
+//args2: last graph #
+//args3: graph directory
+//args4: result file name
 int main(int args, char** argv)
 {
 	/*	if (args < 6)
