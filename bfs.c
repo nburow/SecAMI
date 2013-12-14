@@ -82,10 +82,15 @@ int **getGraph(FILE *in)
 	int **retval = init();
 
 	char *line = getLine(in);
+	char *startOfLine = line;
 	char *word = parseWord(&line);
 	nodes = atoi(word);
 
+	free(word);
+	free(startOfLine);
+
 	line = getLine(in);
+	startOfLine = line;
 	//printf("next line: %s\n", line);
 
 	int i = 0;
@@ -132,14 +137,20 @@ int **getGraph(FILE *in)
 			//if(i == 1)
 			//printf("adding: %d\n", node);
 			retval[i][j] = node;
+
+			free(word);
 			word = parseWord(&line);
 			j++;
 		}
 		//printf("last entry in line %d: %d\n", i, retval[i][j]);
+		free(word);
+		free(startOfLine);
 		line = getLine(in);
+		startOfLine = line;
 		//printf("next line: %s\n", line);
 		i++;
 	}
+	free(startOfLine);
 	return retval;
 }
 
@@ -293,4 +304,5 @@ void bfsPrint(int *bfs)
 	return EXIT_SUCCESS;
 }*/
 //*/
+
 

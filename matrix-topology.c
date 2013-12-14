@@ -218,6 +218,11 @@ void makeGraph(int num)
 //arg3: 9 digit seed for RNG; argv4: number of graphs to make
 int main(int argc, char **argv)
 {
+	if(argc < 5)
+	{
+		printf("4 arguments needed\n");
+		return EXIT_FAILURE;
+	}
 	nodes = atoi(argv[1]);
 	max = atoi(argv[2]);
 	seed = atof(argv[3]);

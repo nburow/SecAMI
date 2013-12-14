@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include "Heap.h"
 
+int countFree = 0;
+
+//void iniFreeCount()	{countFree = 0;}
+
+int getFreeCount()
+{
+	return countFree;
+}
+
 void swap(Event* array[], int a, int b)
 {
 	Event* temp = array[a];
@@ -124,6 +133,7 @@ Heap HeapIncrement(Heap heap)
 		Event* temp = (heap->array)[i];
 		free(temp);
 	}
+	free(heap);
 //	free(heap->array);
 //	heap->maxSize = 0;
 //	heap->currentSize = 0;
