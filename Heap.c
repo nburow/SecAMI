@@ -2,15 +2,6 @@
 #include <stdio.h>
 #include "Heap.h"
 
-int countFree = 0;
-
-//void iniFreeCount()	{countFree = 0;}
-
-int getFreeCount()
-{
-	return countFree;
-}
-
 void swap(Event* array[], int a, int b)
 {
 	Event* temp = array[a];
@@ -70,10 +61,7 @@ void insertNode(HeapPointer hp, Event* event)
 	}
 	(heap->array)[heap->currentSize] = event;
 	heap->currentSize++;
-/*	int i;
-	for (i = 0; i < heap->currentSize; i++)		printf("%f ", (heap->array)[i]->time);
-	printf("\n%d\n", heap->currentSize);
-*/	
+	
 	int cIndex = heap->currentSize-1;
 	int pIndex = heap->currentSize/2-1;
 	while (pIndex >= 0)
@@ -96,17 +84,11 @@ Boolean HeapIsEmpty(Heap heap)
 }
 void HeapPop(Heap heap, Event* event)
 {
-/*	if (HeapIsEmpty(heap))	
-	{
-		event->type = NOEVENT;
-		return;
-	}
-*/	Event* temp = HeapGetMin(heap);
+	Event* temp = HeapGetMin(heap);
 	event->time = temp->time;
 	event->type = temp->type;
 	event->subject = temp->subject;
 	event->object = temp->object;
-//	event->active = temp->active;
 	HeapDelMin(heap);
 }
 
@@ -124,7 +106,6 @@ Heap HeapIncrement(Heap heap)
 		(newHeap->array)[i]->type = (heap->array)[i]->type;
 		(newHeap->array)[i]->subject = (heap->array)[i]->subject;
 		(newHeap->array)[i]->object = (heap->array[i])->object;
-	//	(newHeap->array)[i]->active = (heap->array[i])->active;
 		newHeap->currentSize++;
 	}
 
@@ -134,66 +115,7 @@ Heap HeapIncrement(Heap heap)
 		free(temp);
 	}
 	free(heap);
-//	free(heap->array);
-//	heap->maxSize = 0;
-//	heap->currentSize = 0;
 
 	return newHeap;
 }
 
-/*
-int main()
-{
-	// test
-	Heap heap = (Heap)malloc(sizeof(Heap));
-	heap->array = (char*)malloc(sizeof(Event*) * 100);
-	heap->maxSize = 100;
-	heap->currentSize = 0;
-
-	int i;
-	for (i = 0; i < 100; i++)
-	{
-		Event* newEve = (Event*)malloc(sizeof(Event));
-		newEve->time = 100-i;
-		newEve->type = 1;
-		(heap->array)[heap->currentSize] = newEve;
-		heap->currentSize++;
-	}
-
-	MinHeapBuild(heap);
-	for (i = 0; i < heap->currentSize; i++)		printf("%f ", (heap->array)[i]->time);
-	printf("\n%d\n", heap->currentSize);
-
-	for (i = heap->currentSize-1; i >= 0; i--)
-	{
-		swap(heap->array, 0, i);
-		heap->currentSize--;
-		Heapify(heap, 0);
-	}
-	for (i = 0; i < 100; i++)		printf("%f ", (heap->array)[i]->time);
-	printf("\n");
-
-	Event* event = (Event*)malloc(sizeof(Event));
-	event->time = 30;
-	event->type = 2;
-	insertNode(&heap, event);
-	for (i = 0; i < heap->currentSize; i++)		printf("%f ", (heap->array)[i]->time);
-	printf("\n%d\n", heap->currentSize);
-	
-	Event e;
-	while (heap->currentSize > 0)
-	{
-		HeapPop(heap, &e);
-		printf("%f ", e.time);
-	}
-	printf("\n");
-
-	Event e;
-	HeapPop(heap, &e);
-	printf("%f\n", (heap->array)[0]->time);
-	printf("%f", e.time);
-	printf("\n");
-
-	return 0;
-}
-*/

@@ -13,9 +13,6 @@ struct myHeap{
 typedef struct myHeap* Heap;
 typedef Heap* HeapPointer; 
 
-void iniFreeCount();
-int getFreeCount();
-
 void MinHeapBuild(Heap heap);
 void Heapify(Heap heap, int currentNode);
 void HeapPop(Heap heap, Event* event);
