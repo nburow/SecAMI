@@ -605,7 +605,7 @@ int main(int args, char** argv)
 	int hopTime = 1;
 	
 	Results = fopen(argv[4], "w");
-	fprintf(Results, "%20s%20s%20s%20s%20s%20s%20s%20s%20s\n", "Graph File", "Attack Policy", "Compromise Time", "Hop Time", "Detect Time", "Ratio", "Start Point", "Num Compromised", "% Alive");
+	fprintf(Results, "%20s%20s%20s%20s%20s%20s%20s%20s\n", "Graph File", "Compromise Time", "Hop Time", "Detect Time", "Ratio", "Start Point", "Num Compromised", "% Alive");
 
 
 	int startGraphNum = atoi(argv[1]);
