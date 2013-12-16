@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 #include "attackSim.h"
 #include "bfs.h"
 #include "Heap.h"
@@ -26,9 +27,9 @@ Heap EventHeap;
 
 double seed;
 
-int countDeadEvent = 0;
-
 int *visited;
+
+int whichModel;
 
 int dfs(int node)
 {
@@ -70,30 +71,13 @@ void statistic(double time)
 
 	fprintf(Results, "%20d%20f\n", nodeNum-count, (count/(double)nodeNum)*100);
 }
-int randomChoose(int* array)
+
+int randomChoose(int total)
 {
-	int stillSafe = 0;
-	int i;
-	for (i = 1; array[i] != -1; i++)
-	{
-		if (array[i] != DISCONNECTED && NodeStatus[array[i]] == GOOD)	stillSafe++;
-	}
-	if (stillSafe == 0)
-	{
-		printf("No\n");
-		exit(-1);
-	}
-	int choosen = (int)(uniform(&seed)*100) % stillSafe;
-	for (i = 1; array[i] != -1; i++)
-	{
-		if (array[i] != DISCONNECTED && NodeStatus[array[i]] == GOOD)
-		{
-			if (choosen == 0)	return array[i];
-			else				choosen--;
-		}
-	}
-	return WRONG; 
+	if (total == 0)		exit(-1);
+	return (int)(uniform(&seed)*100) % total;
 }
+
 
 double calDetectionTime(int dcu, int compromisedNode)
 {
@@ -121,14 +105,13 @@ void initialActiveEventList()
 	}
 }
 
-void initial(char* fileName, int attackNode, double ct, double ht, double dt)
+void initial(char* fileName, int attackNode, double ct, double ht, double dt, int numOfNodesToCom)
 {
 	fprintf(Results, "%20s%20f%20f%20f%20f%20d", fileName, ct, ht, dt, ct/dt, attackNode);
 	COMTIME = ct;
 	HOPTIME = ht;
 	DECTIME = dt;
 
-	countDeadEvent = 0;
 	//redirect to file
 	Log = fopen("log.txt", "w");
 	if (!Log)
@@ -226,7 +209,6 @@ void DelDeadEvent()
 				free(current->event);
 				free(current);
 				current = pre->next;
-				countDeadEvent++;
 			}
 			else
 			{	
@@ -391,9 +373,9 @@ void freeall()
 	Graph = NULL;
 }
 
-void runSim(char* fileName, int attackNode, double ct, double ht, double dt)
+void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int numOfNodesToCom)
 {
-	initial(fileName, attackNode, ct, ht, dt);
+	initial(fileName, attackNode, ct, ht, dt, numOfNodesToCom);
 
 	double current = 0.0;
 	double eventTime = 0.0;
@@ -425,73 +407,120 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt)
 		//deal with event
 		switch (event->type)	{
 		case COMPROMISE:	{
-			if (NodeStatus[event->object] == COMPROMISED)
-			{
-				//fprintf(Log, "WTF, %d has already been compromised\n", event->object);
-				break;
-			}
+			
 			NodeStatus[event->subject] = COMPROMISED;
 			NodeStatus[event->object] = COMPROMISED;
 			
 			if (event->object == 0)		break;
 			//fprintf(Log, "node %d is compromised\n", event->object);
-			
+	
+		
+			if (whichModel == 1)	{
 
-			// search target to compromise
 			int i, j;
-			int whichNeighbour = 0;
 			for (i = 1; i < nodeNum; i++)
 			{
 				if (NodeStatus[i] == COMPROMISED)
 				{
 					// neighbours of the node
 					int* neighbourList = CopyGraph[i];
+					int stillSafe = 0;
 					for (j = 1; neighbourList[j] != -1; j++)		//hop to next
 					{
-						// if neighbour is compromised but not detected or detected(disconnected) or is under attack or is attacking
-						if (neighbourList[j] == DISCONNECTED || NodeStatus[neighbourList[j]] != GOOD)	continue;
-						// there's a node to hop to
-						else
+						if (neighbourList[j] != DISCONNECTED && NodeStatus[neighbourList[j]] == GOOD)	stillSafe++;
+					}
+					if (stillSafe == 0)	continue;
+
+					else
+					{
+						NodeStatus[i] = HOPPING;						
+						int luckyDog = randomChoose(stillSafe);
+						int j;
+						for (j = 1; neighbourList[j] != END_OF_LIST; j++)
 						{
-							whichNeighbour = randomChoose(neighbourList);
-
-							if (whichNeighbour == NOONE)
+							if (neighbourList[j] != DISCONNECTED && NodeStatus[neighbourList[j]] == GOOD)	
 							{
-								//fprintf(Log, "ALL nodes are occupied\n");
-								continue;
+								if (luckyDog == 0)
+								{
+									//fprintf(Log, "%f second later hop to %d\n",  HOPTIME, neighbourList[j]);
+									NodeStatus[neighbourList[j]] = HOPPING;
+									Event* hopEvent = (Event*)malloc(sizeof(Event));
+									hopEvent->time = current + HOPTIME;
+									hopEvent->type = HOP;
+									hopEvent->subject = i;
+									hopEvent->object = neighbourList[j];
+									insertNode(&EventHeap, hopEvent);
+	
+									addToActiveList(hopEvent);
+									break;
+								}
+								else	luckyDog--;
 							}
-							if (whichNeighbour == WRONG)
-							{
-								printf("crash!!!!\n");
-								exit(-1);
-							}
-
-							//fprintf(Log, "%f second later hop to %d\n", HOPTIME, whichNeighbour);
-							break;
-							// or you can count the reachable neighbours for lately random choose
+						}			
+						if (neighbourList[j] == END_OF_LIST)
+						{	
+							printf("should never come here 3\n");
+							exit(-1);
 						}
 					}
-					if (neighbourList[j] == -1)
-					{
-						//fprintf(Log, "All of the neighbours are COMPROMISED\n");
-						continue;
-					}
-
-					NodeStatus[i] = HOPPING;
-					NodeStatus[whichNeighbour] = HOPPING;
-					// then hop to it
-					Event* hopEvent = (Event*)malloc(sizeof(Event));
-					hopEvent->time = current + HOPTIME;
-					hopEvent->type = HOP;
-					hopEvent->subject = i;
-					hopEvent->object = whichNeighbour;
-					insertNode(&EventHeap, hopEvent);
-
-					addToActiveList(hopEvent);
-
 				}
 			}
-			eventTime = HOPTIME;				//time needed for event to happen
+			eventTime = HOPTIME;
+			}
+			
+			else if (whichModel == 2)	{
+
+			int* neighbourList = CopyGraph[event->object];
+			int stillSafe = 0;
+			for (int i = 1; neighbourList[i] != END_OF_LIST; i++)
+			{
+				if(neighbourList[i] != DISCONNECTED && NodeStatus[neighbourList[i]] == GOOD)	stillSafe++;
+			}
+			if (stillSafe == 0)
+			{
+				//fprintf(Log, "All of the neighbours are COMPROMISED\n");
+			}
+			else
+			{
+				NodeStatus[event->object] = HOPPING;
+				int temp = (numOfNodesToCom == 0) ? (randomChoose(5)) : numOfNodesToCom;
+		
+				int min = (stillSafe < temp) ? stillSafe : temp;
+				for (int i = 0; i < min; i++)
+				{
+					int luckyDog = randomChoose(stillSafe);
+					int j;
+					for (j = 1; neighbourList[j] != END_OF_LIST; j++)
+					{
+						if (neighbourList[j] != DISCONNECTED && NodeStatus[neighbourList[j]] == GOOD)	
+						{
+							if (luckyDog == 0)
+							{
+								//fprintf(Log, "%f second later hop to %d\n",  HOPTIME, neighbourList[j]);
+								NodeStatus[neighbourList[j]] = HOPPING;
+								Event* hopEvent = (Event*)malloc(sizeof(Event));
+								hopEvent->time = current + HOPTIME;
+								hopEvent->type = HOP;
+								hopEvent->subject = event->object;
+								hopEvent->object = neighbourList[j];
+								insertNode(&EventHeap, hopEvent);
+
+								addToActiveList(hopEvent);
+								break;
+							}
+							else	luckyDog--;
+						}
+					}			
+					if (neighbourList[j] == END_OF_LIST)
+					{	
+						printf("should never come here 3\n");
+						exit(-1);
+					}
+					stillSafe--;
+				}
+			}
+			eventTime = HOPTIME;
+			}
 
 			// schedule detection
 			double detectionTime = calDetectionTime(0, event->object);
@@ -511,13 +540,6 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt)
 			break;
 		}
 		case DETECTION:		{
-			if (NodeStatus[event->object] == GOOD && event->object != 0)
-			{
-				printf("status: %d\n", NodeStatus[event->object]);
-				//fprintf(Log, "What? No wrong with node %d, dectect nothing\n", event->object);
-				exit(-1);
-			}
-
 			// set node to detected
 			NodeStatus[event->object] = DETECTED;
 
@@ -537,13 +559,7 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt)
 			disconnect(event->object);
 			break;
 		}
-		case HOP:	{
-			// if this node has already been compromised before others spread here
-			if (NodeStatus[event->object] == COMPROMISED)
-			{
-				//fprintf(Log, "HAha, one step late, %d has been compromised\n", event->object);
-				break;
-			}
+		case HOP:	{		
 			//fprintf(Log, "reach node: %d\n", event->object);
 			
 			NodeStatus[event->subject] = COMPROMISING;
@@ -570,25 +586,44 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt)
 	freeall();
 }
 
+//argv1: start graph
+//argv2: end graph
+//argv3: graph directory
+//argv4: results file
+//argv5: number of starting points to use
 int main(int args, char** argv)
 {
 	seed = 42397952317;
-	if (args < 5)
+	if (args < 6)
 	{
-		printf("4 arguments Needed\n");
+		printf("6 arguments Needed\n");
 		return -1;
 	}
 	
 	int compromiseTime[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 	int detectTime[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	int hopTime = 1;
+	
 	Results = fopen(argv[4], "w");
-	fprintf(Results, "%20s%20s%20s%20s%20s%20s%20s%20s\n", "Graph File", "Compromise Time", "Hop Time", "Detect Time", "Ratio", "Start Point", "Num Compromised", "% Alive");
+	fprintf(Results, "%20s%20s%20s%20s%20s%20s%20s%20s%20s\n", "Graph File", "Attack Policy", "Compromise Time", "Hop Time", "Detect Time", "Ratio", "Start Point", "Num Compromised", "% Alive");
+
 
 	int startGraphNum = atoi(argv[1]);
 	int lastGraphNum = atoi(argv[2]);
+	
+	whichModel = 2;
+	
+	/*if (whichModel != 1 && whichModel != 2)
+	{
+		printf("choose from model 1 or 2\n");
+		exit(-1);
+	}*/
+	
+	int numOfNodesToCom = INT_MAX;
+	
 	int count = 0;
 	//graphs
+	
 	for(int i = startGraphNum; i <= lastGraphNum; i++)
 	{
 		char graph[30];
@@ -602,13 +637,13 @@ int main(int args, char** argv)
 			for(int k = 0; k < 10; k++)
 			{
 				//start node
-				for(int m = 0; m < 100; m++)
+				for(int m = 0; m < atoi(argv[5]); m++)
 				{
 					//runs per start point
-					for(int n = 0; n < 2; n++)
+					for(int n = 0; n < 1; n++)
 					{
 						printf("running sim %d\n", count++);
-						runSim(graph, m, compromiseTime[j], hopTime, detectTime[k]);
+						runSim(graph, m, compromiseTime[j], hopTime, detectTime[k], numOfNodesToCom);
 					}
 				}
 			}
@@ -616,10 +651,7 @@ int main(int args, char** argv)
 	}
 	fclose(Results);
 
-	/*Results = fopen("results.txt", "w");
-	runSim("Graph10010/graph0.txt", 22, 1, 1, 7);
-	fclose(Results);*/
-
+//	runSim("Graph10010/graph0.txt", 50, 1, 1, 1, 1);
 	return 0;
 }
 
