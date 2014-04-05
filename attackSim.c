@@ -78,7 +78,6 @@ int randomChoose(int total)
 	return (int)(uniform(&seed)*100) % total;
 }
 
-
 double calDetectionTime(int dcu, int compromisedNode)
 {
 	int distance = dijkstra(dcu, compromisedNode, Graph);
@@ -600,13 +599,22 @@ int main(int args, char** argv)
 		return -1;
 	}
 	
-	int compromiseTime[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-	int detectTime[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	int hopTime = 1;
+//	int compromiseTime[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//	int detectTime[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+	double compromiseTime = 0.0, detectTime = 0.0, hopTime = 0.0;
 	
 	Results = fopen(argv[4], "w");
 	fprintf(Results, "%20s%20s%20s%20s%20s%20s%20s%20s\n", "Graph File", "Compromise Time", "Hop Time", "Detect Time", "Ratio", "Start Point", "Num Compromised", "% Alive");
 
+	printf("Specify the hop time: (second)\n");
+	scanf("%lf", &hopTime);
+
+	printf("Specify the attack time: (second)\n");
+	scanf("%lf", &compromiseTime);
+	
+	printf("Specify the detect time: (second)\n");
+	scanf("%lf", &detectTime);
 
 	int startGraphNum = atoi(argv[1]);
 	int lastGraphNum = atoi(argv[2]);
@@ -630,6 +638,7 @@ int main(int args, char** argv)
 		sprintf(graph, "%s/graph%d", argv[3], i);
 		strcat(graph, ".txt");
 		printf("%s\n", graph);
+
 		//compromise times
 		for(int j = 0; j < 10; j++)
 		{
@@ -643,7 +652,7 @@ int main(int args, char** argv)
 					for(int n = 0; n < 1; n++)
 					{
 						printf("running sim %d\n", count++);
-						runSim(graph, m, compromiseTime[j], hopTime, detectTime[k], numOfNodesToCom);
+						runSim(graph, m, compromiseTime, hopTime, detectTime, numOfNodesToCom);
 					}
 				}
 			}
