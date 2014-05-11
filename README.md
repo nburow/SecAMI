@@ -1,7 +1,7 @@
-ece695
+SecAMI
 ======
 
-Final Project for ECE695
+Smart Grid Research Project
 
 build using our make file.
 
