@@ -1,7 +1,7 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-enum EventType {COMPROMISE, DETECTION, HOP, NOEVENT};
+enum EventType {COMPROMISE, DETECTION, HOP, KEYUPDATE, NOEVENT};
 enum BOOLEAN {FALSE, TRUE};
 
 typedef enum BOOLEAN Boolean;
@@ -11,7 +11,7 @@ typedef struct
 	enum EventType type;
 	int subject;
 	int object;
-//	Boolean active;
+	int keyRound;
 } Event;
 
 #endif

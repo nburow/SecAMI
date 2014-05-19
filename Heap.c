@@ -57,7 +57,7 @@ void insertNode(HeapPointer hp, Event* event)
 	Heap heap = *hp;
 	if (heap->currentSize == heap->maxSize)
 	{
-		heap = HeapIncrement(heap);
+		HeapIncrement(heap);
 	}
 	(heap->array)[heap->currentSize] = event;
 	heap->currentSize++;
@@ -89,33 +89,19 @@ void HeapPop(Heap heap, Event* event)
 	event->type = temp->type;
 	event->subject = temp->subject;
 	event->object = temp->object;
+	event->keyRound = temp->keyRound;
 	HeapDelMin(heap);
 }
 
-Heap HeapIncrement(Heap heap)
+void HeapIncrement(Heap heap)
 {
-	Heap newHeap = (Heap)malloc(sizeof(Heap));
-	newHeap->array = (Event**)malloc(sizeof(Event*) * (heap->currentSize + HEAPSIZE));
-	newHeap->maxSize = heap->currentSize + HEAPSIZE;
-	newHeap->currentSize = 0;
-	int i;
-	for (i = 0; i < heap->currentSize; i++)
+	int size = heap->currentSize;
+	heap->array = (Event**)realloc(heap->array, (size+HEAPSIZE)*sizeof(Event*));
+	if (heap->array == NULL)
 	{
-		(newHeap->array)[i] = (Event*)malloc(sizeof(Event));
-		(newHeap->array)[i]->time = (heap->array)[i]->time;
-		(newHeap->array)[i]->type = (heap->array)[i]->type;
-		(newHeap->array)[i]->subject = (heap->array)[i]->subject;
-		(newHeap->array)[i]->object = (heap->array[i])->object;
-		newHeap->currentSize++;
+		printf("realloc failed\n");
+		exit(-1);
 	}
-
-	for (i = 0; i < heap->currentSize; i++)
-	{
-		Event* temp = (heap->array)[i];
-		free(temp);
-	}
-	free(heap);
-
-	return newHeap;
+	heap->maxSize = size + HEAPSIZE;
 }
 

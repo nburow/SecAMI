@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdarg.h>
 #include <string.h>
 #include <limits.h>
 #include "attackSim.h"
@@ -8,21 +9,52 @@
 #include "Event.h"
 #include "random.h"
 
+#define LOG		1
+#if LOG == 1 
+#define LOGINITIAL()								\
+do {												\
+	Log = fopen("log.txt", "w");					\
+	if (!Log)										\
+	{												\
+		printf("File doesn't exit\n");				\
+		exit(-1);									\
+	}												\
+} while(0)
+					
+#define LOGPRINT(format)			 				\
+do {												\
+	logRecorder format;								\
+} while(0)											\
+
+
+#define LOGCLOSE()									\
+do {												\
+	fclose(Log);									\
+} while(0)
+#else
+#define LOGINITIAL()
+#define LOGPRINT(format)
+#define LOGCLOSE()
+#endif
 
 double COMTIME;
 double HOPTIME;
 double DECTIME;
+double DISTIME;
 
 FILE* Log;
 FILE* Results;
 
 int** Graph;
 int nodeNum;
+int keyRound;
+
 
 int** CopyGraph;
 
 ActiveEventList AEL;
 int* NodeStatus;
+int* KeyChain;
 Heap EventHeap;
 
 double seed;
@@ -30,6 +62,14 @@ double seed;
 int *visited;
 
 int whichModel;
+
+void logRecorder(const char* format, ...)
+{
+	va_list args;
+	va_start(args, format);
+	vfprintf(Log, format, args);
+	va_end(args);
+}
 
 int dfs(int node)
 {
@@ -46,7 +86,7 @@ int dfs(int node)
 		{
 			visited[canidate] = 1;
 			count += dfs(canidate); //count neighbors recursively
-			//fprintf(Log, "%d ", canidate);
+			LOGPRINT(("%d ", canidate));
 		}
 		i++;  //move to next neighbor
 	}
@@ -55,11 +95,11 @@ int dfs(int node)
 
 void statistic(double time)
 {
-	//fprintf(Log, "<-----------Collection------------->\n");
+	LOGPRINT(("<-----------Collection------------->\n"));
 	//myprint(Log, CopyGraph);
-	//fprintf(Log, "Attack simulation time: %f\n", time);
-	//fprintf(Log, "Safe Nodes: \n");
-	visited = (int *)malloc(nodeNum*(sizeof(int)));
+	LOGPRINT(("Attack simulation time: %f\n", time));
+	LOGPRINT(("Safe Nodes: \n"));
+	visited = (int*)malloc(nodeNum*(sizeof(int)));
 	memset(visited, 0, nodeNum*sizeof(int));
 	visited[0] = 1;
 
@@ -67,8 +107,7 @@ void statistic(double time)
 	if(NodeStatus[0] == DETECTED || NodeStatus[0] == COMPROMISED)
 		count = 0;
 	else
-		count = dfs(0);
-
+		count = dfs(0);	
 	fprintf(Results, "%20d%20f\n", nodeNum-count, (count/(double)nodeNum)*100);
 }
 
@@ -111,15 +150,22 @@ void initial(char* fileName, int attackNode, double ct, double ht, double dt, in
 	HOPTIME = ht;
 	DECTIME = dt;
 
+	DISTIME = 0.5;
+
 	//redirect to file
-	Log = fopen("log.txt", "w");
+/*	Log = fopen("log.txt", "w");
 	if (!Log)
 	{
 		printf("File doesn't exit\n");
 		exit(-1);
 	}
+*/
+
+	//Log file Initialize
+	LOGINITIAL();
+
 	//Graph Initialize
-	//fprintf(Log, "Initializing graph...\n");
+	LOGPRINT(("Initializing graph...\n"));
 	FILE* in = fopen(fileName, "r");
 	if (!in)
 	{
@@ -135,36 +181,45 @@ void initial(char* fileName, int attackNode, double ct, double ht, double dt, in
 	nodeNumOfGraph();
 	//myprint(Log, Graph);
 
+	//key initialize
+	keyRound = 0;
+
 	//ActiveEventList Initialize
-	//fprintf(Log, "Initializing ActiveEventList...\n");
+	LOGPRINT(("Initializing ActiveEventList...\n"));
 	AEL = (ActiveEventList)malloc(sizeof(ActiveNodePtr)*nodeNum);
 	initialActiveEventList();
 
 	//NodeStatus Initialize
-	//fprintf(Log, "Initializing NodeStatus...\n");
+	LOGPRINT(("Initializing NodeStatus...\n"));
 	NodeStatus = (int*)malloc(sizeof(int)*nodeNum);
 	memset(NodeStatus, GOOD, sizeof(int)*nodeNum);
 
+	//KeyChain Intialize
+	LOGPRINT(("Initializing KeyChain...\n"));
+	KeyChain = (int*)malloc(sizeof(int)*nodeNum);
+	memset(KeyChain, KEYZERO, sizeof(int)*nodeNum);
+
 	//Heap Initialize
-	//fprintf(Log, "Initializing Heap...\n");
+	LOGPRINT(("Initializing Heap...\n"));
 	EventHeap = (Heap)malloc(sizeof(struct myHeap));
 	EventHeap->array = (Event**)malloc(sizeof(Event*) * 100);
 	EventHeap->currentSize = 0;
 	EventHeap->maxSize = 100;
 
 	//Attack Initialize
-	//fprintf(Log, "Initializing Attack...\n");
+	LOGPRINT(("Initializing Attack...\n"));
 	Event* event = (Event*)malloc(sizeof(Event));
 	event->type = COMPROMISE;
 	event->time = 0.1;
 	event->subject = attackNode;
 	event->object = attackNode;
+	event->keyRound = KEYZERO;
 
 	insertNode(&EventHeap, event);
 
 	addToActiveList(event);
 
-	//fprintf(Log, "Initialization done, start attack\n");
+	LOGPRINT(("Initialization done, start attack\n"));
 }
 
 Boolean EventIsActive(Event* event)
@@ -174,6 +229,7 @@ Boolean EventIsActive(Event* event)
 	{
 		Event* temp = head->event;
 		if (temp->type == event->type && temp->subject == event->subject && temp->object == event->object && head->active == TRUE)	return TRUE;
+
 		head = head->next;
 	}
 	return FALSE;
@@ -181,13 +237,14 @@ Boolean EventIsActive(Event* event)
 
 void addToActiveList(Event* event)
 {
-	//fprintf(Log, "Adding Event %d to active list(from %d to %d)\n", event->type, event->subject, event->object);
+	LOGPRINT(("Adding Event %d to active list(from %d to %d)\n", event->type, event->subject, event->object));
 	ActiveNodePtr newActiveEvent= (ActiveNodePtr)malloc(sizeof(ActiveNode));
 	Event* temp = (Event*)malloc(sizeof(Event));
 	temp->subject = event->subject;
 	temp->object = event->object;
 	temp->type = event->type;
 	temp->time = event->time;
+	temp->keyRound = event->keyRound;
 	newActiveEvent->event = temp;
 	newActiveEvent->next = (AEL[event->subject])->next;
 	newActiveEvent->active = TRUE;
@@ -246,12 +303,12 @@ void cleanActiveList(Event* event)
 		Event* temp = current->event;
 		if (temp == NULL)
 		{
-			//fprintf(Log, "should not come here\n");
+			printf( "should not come here\n");
 			exit(-1);
 		}
 		else if (temp->subject == event->subject && temp->object == event->object && temp->type == event->type && current->active == TRUE)
 		{
-			//fprintf(Log, "Deactivating event %d from %d to %d\n", event->type, event->subject, event->object);
+			LOGPRINT(("Deactivating event %d from %d to %d\n", event->type, event->subject, event->object));
 			current->active = FALSE;
 			break;
 		}
@@ -263,7 +320,7 @@ void cleanActiveList(Event* event)
 
 void clearActiveList(int node)
 {
-	//fprintf(Log, "Deactivating event conerning with node %d...\n", node);
+	LOGPRINT(("Deactivating event conerning with node %d...\n", node));
 	ActiveNodePtr pre = AEL[node];
 	ActiveNodePtr current = AEL[node]->next;
 	while (current != NULL)
@@ -271,12 +328,12 @@ void clearActiveList(int node)
 		Event* temp = current->event;
 		if (temp == NULL)
 		{
-			//fprintf(Log, "should not come here 2\n");
+			printf( "should not come here 2\n");
 			exit(-1);
 		}
 		else if (current->active == TRUE)
 		{
-			//fprintf(Log, "stop attacking from node %d to node %d\n", temp->subject, temp->object);
+			LOGPRINT(("stop attacking from node %d to node %d\n", temp->subject, temp->object));
 			current->active = FALSE;
 		}
 		pre = current;
@@ -309,7 +366,7 @@ void disconnect(int node)
 		{
 			if (neighbourListOfNeighbour[j] == node)
 			{
-				//fprintf(Log, "disconnect %d from %d\n", neighbourList[i], node);
+				LOGPRINT(("disconnect %d from %d\n", neighbourList[i], node));
 				neighbourListOfNeighbour[j] = DISCONNECTED;
 				break;
 			}
@@ -317,20 +374,16 @@ void disconnect(int node)
 		//sort of directed graph, shouldn't happen
 		if (neighbourListOfNeighbour[j] == -1)
 		{
-			//fprintf(Log, "Should never come here\n");
+			printf( "Should never come here\n");
 			exit(-1);
 		}
 
 		//disconnect node from his neighbour
-		//fprintf(Log, "disconnect %d from %d\n", node, neighbourList[i]);
+		LOGPRINT(("disconnect %d from %d\n", node, neighbourList[i]));
 		neighbourList[i] = DISCONNECTED;
 	}
 
 	clearActiveList(node);
-
-	//fprintf(Log, "Now the graph is like:\n");
-	//myprint(Log, CopyGraph);
-	//fprintf(Log, "--------------------------------------------\n");
 }
 
 void freeall()
@@ -364,7 +417,15 @@ void freeall()
 	//Free NodeStatus
 	free(NodeStatus);
 	NodeStatus = NULL;
+
+	//Free KeyChain
+	free(KeyChain);
+	KeyChain = NULL;
 	
+	//Free visted
+	free(visited);
+	visited = NULL;
+
 	//Free Graph
 	freeGraph(CopyGraph);
 	freeGraph(Graph);	
@@ -372,7 +433,7 @@ void freeall()
 	Graph = NULL;
 }
 
-void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int numOfNodesToCom)
+void runSim1(char* fileName, int attackNode, double ct, double ht, double dt, int numOfNodesToCom)
 {
 	initial(fileName, attackNode, ct, ht, dt, numOfNodesToCom);
 
@@ -392,7 +453,7 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 		if (event == NULL)		break;
 		if (!EventIsActive(event))
 		{
-			//fprintf(Log, "Event has been cancelled, delete from the heap\n");
+			LOGPRINT(("Event has been cancelled, delete from the heap\n"));
 			HeapDelMin(EventHeap);
 			continue;
 		}
@@ -401,7 +462,7 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 		current = event->time;
 		eventTime = 0.0;
 
-		//fprintf(Log, "At %f second comes event %d\n", current, event->type);
+		LOGPRINT(("At %f second comes event %d\n", current, event->type));
 		cleanActiveList(event);
 		//deal with event
 		switch (event->type)	{
@@ -411,7 +472,166 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 			NodeStatus[event->object] = COMPROMISED;
 			
 			if (event->object == 0)		break;
-			//fprintf(Log, "node %d is compromised\n", event->object);
+			LOGPRINT(("node %d is compromised\n", event->object));
+
+			int* neighbourList = CopyGraph[event->object];
+			int stillSafe = 0;
+			for (int i = 1; neighbourList[i] != END_OF_LIST; i++)
+			{
+				if(neighbourList[i] != DISCONNECTED && NodeStatus[neighbourList[i]] == GOOD)	stillSafe++;
+			}
+			if (stillSafe == 0)
+			{
+				LOGPRINT(("All of the neighbours are COMPROMISED\n"));
+			}
+			else
+			{
+				NodeStatus[event->object] = HOPPING;
+				int temp = (numOfNodesToCom == 0) ? (randomChoose(5)) : numOfNodesToCom;
+				int min = (stillSafe < temp) ? stillSafe : temp;
+	
+				for (int i = 0; i < min; i++)
+				{
+					int j;
+					int luckyDog = randomChoose(stillSafe);
+					for (j = 1; neighbourList[j] != END_OF_LIST; j++)
+					{
+						if (neighbourList[j] != DISCONNECTED && NodeStatus[neighbourList[j]] == GOOD)	
+						{
+							if (luckyDog == 0)
+							{
+								LOGPRINT(("%f second later hop to %d\n",  HOPTIME, neighbourList[j]));
+								NodeStatus[neighbourList[j]] = HOPPING;
+								Event* hopEvent = (Event*)malloc(sizeof(Event));
+								hopEvent->time = current + HOPTIME;
+								hopEvent->type = HOP;
+								hopEvent->subject = event->object;
+								hopEvent->object = neighbourList[j];
+								insertNode(&EventHeap, hopEvent);
+
+								addToActiveList(hopEvent);
+								break;
+							}
+							else	luckyDog--;
+						}
+					}		
+					if (neighbourList[j] == END_OF_LIST)
+					{	
+						printf("should never come here 3\n");
+						exit(-1);
+					}
+					stillSafe--;
+				}
+			}
+			eventTime = HOPTIME;
+
+			// schedule detection
+			double detectionTime = calDetectionTime(0, event->object);
+			LOGPRINT(("%f second should be detected\n", current+detectionTime));
+
+			Event* detectEvent = (Event*)malloc(sizeof(Event));
+			detectEvent->time = current + detectionTime;
+			detectEvent->type = DETECTION;
+			// subject should be DCU, which is supposed to be at node 0
+			detectEvent->subject = 0;
+			detectEvent->object = event->object;
+			insertNode(&EventHeap, detectEvent);
+
+			addToActiveList(detectEvent);
+			if (eventTime < detectionTime)	eventTime = detectionTime;
+
+			break;
+		}
+		case DETECTION:		{
+			// set node to detected
+			NodeStatus[event->object] = DETECTED;
+
+			// disconnect its neighbour
+			LOGPRINT(("node: %d is detected\n", event->object));
+			LOGPRINT(("disconnect its neighbour:\n"));
+
+			disconnect(event->object);
+			break;
+		}
+		case HOP:	{		
+			LOGPRINT(("reach node: %d\n", event->object));
+			
+			NodeStatus[event->subject] = COMPROMISING;
+			NodeStatus[event->object] = COMPROMISING;
+
+			LOGPRINT(("%f second later compromise node %d\n", COMTIME, event->object));
+			Event* compromiseEvent = (Event*)malloc(sizeof(Event));
+			compromiseEvent->time = current + COMTIME;
+			compromiseEvent->type = COMPROMISE;
+			compromiseEvent->subject = event->subject;
+			compromiseEvent->object = event->object;
+			insertNode(&EventHeap, compromiseEvent);
+
+			addToActiveList(compromiseEvent);
+			eventTime = COMTIME;
+			break;
+		}
+		default:	break;
+		}
+		HeapDelMin(EventHeap);
+	} while(1);
+	statistic(current);
+	LOGCLOSE();
+	freeall();
+}
+
+void runSim2(char* fileName, int attackNode, double ct, double ht, double dt, int numOfNodesToCom)
+{
+	initial(fileName, attackNode, ct, ht, dt, numOfNodesToCom);
+
+	double current = 0.0;
+	double eventTime = 0.0;
+
+	do
+	{
+		if (NodeStatus[0] == COMPROMISED || NodeStatus[0] == DETECTED)
+		{
+			DCUCompromised();
+			break;
+		}
+
+		//pick an event from EventHeap
+		Event* event = HeapGetMin(EventHeap);
+		if (event == NULL)		break;
+		if (!EventIsActive(event))
+		{
+			LOGPRINT(("Event has been cancelled, delete from the heap\n"));
+			HeapDelMin(EventHeap);
+			continue;
+		}
+
+		//set current time to event time
+		current = event->time;
+		eventTime = 0.0;
+
+		LOGPRINT(("At %f second comes event %d\n", current, event->type));
+		cleanActiveList(event);
+		//deal with event
+		switch (event->type)	{
+		case COMPROMISE:	{
+			// if is already compromised, ignore 
+			if (NodeStatus[event->object] == COMPROMISED || NodeStatus[event->object] == COMPROMISING || NodeStatus[event->object] == HOPPING || NodeStatus[event->object] == DETECTED)	break;
+			// else if protected, authenticate
+			else if (NodeStatus[event->object] == PROTECTED)
+			{
+				if (event->keyRound != KeyChain[event->object])
+				{
+					LOGPRINT(("authenticate failed\n"));
+					break;
+				}
+			}
+			
+			//authentication succeed or has not been protected
+			//NodeStatus[event->subject] = COMPROMISED;
+			NodeStatus[event->object] = COMPROMISED;
+			
+			if (event->object == 0)		break;
+			LOGPRINT(("node %d is compromised\n", event->object));
 	
 		
 			if (whichModel == 1)	{
@@ -477,7 +697,7 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 			}
 			if (stillSafe == 0)
 			{
-				//fprintf(Log, "All of the neighbours are COMPROMISED\n");
+				LOGPRINT(("All of the neighbours are COMPROMISED\n"));
 			}
 			else
 			{
@@ -485,29 +705,31 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 				int temp = (numOfNodesToCom == 0) ? (randomChoose(5)) : numOfNodesToCom;
 		
 				int min = (stillSafe < temp) ? stillSafe : temp;
+				int luckyDog = randomChoose(stillSafe);
 				for (int i = 0; i < min; i++)
 				{
-					int luckyDog = randomChoose(stillSafe);
 					int j;
+					int temp = (luckyDog+i) % min;
 					for (j = 1; neighbourList[j] != END_OF_LIST; j++)
 					{
 						if (neighbourList[j] != DISCONNECTED && NodeStatus[neighbourList[j]] == GOOD)	
 						{
-							if (luckyDog == 0)
+							if (temp == 0)
 							{
-								//fprintf(Log, "%f second later hop to %d\n",  HOPTIME, neighbourList[j]);
-								NodeStatus[neighbourList[j]] = HOPPING;
+								LOGPRINT(("%f second later hop to %d\n",  HOPTIME, neighbourList[j]));
+								//NodeStatus[neighbourList[j]] = HOPPING;
 								Event* hopEvent = (Event*)malloc(sizeof(Event));
 								hopEvent->time = current + HOPTIME;
 								hopEvent->type = HOP;
 								hopEvent->subject = event->object;
 								hopEvent->object = neighbourList[j];
+								hopEvent->keyRound = event->keyRound;
 								insertNode(&EventHeap, hopEvent);
 
 								addToActiveList(hopEvent);
 								break;
 							}
-							else	luckyDog--;
+							else	temp--;
 						}
 					}			
 					if (neighbourList[j] == END_OF_LIST)
@@ -523,7 +745,7 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 
 			// schedule detection
 			double detectionTime = calDetectionTime(0, event->object);
-			//fprintf(Log, "%f second should be detected\n", current+detectionTime);
+			LOGPRINT(("%f second should be detected\n", current+detectionTime));
 
 			Event* detectEvent = (Event*)malloc(sizeof(Event));
 			detectEvent->time = current + detectionTime;
@@ -531,6 +753,7 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 			// subject should be DCU, which is supposed to be at node 0
 			detectEvent->subject = 0;
 			detectEvent->object = event->object;
+			detectEvent->keyRound = event->keyRound;
 			insertNode(&EventHeap, detectEvent);
 
 			addToActiveList(detectEvent);
@@ -539,49 +762,150 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 			break;
 		}
 		case DETECTION:		{
+			
+			if (event->object == 0)
+			{
+				printf("show me!\n");
+				exit(-1);
+			}
+
+
+			LOGPRINT(("at %f, node %d is detected\n", current, event->object));
+			
 			// set node to detected
 			NodeStatus[event->object] = DETECTED;
 
 			// disconnect its neighbour
-			//fprintf(Log, "node: %d is detected\n", event->object);
-			//fprintf(Log, "disconnect its neighbour:\n");
+			
+			keyRound++;
 
-			int* neighbourList = CopyGraph[event->object];
-			int i;
-			for (i = 1; neighbourList[i] != -1; i++)
+			if (KeyChain[event->subject]  < event->keyRound)	
 			{
-				// if has already disconnected, continue
-				if 	(neighbourList[i] == DISCONNECTED)		continue;
-				else	;//fprintf(Log, "%d ", neighbourList[i]);
+				printf("impossible!\n");
+				exit(-1);
 			}
-			//fprintf(Log, "\n");
+			NodeStatus[event->subject] = PROTECTED;
+			KeyChain[event->subject] = keyRound; 
+
 			disconnect(event->object);
+			// new attack detected, generate new key and distribute
+			int i;
+			int* dcuNeighbour = CopyGraph[event->subject];		//event->subject == 0 
+			for (i = 1; dcuNeighbour[i] != -1; i++)
+			{
+				if (dcuNeighbour[i] != DISCONNECTED && NodeStatus[dcuNeighbour[i]] != DETECTED)
+				{	
+					LOGPRINT(("send new key to %d\n", dcuNeighbour[i]));
+					Event* keyDist = (Event*)malloc(sizeof(Event));
+					keyDist->time = current + DISTIME;
+					keyDist->type = KEYUPDATE;
+					keyDist->subject = 0;
+					keyDist->object = dcuNeighbour[i];
+					keyDist->keyRound = keyRound;
+					insertNode(&EventHeap, keyDist);
+
+					addToActiveList(keyDist);
+				}
+			}
 			break;
 		}
 		case HOP:	{		
-			//fprintf(Log, "reach node: %d\n", event->object);
+			// if is already compromised, ignore
+			if (NodeStatus[event->object] == COMPROMISED || NodeStatus[event->object] == COMPROMISING || NodeStatus[event->object] == HOPPING || NodeStatus[event->object] == DETECTED)		break;
+
+			LOGPRINT(("reach node: %d\n", event->object));
 			
 			NodeStatus[event->subject] = COMPROMISING;
-			NodeStatus[event->object] = COMPROMISING;
+			//NodeStatus[event->object] = COMPROMISING;
 
-			//fprintf(Log, "%f second later compromise node %d\n", COMTIME, event->object);
+			LOGPRINT(("%f second later compromise node %d\n", COMTIME, event->object));
 			Event* compromiseEvent = (Event*)malloc(sizeof(Event));
 			compromiseEvent->time = current + COMTIME;
 			compromiseEvent->type = COMPROMISE;
 			compromiseEvent->subject = event->subject;
 			compromiseEvent->object = event->object;
+			compromiseEvent->keyRound = event->keyRound;
 			insertNode(&EventHeap, compromiseEvent);
 
 			addToActiveList(compromiseEvent);
 			eventTime = COMTIME;
 			break;
 		}
+		case KEYUPDATE:	{
+			// get a key from others, compare it with itself, out-of-date
+			if (event->keyRound <= KeyChain[event->object])		break;
+
+			// it's a new key
+			LOGPRINT(("Node %d get a new key from %d\n", event->object, event->subject));
+
+			// if it's acquired by bad buy
+			if (NodeStatus[event->object] == COMPROMISED || NodeStatus[event->object] == HOPPING || NodeStatus[event->object] == COMPROMISING)
+			{
+				LOGPRINT(("Bad guy got the key!\n"));
+				// stop old attack, because it's very likely to fail
+				clearActiveList(event->object);
+
+				// update status and key
+				NodeStatus[event->object] = HOPPING;
+				KeyChain[event->object] = event->keyRound;
+
+				// start new attack with the new key
+				int* neighbourList = CopyGraph[event->object];
+				int i;
+				for (i = 1; neighbourList[i] != -1; i++)
+				{
+					// only attack 'good' node
+					if (neighbourList[i] != DISCONNECTED && NodeStatus[neighbourList[i]] != DETECTED && NodeStatus[neighbourList[i]] != COMPROMISED)
+					{
+						LOGPRINT(("%f second later hop to %d\n", HOPTIME, neighbourList[i]));
+						Event* attackWithNewKey = (Event*)malloc(sizeof(Event));
+						attackWithNewKey->time = current + HOPTIME;
+						attackWithNewKey->type = HOP;
+						attackWithNewKey->subject = event->object;
+						attackWithNewKey->object = neighbourList[i];
+						attackWithNewKey->keyRound = event->keyRound;
+						insertNode(&EventHeap, attackWithNewKey);
+
+						addToActiveList(attackWithNewKey);
+						
+						//NodeStatus[neighbourList[i]] = HOPPING;
+					}
+				}
+				break;
+			}
+
+			// good guy get the key
+			
+			// update its status and keychain
+			NodeStatus[event->object] = PROTECTED;
+			KeyChain[event->object] = event->keyRound;
+
+			// pass the key around
+			int i;
+			int* neighbourList = CopyGraph[event->object];
+			for (i = 1; neighbourList[i] != -1; i++)
+			{
+				if (neighbourList[i] != DISCONNECTED && NodeStatus[neighbourList[i]] != DETECTED && neighbourList[i] != event->subject && neighbourList[i] != 0)
+				{
+					LOGPRINT(("pass this key to %d\n", neighbourList[i]));
+					Event* keyDist = (Event*)malloc(sizeof(Event));
+					keyDist->time = current + DISTIME;
+					keyDist->type = KEYUPDATE;
+					keyDist->subject = event->object;
+					keyDist->object = neighbourList[i];
+					keyDist->keyRound = event->keyRound;
+					insertNode(&EventHeap, keyDist);
+
+					addToActiveList(keyDist);
+				}
+			}
+		}
 		default:	break;
 		}
 		HeapDelMin(EventHeap);
 	} while(1);
 	statistic(current);
-	fclose(Log);
+	LOGCLOSE();	
 	freeall();
 }
 
@@ -590,9 +914,33 @@ void runSim(char* fileName, int attackNode, double ct, double ht, double dt, int
 //argv3: graph directory
 //argv4: results file
 //argv5: number of starting points to use
+//argv6: which model
 int main(int args, char** argv)
 {
 	seed = 42397952317;
+/*	whichModel = 2;
+	Results = fopen("results.txt", "w");
+	fprintf(Results, "%20s%20s%20s%20s%20s%20s%20s%20s\n", "Graph File", "Compromise Time", "Hop Time", "Detect Time", "Ratio", "Start Point", "Num Compromised", "% Alive");
+//	runSim("Graph1506/graph0.txt", 1, 2, 2, 1, INT_MAX);
+
+	int compromiseTime[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int detectTime[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	int hopTime = 2;
+
+	int count = 0;
+	for (int j = 0; j < 10; j++)
+	{
+		for (int k = 0; k < 10; k++)
+		{
+			for (int i = 0; i < 50; i++)
+			{
+				printf("run sim %d\n", count++);
+				runSim("Graph5010/graph0.txt", i, compromiseTime[j], hopTime, detectTime[k], INT_MAX);
+			}		
+		}
+	}
+*/
+
 	if (args < 6)
 	{
 		printf("6 arguments Needed\n");
@@ -619,13 +967,13 @@ int main(int args, char** argv)
 	int startGraphNum = atoi(argv[1]);
 	int lastGraphNum = atoi(argv[2]);
 	
-	whichModel = 2;
+	whichModel = atoi(argv[6]);
 	
-	/*if (whichModel != 1 && whichModel != 2)
+	if (whichModel != 1 && whichModel != 2)
 	{
 		printf("choose from model 1 or 2\n");
 		exit(-1);
-	}*/
+	}
 	
 	int numOfNodesToCom = INT_MAX;
 	
@@ -639,30 +987,15 @@ int main(int args, char** argv)
 		strcat(graph, ".txt");
 		printf("%s\n", graph);
 
-		//compromise times
-		for(int j = 0; j < 10; j++)
+		for (int j = 0; j < atoi(argv[5]); j++)
 		{
-			//detect times
-			for(int k = 0; k < 10; k++)
-			{
-				//start node
-				for(int m = 0; m < atoi(argv[5]); m++)
-				{
-					//runs per start point
-					for(int n = 0; n < 1; n++)
-					{
-						printf("running sim %d\n", count++);
-						runSim(graph, m, compromiseTime, hopTime, detectTime, numOfNodesToCom);
-					}
-				}
-			}
+			printf("running sim %d\n", count++);
+			if (whichModel == 1)
+				runSim1(graph, j, compromiseTime, hopTime, detectTime, numOfNodesToCom);
+			else
+				runSim2(graph, j, compromiseTime, hopTime, detectTime, numOfNodesToCom);
 		}
 	}
 	fclose(Results);
-
-//	runSim("Graph10010/graph0.txt", 50, 1, 1, 1, 1);
 	return 0;
 }
-
-
-

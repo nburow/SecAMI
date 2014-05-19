@@ -3,13 +3,8 @@
 
 #include "Heap.h"
 
-#define WRONG		65536
-#define NOONE		-3
-
-#define SIMTIME		50.0	
-
 //flag adjlist
-#define END_OF_LIST			-1
+#define END_OF_LIST				-1
 #define DISCONNECTED			-2
 
 //node status
@@ -17,8 +12,13 @@
 #define COMPROMISED		1
 #define DETECTED		3
 #define HOPPING			4
-#define COMPROMISING		5
+#define COMPROMISING	5
 #define DETECTING		7
+#define PROTECTED		8
+
+//initial key
+#define KEYZERO			0
+
 
 typedef struct activeNode
 {
