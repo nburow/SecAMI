@@ -8,7 +8,7 @@ build using our make file.
 To run:
 
 graph: 4 command line arguments: # nodes, # connections, RNG Seed (9 digits), #Graphs to generate
-attackSim: # of Start graph, # end graph, graph directory, result file, # nodes
+attackSim: # of Start graph, # end graph, graph directory, result file, # nodes, which model (model 1: simple response; model 2: re-key response)
 
 Notes:
 
